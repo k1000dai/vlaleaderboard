@@ -170,6 +170,21 @@ export const MODELS: Record<string, ModelEntry> = {
     dateAdded: '2025-06-01',
     modelSize: '0.45b'
   },
+  'vla-0' : {
+    id: 'vla-0',
+    name: 'VLA-0',
+    organization: 'NVIDIA',
+    paper: {
+      title: 'VLA-0: Building State-of-the-Art VLAs with Zero Modification',
+      authors: ['Ankit Goyal, Hugo Hadfield, Xuning Yang, Valts Blukis, Fabio Ramos'],
+      year: 2025,
+      arxivId: '2510.13054',
+    },
+    githubUrl: "https://github.com/NVlabs/vla0",
+    isOpenSource: true,
+    dateAdded: '2025-12-19',
+    modelSize: '3b'
+  }
 };
 
 export const getAllModels = () => Object.values(MODELS);
