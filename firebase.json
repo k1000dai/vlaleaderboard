@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "vlaleaderboard",
     "public": "dist",
     "ignore": [
       "firebase.json",
