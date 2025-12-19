@@ -129,10 +129,11 @@ export const VLABENCH: Benchmark = {
   iconEmoji: '⚖️',
   category: 'simulation',
   paper: {
-    title: 'VLABench: Comprehensive Evaluation of VLA Models',
+    title: 'VLABench: A Large-Scale Benchmark for Language-Conditioned Robotics Manipulation with Long-Horizon Reasoning Tasks',
     authors: ['VLABench Team'],
     venue: 'arXiv',
     year: 2024,
+    arxivId: '2412.18194',
   },
   datasetUrls: {
     lerobot: 'https://huggingface.co/datasets/VLABench/vlabench_primitive_ft_lerobot',
