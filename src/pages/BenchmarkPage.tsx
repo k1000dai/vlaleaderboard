@@ -2,7 +2,7 @@ import { useParams, Navigate } from 'react-router-dom';
 import { ExternalLink, FileText, Github, Globe, Clock, Tag, Database } from 'lucide-react';
 import { getBenchmarkById, getLeaderboardData } from '../data';
 import { LeaderboardTable } from '../components/LeaderboardTable';
-import { getArxivUrl } from '../data/utils';
+import { getPaperUrl } from '../data/utils';
 
 export function BenchmarkPage() {
   const { benchmarkId } = useParams<{ benchmarkId: string }>();
@@ -23,6 +23,7 @@ export function BenchmarkPage() {
   }
 
   const leaderboardData = getLeaderboardData(benchmark);
+  const benchmarkPaperUrl = getPaperUrl(benchmark.paper);
 
   return (
     <div className="benchmark-page">
@@ -54,9 +55,9 @@ export function BenchmarkPage() {
         </div>
 
         <div className="benchmark-links-section">
-          {benchmark.paper?.arxivId && (
+          {benchmarkPaperUrl && (
             <a
-              href={getArxivUrl(benchmark.paper.arxivId)}
+              href={benchmarkPaperUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="benchmark-action-link"
@@ -119,16 +120,34 @@ export function BenchmarkPage() {
       {benchmark.paper && (
         <div className="paper-citation">
           <h3>📚 Citation</h3>
-          <div className="citation-box">
-            <p className="paper-title">{benchmark.paper.title}</p>
-            <p className="paper-authors">
-              {benchmark.paper.authors.slice(0, 5).join(', ')}
-              {benchmark.paper.authors.length > 5 && ` et al.`}
-            </p>
-            <p className="paper-venue">
-              {benchmark.paper.venue} {benchmark.paper.year}
-            </p>
-          </div>
+          {benchmarkPaperUrl ? (
+            <a
+              href={benchmarkPaperUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="citation-box citation-box-link"
+            >
+              <p className="paper-title">{benchmark.paper.title}</p>
+              <p className="paper-authors">
+                {benchmark.paper.authors.slice(0, 5).join(', ')}
+                {benchmark.paper.authors.length > 5 && ` et al.`}
+              </p>
+              <p className="paper-venue">
+                {benchmark.paper.venue} {benchmark.paper.year}
+              </p>
+            </a>
+          ) : (
+            <div className="citation-box">
+              <p className="paper-title">{benchmark.paper.title}</p>
+              <p className="paper-authors">
+                {benchmark.paper.authors.slice(0, 5).join(', ')}
+                {benchmark.paper.authors.length > 5 && ` et al.`}
+              </p>
+              <p className="paper-venue">
+                {benchmark.paper.venue} {benchmark.paper.year}
+              </p>
+            </div>
+          )}
         </div>
       )}
 
@@ -163,4 +182,3 @@ export function BenchmarkPage() {
     </div>
   );
 }
-

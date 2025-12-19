@@ -53,11 +53,23 @@ export function LeaderboardTable({ data, metrics, showDetails = true }: Leaderbo
         header: 'Model',
         cell: (info: CellContext<LeaderboardEntry, unknown>) => {
           const model = info.row.original.model;
-          const paperUrl = getPaperUrl(model);
+          const paperUrl = getPaperUrl(model.paper);
           return (
             <div className="model-cell">
               <div className="model-info">
-                <span className="model-name">{model.name}</span>
+                {paperUrl ? (
+                  <a
+                    href={paperUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="model-name"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {model.name}
+                  </a>
+                ) : (
+                  <span className="model-name">{model.name}</span>
+                )}
                 {model.organization && (
                   <span className="model-org">{model.organization}</span>
                 )}

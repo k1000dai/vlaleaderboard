@@ -2,7 +2,7 @@
 // Data Utility Functions
 // ============================================
 
-import type { Benchmark, LeaderboardEntry, ModelEntry } from '../types';
+import type { Benchmark, LeaderboardEntry, Paper } from '../types';
 import { getModelById } from './models';
 
 /**
@@ -62,14 +62,18 @@ export const getArxivUrl = (arxivId: string): string =>
 /**
  * Get paper URL (prefers arXiv, falls back to DOI or direct URL)
  */
-export const getPaperUrl = (model: ModelEntry): string | undefined => {
-  if (model.paper?.arxivId) {
-    return getArxivUrl(model.paper.arxivId);
+export const getPaperUrl = (paper?: Paper): string | undefined => {
+  if (!paper) {
+    return undefined;
   }
-  if (model.paper?.doi) {
-    return `https://doi.org/${model.paper.doi}`;
+
+  if (paper.arxivId) {
+    return getArxivUrl(paper.arxivId);
   }
-  return model.paper?.url;
+  if (paper.doi) {
+    return `https://doi.org/${paper.doi}`;
+  }
+  return paper.url;
 };
 
 /**
@@ -79,4 +83,3 @@ export const getCategories = (benchmarks: Benchmark[]): string[] => {
   const categories = new Set(benchmarks.map(b => b.category));
   return Array.from(categories);
 };
-

@@ -727,10 +727,23 @@ body::before {
 }
 
 .citation-box {
+  display: block;
   padding: var(--space-md);
   background: rgba(0, 0, 0, 0.2);
   border-radius: var(--radius-md);
   border-left: 3px solid var(--color-accent);
+  text-decoration: none;
+  color: inherit;
+}
+
+.citation-box-link {
+  transition: transform var(--transition-fast), background var(--transition-fast);
+  cursor: pointer;
+}
+
+.citation-box-link:hover {
+  transform: translateY(-1px);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .paper-title {
@@ -880,6 +893,12 @@ body::before {
 .model-name {
   font-weight: 600;
   color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.model-name:hover {
+  color: var(--color-accent);
 }
 
 .model-org {
