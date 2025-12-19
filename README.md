@@ -1,26 +1,58 @@
 # VLA Leaderboard
 
-A comprehensive leaderboard for Vision-Language-Action (VLA) models across simulation benchmarks.
+A collaborative, open-source leaderboard tracking the state-of-the-art in **Vision-Language-Action (VLA)** models for robotic manipulation and simulation benchmarks.
 
-🌐 **Live Site**: [https://vlaleaderboard.web.app](https://vlaleaderboard.web.app)
+🌐 **Live Leaderboard**: [https://vlaleaderboard.web.app](https://vlaleaderboard.web.app)
 
-## Features
+---
 
-- 📊 **7 Simulation Benchmarks**: SIMPLER-Env, CALVIN, LIBERO, Meta-World, RLBench, ManiSkill, ALOHA
-- 🤖 **12+ VLA Models**: Including OpenVLA, RT-2, Octo, RDT, and more
-- 📄 **Easy Paper Access**: Direct links to arXiv papers, GitHub repos, and HuggingFace models
-- 🔄 **Sortable Tables**: Sort by any metric
-- 📱 **Responsive Design**: Works on desktop and mobile
+## 🚀 Mission
 
-## Tech Stack
+As the field of robotics moves toward general-purpose foundational models, standardized evaluation becomes critical. This project aims to provide a centralized, easy-to-update repository of performance metrics across diverse simulation environments, enabling researchers to:
 
-- **Frontend**: React + TypeScript + Vite
-- **Styling**: Custom CSS with CSS Variables
-- **Routing**: React Router
-- **Tables**: TanStack Table
-- **Hosting**: Firebase Hosting
+- **Track Progress**: Follow the latest advances in robotic foundational models.
+- **Fair Comparison**: Compare models using standardized metrics across different benchmarks.
+- **Easy Reference**: Access original papers, code repositories, and datasets directly from the leaderboard.
 
-## Development
+---
+
+## 📊 Supported Benchmarks
+
+The leaderboard currently tracks performance across these key simulation environments:
+
+| Benchmark | Description | Key Metrics |
+| :--- | :--- | :--- |
+| **LIBERO-PRO** | Robustness and generalization on LIBERO tasks | Success Rate (Obj, Pos, Sem, etc.) |
+| **CALVIN** | Language-conditioned long-horizon manipulation | Average task length, Success Rate |
+| **LIBERO** | Lifelong robot learning and knowledge transfer | Success Rate (Spatial, Object, etc.) |
+| **Meta-World** | Multi-task and meta reinforcement learning | Success Rate (Easy to Very Hard) |
+| **SIMPLER-Env** | Real-world policy evaluation in simulation | Average Success Rate |
+| **VLABench** | Diverse robotic primitives and common sense | Semantic Instruction, Cross Category |
+| **RoboTwin 2.0** | Dual-arm manipulation with digital twins | Success Rate |
+
+---
+
+## 🤝 Contributing (Pull Requests Welcome!)
+
+This is a community-driven project. We strongly encourage researchers and developers to submit their results!
+
+### How to Add Your Model or Update Scores
+
+1.  **Fork** the repository.
+2.  **Add/Update Data**:
+    - **Models**: Edit `src/data/models.ts` to add your model details (name, paper, organization).
+    - **Scores**: Edit `src/data/benchmarks.ts` to add the evaluation results for specific benchmarks.
+3.  **Submit a Pull Request**: Provide a reference (arXiv link, blog post, or code repo) to verify the results.
+
+Detailed instructions for data structure can be found in the [Updating Data](#updating-data) section below.
+
+---
+
+## 🛠 Technical Setup
+
+This project is built with **React**, **TypeScript**, and **Vite**, hosted on **Firebase**.
+
+### Development
 
 ```bash
 # Install dependencies
@@ -31,116 +63,57 @@ npm run dev
 
 # Build for production
 npm run build
-
-# Preview production build
-npm run preview
 ```
 
-## Deployment
+### Deployment
 
 ```bash
-# Build and deploy to Firebase
-npm run build
-firebase deploy
+# Build and deploy to Firebase Hosting
+npm run deploy
 ```
 
-## Project Structure
+---
 
-```
-src/
-├── components/           # Reusable UI components
-│   ├── Layout.tsx       # Main layout with navigation
-│   ├── LeaderboardTable.tsx  # Sortable data table
-│   └── BenchmarkCard.tsx     # Overview card for benchmarks
-├── data/                 # Data files (EASY TO UPDATE!)
-│   ├── models.ts        # VLA model definitions
-│   ├── benchmarks.ts    # Benchmark definitions & scores
-│   └── utils.ts         # Data utilities
-├── pages/               # Page components
-│   ├── Overview.tsx     # Homepage with all benchmarks
-│   └── BenchmarkPage.tsx # Individual benchmark view
-├── types/               # TypeScript type definitions
-└── index.css            # Global styles
-```
+## 📝 Updating Data (For Contributors)
 
-## How to Update Data
-
-### Adding a New Model
-
-Edit `src/data/models.ts`:
-
+### 1. Registering a Model (`src/data/models.ts`)
 ```typescript
-export const MODELS: Record<string, ModelEntry> = {
-  // ... existing models ...
-  
-  'your-new-model': {
-    id: 'your-new-model',
-    name: 'Your New Model',
-    organization: 'Your Organization',
-    paper: {
-      title: 'Your Paper Title',
-      authors: ['Author 1', 'Author 2'],
-      venue: 'Conference/Journal',
-      year: 2024,
-      arxivId: '2401.12345',  // arXiv ID for automatic link
-    },
-    githubUrl: 'https://github.com/org/repo',
-    huggingfaceUrl: 'https://huggingface.co/org/model',
-    isOpenSource: true,
-    modelSize: '7B',
-    dateAdded: '2024-01-01',
+'model-id': {
+  id: 'model-id',
+  name: 'Model Name',
+  organization: 'Organization Name',
+  paper: {
+    title: 'Paper Title',
+    authors: ['Author 1', 'et al.'],
+    year: 2025,
+    arxivId: 'XXXX.XXXXX', // Optional: Auto-generates arXiv link
+    url: 'https://...',    // Optional: Direct link
   },
-};
+  isOpenSource: true,
+  dateAdded: '2025-12-19',
+}
 ```
 
-### Adding Scores to a Benchmark
-
-Edit `src/data/benchmarks.ts`:
-
+### 2. Adding Scores (`src/data/benchmarks.ts`)
 ```typescript
-export const YOUR_BENCHMARK: Benchmark = {
-  // ... benchmark definition ...
-  scores: [
-    // Add new score entry
-    { 
-      modelId: 'your-new-model',  // Must match ID in models.ts
-      score: 85.5,                 // Primary metric score
-      details: {                   // Optional: sub-metric scores
-        metric1: 90.2,
-        metric2: 80.8,
-      }
-    },
-  ],
-};
+{
+  modelId: 'model-id', // Must match the ID in models.ts
+  score: 85.5,         // Primary metric score
+  details: {           // Sub-metrics (if applicable)
+    easy: 90.0,
+    hard: 70.0,
+  }
+}
 ```
 
-### Adding a New Benchmark
+---
 
-1. Add benchmark definition in `src/data/benchmarks.ts`
-2. Add it to `ALL_BENCHMARKS` array
-3. Add navigation link in `src/components/Layout.tsx`
+## 📜 Acknowledgments
 
-## Paper Citations
+- **Development**: Maintained by [k1000dai](https://k1000dai.github.io/).
+- **Inspiration**: Inspired by the [LMArena Leaderboard](https://huggingface.co/spaces/lmarena-ai/lmarena-leaderboard).
+- **Data**: All credits go to the respective authors of the VLA models and benchmarks mentioned.
 
-Each model and benchmark has a `paper` field that supports:
+## ⚖️ License
 
-- `arxivId`: Auto-generates arXiv link
-- `doi`: Auto-generates DOI link
-- `url`: Direct link to paper
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Add/update data in the `src/data/` directory
-4. Submit a pull request
-
-## License
-
-MIT License - see LICENSE file for details.
-
-## Acknowledgments
-
-- [k1000dai](https://k1000dai.github.io/) for development
-- VLA research community for benchmark data
-- [LMArena Leaderboard](https://huggingface.co/spaces/lmarena-ai/lmarena-leaderboard) for design inspiration
+Distributed under the MIT License. See `LICENSE` for more information.
