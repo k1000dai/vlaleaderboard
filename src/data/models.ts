@@ -18,6 +18,7 @@ export const MODELS: Record<string, ModelEntry> = {
     githubUrl: 'https://github.com/openvla/openvla',
     isOpenSource: true,
     dateAdded: '2024-06-01',
+    modelSize: '7b'
   },
   'pi0': {
     id: 'pi0',
@@ -32,6 +33,7 @@ export const MODELS: Record<string, ModelEntry> = {
     githubUrl: 'https://github.com/Shiduo-zh/openpi',
     isOpenSource: true,
     dateAdded: '2024-10-01',
+    modelSize: '3b'
   },
   'pi0.5': {
     id: 'pi0.5',
@@ -46,6 +48,7 @@ export const MODELS: Record<string, ModelEntry> = {
     githubUrl: 'https://github.com/Shiduo-zh/openpi',
     isOpenSource: true,
     dateAdded: '2025-04-01',
+    modelSize: '3b'
   },
   'molmoact': {
     id: 'molmoact',
@@ -60,6 +63,7 @@ export const MODELS: Record<string, ModelEntry> = {
     githubUrl: 'https://github.com/allenai/molmoact',
     isOpenSource: true,
     dateAdded: '2025-08-01',
+    modelSize: '7b'
   },
   'x-vla': {
     id: 'x-vla',
@@ -74,6 +78,7 @@ export const MODELS: Record<string, ModelEntry> = {
     githubUrl: 'https://github.com/2toinf/X-VLA',
     isOpenSource: true,
     dateAdded: '2025-10-01',
+    modelSize: '0.9b'
   },
   'vla-adapter-pro': {
     id: 'vla-adapter-pro',
@@ -88,6 +93,7 @@ export const MODELS: Record<string, ModelEntry> = {
     githubUrl: 'https://github.com/OpenHelix-Team/VLA-Adapter',
     isOpenSource: true,
     dateAdded: '2025-09-01',
+    modelSize: "0.5b"
   },
   'flower': {
     id: 'flower',
@@ -102,6 +108,7 @@ export const MODELS: Record<string, ModelEntry> = {
     githubUrl: 'https://github.com/intuitive-robots/flower_vla_pret',
     isOpenSource: true,
     dateAdded: '2025-02-01',
+    modelSize: '1b'
   },
   'univla': {
     id: 'univla',
@@ -116,6 +123,7 @@ export const MODELS: Record<string, ModelEntry> = {
     githubUrl: "https://github.com/baaivision/UniVLA",
     isOpenSource: true,
     dateAdded: '2025-02-01',
+    modelSize: '8.5b'
   },
   'octo': {
     id: 'octo',
@@ -125,11 +133,12 @@ export const MODELS: Record<string, ModelEntry> = {
       title: 'Octo: An Open-Source Generalist Robot Policy',
       authors: ['Octo Model Team'],
       year: 2024,
-      url: 'https://arxiv.org/pdf/2405.12213',
+      arxivId: '2405.12213',
     },
     githubUrl: 'https://github.com/octo-models/octo',
     isOpenSource: true,
     dateAdded: '2024-05-01',
+    modelSize: '0.1b' 
   },
   'pi0fast': {
     id: 'pi0fast',
@@ -144,6 +153,7 @@ export const MODELS: Record<string, ModelEntry> = {
     githubUrl: 'https://github.com/Physical-Intelligence/openpi',
     isOpenSource: true,
     dateAdded: '2025-01-01',
+    modelSize: '3b'
   },
   'smolvla-0.45b': {
     id: 'smolvla-0.45b',
@@ -157,7 +167,8 @@ export const MODELS: Record<string, ModelEntry> = {
     },
     githubUrl : "https://github.com/huggingface/lerobot",
     isOpenSource: true,
-    dateAdded: '2025-01-01',
+    dateAdded: '2025-06-01',
+    modelSize: '0.45b'
   },
 };
 
