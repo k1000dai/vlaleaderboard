@@ -257,6 +257,18 @@ body::before {
   font-size: 0.8rem;
 }
 
+.footer-contribution {
+  margin-top: var(--space-md);
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.footer-contribution a {
+  margin-left: 6px;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
 /* ============================================
    Overview Page
    ============================================ */

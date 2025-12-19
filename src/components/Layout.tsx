@@ -70,6 +70,13 @@ export function Layout() {
           <p className="footer-note">
             A community benchmark for Vision-Language-Action models in robotic manipulation.
           </p>
+          <p className="footer-contribution">
+            We welcome contributions! Found a model or benchmark missing? 
+            <a href="https://github.com/k1000dai/vlaleaderboard" target="_blank" rel="noopener noreferrer">
+              Submit a Pull Request on GitHub
+              <Github size={12} style={{ marginLeft: 4 }} />
+            </a>
+          </p>
         </div>
       </footer>
     </div>
