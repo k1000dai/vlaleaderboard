@@ -203,7 +203,7 @@ export const VLABENCH: Benchmark = {
 export const META_WORLD: Benchmark = {
   id: 'meta-world',
   name: 'Meta-World',
-  shortName: 'MW',
+  shortName: 'Meta-World',
   description: 'A benchmark for multi-task and meta reinforcement learning.',
   iconEmoji: '🌍',
   category: 'multi-task',
