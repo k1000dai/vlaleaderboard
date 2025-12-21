@@ -107,5 +107,5 @@ export interface LeaderboardEntry {
   model: ModelEntry;
   score: number;
   details?: Record<string, number>;
+  notes?: string;
 }
-

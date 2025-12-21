@@ -147,11 +147,17 @@ export function LeaderboardTable({ data, metrics, showDetails = true }: Leaderbo
         id: 'score',
         accessorFn: (row) => row.score,
         header: primaryMetric?.name || 'Score',
-        cell: (info: CellContext<LeaderboardEntry, unknown>) => (
-          <span className="score-cell">
-            {formatScore(info.getValue() as number, primaryMetric?.format)}
-          </span>
-        ),
+        cell: (info: CellContext<LeaderboardEntry, unknown>) => {
+          const note = info.row.original.notes;
+          return (
+            <div className="score-cell-wrapper">
+              <span className="score-cell">
+                {formatScore(info.getValue() as number, primaryMetric?.format)}
+              </span>
+              {note && <span className="score-note">{note}</span>}
+            </div>
+          );
+        },
         size: 120,
       },
     ];

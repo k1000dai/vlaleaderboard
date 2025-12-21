@@ -35,6 +35,20 @@ export const MODELS: Record<string, ModelEntry> = {
         dateAdded: '2025-02-01',
         modelSize: '7b'
     },
+    'cot-vla' : {
+        id : 'cot-vla',
+        name : 'CoT-VLA',
+        organization : 'NVIDIA, Stanford University, MIT',
+        paper: {
+            title: 'CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models',
+            authors : ['Qingqing Zhao, Yao Lu, Moo Jin Kim, Zipeng Fu, Zhuoyang Zhang, Yecheng Wu, Zhaoshuo Li, Qianli Ma, Song Han, Chelsea Finn, Ankur Handa, Ming-Yu Liu, Donglai Xiang, Gordon Wetzstein, Tsung-Yi Lin'],
+            year : 2025,
+            arxivId : '2503.22020',
+        },
+        isOpenSource : false,
+        dateAdded : '2025-03-01',
+        modelSize : '7b'
+    },
     'pi0': {
         id: 'pi0',
         name: 'Pi0',

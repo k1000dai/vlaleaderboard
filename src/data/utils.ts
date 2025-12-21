@@ -21,6 +21,7 @@ export const getLeaderboardData = (benchmark: Benchmark): LeaderboardEntry[] => 
         model,
         score: score.score,
         details: score.details,
+        notes: score.notes,
       });
     }
   }
