@@ -2,7 +2,7 @@
 
 A collaborative, open-source leaderboard tracking the state-of-the-art in **Vision-Language-Action (VLA)** models for robotic manipulation and simulation benchmarks.
 
-🌐 **Live Leaderboard**: [https://vlaleaderboard.web.app](https://vlaleaderboard.web.app)
+🌐 **Live Leaderboard**: [https://vlaleaderboard.com/](https://vlaleaderboard.com/)
 
 ---
 
@@ -50,7 +50,7 @@ Detailed instructions for data structure can be found in the [Updating Data](#up
 
 ## 🛠 Technical Setup
 
-This project is built with **React**, **TypeScript**, and **Vite**, hosted on **Firebase**.
+This project is built with **React**, **TypeScript**.
 
 ### Development
 
