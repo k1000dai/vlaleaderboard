@@ -16,7 +16,7 @@ export const MODELS: Record<string, ModelEntry> = {
             arxivId: '2511.19433',
         },
         githubUrl: 'https://github.com/Timsty1/MixtureOfHorizons',
-        isOpenSource: ture,
+        isOpenSource: true,
         dataAdded: '2025-11-24',
         modelSize: '3b'
     },
