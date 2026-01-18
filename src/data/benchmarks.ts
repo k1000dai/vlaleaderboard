@@ -37,6 +37,11 @@ export const LIBERO: Benchmark = {
   lastUpdated: '2025-12-19',
   scores: [
     {
+      modelId: 'mixture_of_horizons',
+      score: 99.0,
+      details: { goal: 98.8, long: 98.4, object: 100, spatial: 98.8 }
+    },
+    {
       modelId: 'vla-adapter-pro',
       score: 98.5,
       details: { goal: 98.2, long: 96.4, object: 99.6, spatial: 99.6 }

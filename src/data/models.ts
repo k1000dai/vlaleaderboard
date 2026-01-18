@@ -5,6 +5,21 @@
 import type { ModelEntry } from '../types';
 
 export const MODELS: Record<string, ModelEntry> = {
+    'mixture_of_horizons': {
+        id: 'mixture_of_horizons',
+        name: 'Mixture of Horizons',
+        organization: 'RUC, UNC, CUHK',
+        paper: {
+            title: 'Mixture of Horizons in Action Chunking',
+            authors: ['Dong Jing, Gang Wang, Jiaqi Liu, Weiliang Tang, Zelong Sun, Yunchao Yao, Zhenyu Wei, Yunhui Liu, Zhiwu Lu, Mingyu Ding'],
+            year: 2025,
+            arxivId: '2511.19433',
+        },
+        githubUrl: 'https://github.com/Timsty1/MixtureOfHorizons',
+        isOpenSource: true,
+        dataAdded: '2025-11-24',
+        modelSize: '3b'
+    },
     'openvla': {
         id: 'openvla',
         name: 'OpenVLA',
