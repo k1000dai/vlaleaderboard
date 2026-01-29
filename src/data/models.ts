@@ -5,6 +5,66 @@
 import type { ModelEntry } from '../types';
 
 export const MODELS: Record<string, ModelEntry> = {
+    'Pi-RL-pi0(Flow-Noise)': {
+        id: 'pi0(Flow-Noise)',
+        name: 'pi0(Flow-Noise)',
+        organization: 'RLinf Team',
+        paper: {
+            title: '$$\backslash$pi\_$\backslash$texttt $\{$RL$\}$ $: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
+            authors: ['Chen, Kang and Liu, Zhihao and Zhang, Tonghe and Guo, Zhen and Xu, Si and Lin, Hao and Zang, Hongzhi and Zhang, Quanlu and Yu, Zhaofei and Fan, Guoliang and others'],
+            year: 2025,
+            arxivId: '2510.25889',
+        },
+        githubUrl: 'https://github.com/RLinf/RLinf',
+        isOpenSource: true,
+        dateAdded: '2026-01-29',
+        modelSize: '3b'
+    },
+    'Pi-RL-pi0.5(Flow-Noise)': {
+        id: 'pi0.5(Flow-Noise)',
+        name: 'pi0.5(Flow-Noise)',
+        organization: 'RLinf Team',
+        paper: {
+            title: '$$\backslash$pi\_$\backslash$texttt $\{$RL$\}$ $: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
+            authors: ['Chen, Kang and Liu, Zhihao and Zhang, Tonghe and Guo, Zhen and Xu, Si and Lin, Hao and Zang, Hongzhi and Zhang, Quanlu and Yu, Zhaofei and Fan, Guoliang and others'],
+            year: 2025,
+            arxivId: '2510.25889',
+        },
+        githubUrl: 'https://github.com/RLinf/RLinf',
+        isOpenSource: true,
+        dateAdded: '2026-01-29',
+        modelSize: '3b'
+    },
+    'Pi-RL-pi0.5(Flow-SDE)': {
+        id: 'pi0.5(Flow-SDE)',
+        name: 'pi0.5(Flow-SDE)',
+        organization: 'RLinf Team',
+        paper: {
+            title: '$$\backslash$pi\_$\backslash$texttt $\{$RL$\}$ $: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
+            authors: ['Chen, Kang and Liu, Zhihao and Zhang, Tonghe and Guo, Zhen and Xu, Si and Lin, Hao and Zang, Hongzhi and Zhang, Quanlu and Yu, Zhaofei and Fan, Guoliang and others'],
+            year: 2025,
+            arxivId: '2510.25889',
+        },
+        githubUrl: 'https://github.com/RLinf/RLinf',
+        isOpenSource: true,
+        dateAdded: '2026-01-29',
+        modelSize: '3b'
+    },
+    'RLinf-VLA': {
+        id: 'OpenVLA-OFT (RLinf-GRPO)',
+        name: 'OpenVLA-OFT (RLinf-GRPO)',
+        organization: 'RLinf Team',
+        paper: {
+            title: 'RLinf-VLA: A Unified and Efficient Framework for VLA+ RL Training',
+            authors: ['Zang, Hongzhi and Wei, Mingjie and Xu, Si and Wu, Yongji and Guo, Zhen and Wang, Yuanqing and Lin, Hao and Shi, Liangzhi and Xie, Yuqing and Xu, Zhexuan and others'],
+            year: 2025,
+            arxivId: '2510.06710',
+        },
+        githubUrl: 'https://github.com/RLinf/RLinf',
+        isOpenSource: true,
+        dateAdded: '2026-01-29',
+        modelSize: '7b'
+    },
     'openvla': {
         id: 'openvla',
         name: 'OpenVLA',

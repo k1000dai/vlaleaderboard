@@ -42,6 +42,16 @@ export const LIBERO: Benchmark = {
       details: { goal: 98.2, long: 96.4, object: 99.6, spatial: 99.6 }
     },
     {
+      modelId: 'pi0.5(Flow-Noise)',
+      score: 98.3,
+      details: { goal: 99.6, long: 94.0, object: 100, spatial: 99.6 }
+    },
+    {
+      modelId: 'OpenVLA-OFT (RLinf-GRPO)',
+      score: 98.1,
+      details: { goal: 98.8, long: 94.0, object: 99.8, spatial: 99.4 }
+    },
+    {
       modelId: 'x-vla',
       score: 98.1,
       details: { goal: 97.8, long: 97.6, object: 98.6, spatial: 98.2 }
@@ -228,6 +238,10 @@ export const META_WORLD: Benchmark = {
   ],
   lastUpdated: '2025-12-19',
   scores: [
+    
+    { modelId: 'pi0(Flow-Noise)', score: 85.8, details: { easy: 91.1, medium: 81.8, hard: 78.3, very_hard: 92.0 } },
+    { modelId: 'pi0.5(Flow-SDE)', score: 70.7, details: { easy: 86.4, medium: 55.5, hard: 75.0, very_hard: 66.0 } },
+    { modelId: 'smolvla-0.45b', score: 57.3, details: { easy: 82.5, medium: 41.8, hard: 45.0, very_hard: 60.0 } },
     { modelId: 'smolvla-0.45b', score: 57.3, details: { easy: 82.5, medium: 41.8, hard: 45.0, very_hard: 60.0 } },
     { modelId: 'pi0', score : 50.5, details: {easy : 80.4, medium:40.9, hard : 36.7, very_hard: 44.0},
     notes: 'This score is based on the smolVLA paper. Maybe uses the lerobot pi0 model.'},
