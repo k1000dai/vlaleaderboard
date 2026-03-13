@@ -42,6 +42,11 @@ export const LIBERO: Benchmark = {
       details: { goal: 98.8, long: 98.4, object: 100, spatial: 98.8 }
     },
     {
+      modelId: 'saivla-0',
+      score: 98.95,
+      details: { spatial: 99.8, object: 100.0, goal: 98.2, long: 97.8 }
+    },
+    {
       modelId: 'vla-adapter-pro',
       score: 98.5,
       details: { goal: 98.2, long: 96.4, object: 99.6, spatial: 99.6 }

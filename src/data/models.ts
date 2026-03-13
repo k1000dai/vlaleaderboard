@@ -318,6 +318,19 @@ export const MODELS: Record<string, ModelEntry> = {
         isOpenSource: false,
         dateAdded: '2025-07-01',
         modelSize: '3b'
+    },
+    'saivla-0': {
+        id: 'saivla-0',
+        name: 'SaiVLA-0',
+        organization: 'Synthoid.ai',
+        paper: {
+            title: 'SaiVLA-0',
+            authors: ['Synthoid.ai'],
+            year: 2026,
+            arxivId: '2603.08124',
+        },
+        isOpenSource: true,
+        dateAdded: '2026-03-13',
     }
 };
 
