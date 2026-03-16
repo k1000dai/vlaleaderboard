@@ -327,10 +327,12 @@ export const MODELS: Record<string, ModelEntry> = {
             title: 'SaiVLA-0',
             authors: ['Synthoid.ai'],
             year: 2026,
+            url: 'https://arxiv.org/pdf/2603.08124',
             arxivId: '2603.08124',
         },
         isOpenSource: true,
         dateAdded: '2026-03-13',
+        githubUrl: 'https://github.com/saivla/saivla-0',
         modelSize: '3b'
     }
 };
