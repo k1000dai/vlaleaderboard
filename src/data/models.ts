@@ -25,7 +25,7 @@ export const MODELS: Record<string, ModelEntry> = {
         name: 'pi0(Flow-Noise)',
         organization: 'RLinf Team',
         paper: {
-            title: '$$\backslash$pi\_$\backslash$texttt $\{$RL$\}$ $: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
+            title: '$\\pi_{\\texttt{RL}}$: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
             authors: ['Chen, Kang and Liu, Zhihao and Zhang, Tonghe and Guo, Zhen and Xu, Si and Lin, Hao and Zang, Hongzhi and Zhang, Quanlu and Yu, Zhaofei and Fan, Guoliang and others'],
             year: 2025,
             arxivId: '2510.25889',
@@ -40,7 +40,7 @@ export const MODELS: Record<string, ModelEntry> = {
         name: 'pi0.5(Flow-Noise)',
         organization: 'RLinf Team',
         paper: {
-            title: '$$\backslash$pi\_$\backslash$texttt $\{$RL$\}$ $: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
+            title: '$\\pi_{\\texttt{RL}}$: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
             authors: ['Chen, Kang and Liu, Zhihao and Zhang, Tonghe and Guo, Zhen and Xu, Si and Lin, Hao and Zang, Hongzhi and Zhang, Quanlu and Yu, Zhaofei and Fan, Guoliang and others'],
             year: 2025,
             arxivId: '2510.25889',
@@ -55,7 +55,7 @@ export const MODELS: Record<string, ModelEntry> = {
         name: 'pi0.5(Flow-SDE)',
         organization: 'RLinf Team',
         paper: {
-            title: '$$\backslash$pi\_$\backslash$texttt $\{$RL$\}$ $: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
+            title: '$\\pi_{\\texttt{RL}}$: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
             authors: ['Chen, Kang and Liu, Zhihao and Zhang, Tonghe and Guo, Zhen and Xu, Si and Lin, Hao and Zang, Hongzhi and Zhang, Quanlu and Yu, Zhaofei and Fan, Guoliang and others'],
             year: 2025,
             arxivId: '2510.25889',
@@ -318,6 +318,104 @@ export const MODELS: Record<string, ModelEntry> = {
         isOpenSource: false,
         dateAdded: '2025-07-01',
         modelSize: '3b'
+    },
+    // Public RoboChallenge aggregate leaderboard entries without published metadata in this repo.
+    'dm0': {
+        id: 'dm0',
+        name: 'DM0',
+        organization: 'Dexmal',
+        paper : {
+            title: 'DM0: An Embodied-Native Vision-Language-Action Model towards Physical AI',
+            authors: ['Dexmal Team'],
+            year: 2026,
+            arxivId: '2602.14974',
+        },
+        isOpenSource: true,
+        githubUrl: 'https://github.com/dexmal/dexbotic',
+        dateAdded: '2026-03-13',
+    },
+    'gigabrain-0.1': {
+        id: 'gigabrain-0.1',
+        name: 'GigaBrain-0.1',
+        dateAdded: '2026-03-13',
+    
+        organization : 'GigaAI',
+        paper : {
+            title : 'GigaBrain-0.5M*: a VLA That Learns From World Model-Based Reinforcement Learning',
+            authors : ['gigaAI'],
+            year : 2026,
+            url : 'https://arxiv.org/html/2602.12099v2'
+        },
+        githubUrl: 'https://gigabrain05m.github.io',
+        isOpenSource : true
+    },
+    'spirit-v1.5': {
+        id: 'spirit-v1.5',
+        name: 'Spirit-v1.5',
+        organization: 'Spirit AI',
+        paper: {
+            title: 'Spirit-v1.5: Clean Data Is the Enemy of Great Robot Foundation Models',
+            authors: ['Spirit AI Team'],
+            year: 2026,
+            url: 'https://www.spirit-ai.com/en/blog/spirit-v1-5',
+        },
+        githubUrl: 'https://github.com/Spirit-AI-Team/spirit-v1.5',
+        dateAdded: '2026-03-13',
+    },
+    'dm0-generalist': {
+        id: 'dm0-generalist',
+        name: 'DM0_generalist',
+        organization: 'Dexmal',
+        description: 'Public RoboChallenge Table 30 leaderboard entry.',
+        dateAdded: '2026-03-13',
+    },
+    'wall-oss-v0.1': {
+        id: 'wall-oss-v0.1',
+        name: 'wall-oss-v0.1',
+        description: 'Public RoboChallenge Table 30 leaderboard entry.',
+        dateAdded: '2026-03-13',
+    },
+    'pi05-generalist': {
+        id: 'pi05-generalist',
+        name: 'pi05_generalist',
+        description: 'Public RoboChallenge Table 30 leaderboard entry.',
+        dateAdded: '2026-03-13',
+    },
+    'rdt-1b': {
+        id: 'rdt-1b',
+        name: 'RDT-1B',
+        description: 'Public RoboChallenge Table 30 leaderboard entry.',
+        dateAdded: '2026-03-13',
+    },
+    'cogact': {
+        id: 'cogact',
+        name: 'cogact',
+        description: 'Public RoboChallenge Table 30 leaderboard entry.',
+        dateAdded: '2026-03-13',
+    },
+    'zr-0-generalist': {
+        id: 'zr-0-generalist',
+        name: 'ZR-0_generalist',
+        description: 'Public RoboChallenge Table 30 leaderboard entry.',
+        dateAdded: '2026-03-13',
+    },
+    'vla-test-0204': {
+        id: 'vla-test-0204',
+        name: 'VLA_test_0204',
+        description: 'Public RoboChallenge Table 30 leaderboard entry.',
+        dateAdded: '2026-03-13',
+    },
+    'pi0-generalist': {
+        id: 'pi0-generalist',
+        name: 'pi0_generalist',
+        description: 'Public RoboChallenge Table 30 leaderboard entry.',
+        dateAdded: '2026-03-13',
+    },
+    'vla-test-0119': {
+        id: 'vla-test-0119',
+        name: 'VLA_test_0119',
+        description: 'Public RoboChallenge Table 30 leaderboard entry.',
+        dateAdded: '2026-03-13',
     },
     'saivla-0': {
         id: 'saivla-0',
