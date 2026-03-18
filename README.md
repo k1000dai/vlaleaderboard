@@ -2,9 +2,9 @@
 
 VLA Leaderboard is a community-maintained registry for tracking Vision-Language-Action model performance across simulation and real-world robotics benchmarks.
 
-Live site: [https://vlaleaderboard.com/](https://vlaleaderboard.com/)
+🌐 Live site: [https://vlaleaderboard.com/](https://vlaleaderboard.com/)
 
-## What This Repo Includes
+## ✨ What This Repo Includes
 
 - An overview dashboard for the current benchmark landscape.
 - Per-benchmark leaderboard pages with links to papers, repos, and datasets.
@@ -12,7 +12,7 @@ Live site: [https://vlaleaderboard.com/](https://vlaleaderboard.com/)
 - A benchmark menu in the header for fast navigation as the registry grows.
 - Dark and light themes.
 
-## Current Benchmarks
+## 📊 Current Benchmarks
 
 The repository currently includes these benchmark registries:
 
@@ -28,7 +28,7 @@ The repository currently includes these benchmark registries:
 
 Each benchmark definition lives in [`src/data/benchmarks.ts`](src/data/benchmarks.ts). Model metadata lives in [`src/data/models.ts`](src/data/models.ts).
 
-## Tech Stack
+## 🛠 Tech Stack
 
 - React
 - TypeScript
@@ -37,7 +37,7 @@ Each benchmark definition lives in [`src/data/benchmarks.ts`](src/data/benchmark
 - TanStack Table
 - Firebase Hosting
 
-## Local Development
+## 🚀 Local Development
 
 ```bash
 npm install
@@ -57,7 +57,7 @@ Production deploy:
 npm run deploy
 ```
 
-## Project Structure
+## 🗂 Project Structure
 
 - [`src/data/models.ts`](src/data/models.ts): model registry and lookup helpers
 - [`src/data/benchmarks.ts`](src/data/benchmarks.ts): benchmark definitions and submitted results
@@ -66,11 +66,11 @@ npm run deploy
 - [`src/pages/Models.tsx`](src/pages/Models.tsx): model registry page
 - [`src/components/Layout.tsx`](src/components/Layout.tsx): app shell, navigation, theme toggle
 
-## Adding or Updating Results
+## 📝 Adding or Updating Results
 
 Normal data updates do not require UI changes. The app reads directly from the registry files, so new models and scores appear automatically once the data is added.
 
-### 1. Add the model if needed
+### 1. 🤖 Add the model if needed
 
 Register the model in [`src/data/models.ts`](src/data/models.ts).
 
@@ -100,7 +100,7 @@ Guidelines:
 - Use ISO dates: `YYYY-MM-DD`.
 - Minimal entries are acceptable when only partial metadata is public.
 
-### 2. Add the score to a benchmark
+### 2. 📈 Add the score to a benchmark
 
 Append a score entry to the target benchmark in [`src/data/benchmarks.ts`](src/data/benchmarks.ts) and update that benchmark's `lastUpdated`.
 
@@ -123,7 +123,7 @@ Guidelines:
 - Keep the numeric precision from the source instead of re-rounding the raw result.
 - Only add `notes` when the source needs a short caveat.
 
-### 3. Add a new benchmark if necessary
+### 3. 🧪 Add a new benchmark if necessary
 
 If the benchmark does not exist yet:
 
@@ -132,7 +132,7 @@ If the benchmark does not exist yet:
 3. Register it in `ALL_BENCHMARKS`.
 4. Set a concise `shortName` because it is used in navigation.
 
-## Contribution Expectations
+## 🤝 Contribution Expectations
 
 Pull requests should include:
 
@@ -147,16 +147,16 @@ npm run lint
 npm run build
 ```
 
-## Agent-Friendly Workflow
+## 🤖 Agent-Friendly Workflow
 
 If you are updating this repository with an automated coding agent, read [`AGENTS.md`](AGENTS.md). It gives the machine-oriented rules for adding results safely and with minimal code changes.
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 - Maintained by [k1000dai](https://k1000dai.github.io/)
 - Inspired by leaderboard-style research registries such as LMArena
 - All benchmark and model credit belongs to the original authors and maintainers
 
-## License
+## ⚖️ License
 
 This project is released under the MIT License. See [`LICENSE`](LICENSE).
