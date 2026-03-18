@@ -460,6 +460,47 @@ export const BEHAVIOR: Benchmark = {
 };
 
 // ============================================
+// RoboChallenge Table 30
+// ============================================
+export const ROBOCHALLENGE: Benchmark = {
+  id: 'robochallenge',
+  name: 'RoboChallenge Table 30',
+  shortName: 'RoboChallenge',
+  description: 'A 30-task real-world benchmark for table-mounted robot manipulation across multiple embodiments.',
+  iconEmoji: '🦾',
+  category: 'real-world',
+  websiteUrl: 'https://robochallenge.ai/home',
+  githubUrl: 'https://github.com/RoboChallenge',
+  datasetUrls: {
+    other: 'https://huggingface.co/datasets/RoboChallenge/Table30',
+  },
+  metrics: [
+    { id: 'score', name: 'Avg. Score', higherIsBetter: true, format: 'decimal' },
+    { id: 'success_rate', name: 'Success Rate', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2026-03-13',
+  taskTypes: ['real-world', 'multi-embodiment', 'tabletop manipulation'],
+  scores: [
+    { modelId: 'dm0', score: 72.24583333333334, details: { success_rate: 62.0 } },
+    { modelId: 'gigabrain-0.1', score: 68.3375, details: { success_rate: 51.66666666666667 } },
+    { modelId: 'spirit-v1.5', score: 67.1875, details: { success_rate: 51.000000000000014 } },
+    { modelId: 'pi0.5', score: 61.8375, details: { success_rate: 42.66666666666667 } },
+    { modelId: 'wall-oss-v0.1', score: 55.30433333333334, details: { success_rate: 35.33333333333333 } },
+    { modelId: 'dm0-generalist', score: 49.079166666666666, details: { success_rate: 37.333333333333336 } },
+    { modelId: 'pi0', score: 46.4125, details: { success_rate: 28.333333333333332 } },
+    { modelId: 'x-vla', score: 34.75, details: { success_rate: 21.333333333333336 } },
+    { modelId: 'pi05-generalist', score: 31.266666666666666, details: { success_rate: 17.666666666666668 } },
+    { modelId: 'rdt-1b', score: 28.8375, details: { success_rate: 14.999999999999996 } },
+    { modelId: 'zr-0-generalist', score: 26.029166666666665, details: { success_rate: 9.333333333333332 } },
+    { modelId: 'vla-test-0119', score: 21.95, details: { success_rate: 5.000000000000001 } },
+    { modelId: 'cogact', score: 21.833333333333332, details: { success_rate: 11.666666666666668 } },
+    { modelId: 'pi0-generalist', score: 20.216666666666665, details: { success_rate: 9.0 } },
+    { modelId: 'vla-test-0204', score: 17.329166666666666, details: { success_rate: 9.000000000000002 } },
+    { modelId: 'openvla-oft', score: 8.6625, details: { success_rate: 5.0 } },
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
@@ -471,6 +512,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   SIMPLER_ENV,
   LIBERO_PRO,
   BEHAVIOR,
+  ROBOCHALLENGE,
 ];
 
 export const BENCHMARKS_BY_ID: Record<string, Benchmark> = ALL_BENCHMARKS.reduce(

@@ -75,11 +75,11 @@ export function LeaderboardTable({ data, metrics, showDetails = true }: Leaderbo
                 )}
               </div>
               <div className="model-links">
-                {model.isOpenSource ? (
+                {model.isOpenSource === true ? (
                   <Unlock size={14} className="open-source-icon" aria-label="Open Source" />
-                ) : (
+                ) : model.isOpenSource === false ? (
                   <Lock size={14} className="closed-source-icon" aria-label="Closed Source" />
-                )}
+                ) : null}
                 {paperUrl && (
                   <a
                     href={paperUrl}

@@ -1,19 +1,59 @@
-import { Outlet, NavLink } from 'react-router-dom';
-import { Bot, Github, ExternalLink } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Outlet, NavLink, useLocation } from 'react-router-dom';
+import { Bot, Github, ExternalLink, Menu, Moon, Sun, X } from 'lucide-react';
+import { getAllBenchmarks } from '../data';
 
-const NAV_LINKS = [
-  { to: '/', label: 'Overview' },
-  { to: '/benchmark/libero', label: 'LIBERO' },
-  { to: '/benchmark/calvin', label: 'CALVIN' },
-  { to: '/benchmark/vlabench', label: 'VLABench' },
-  { to: '/benchmark/meta-world', label: 'Meta-World' },
-  { to: '/benchmark/robotwin', label: 'RoboTwin' },
-  { to: '/benchmark/simpler-env', label: 'SIMPLER' },
-  { to: '/benchmark/libero-pro', label: 'LIBERO-PRO' },
-  { to: '/benchmark/behavior', label: 'BEHAVIOR' },
-];
+type ThemeMode = 'dark' | 'light';
+
+const OVERVIEW_LINK = { to: '/', label: 'Overview' };
+const MODELS_LINK = { to: '/models', label: 'Models' };
+const PRIMARY_LINKS = [OVERVIEW_LINK, MODELS_LINK];
+const BENCHMARK_LINKS = getAllBenchmarks().map((benchmark) => ({
+  to: `/benchmark/${benchmark.id}`,
+  label: benchmark.shortName || benchmark.name,
+}));
+const THEME_STORAGE_KEY = 'vlaleaderboard-theme';
+
+function getInitialTheme(): ThemeMode {
+  if (typeof window === 'undefined') {
+    return 'dark';
+  }
+
+  const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+  return storedTheme === 'light' ? 'light' : 'dark';
+}
 
 export function Layout() {
+  const [isBenchmarkMenuOpen, setIsBenchmarkMenuOpen] = useState(false);
+  const [theme, setTheme] = useState<ThemeMode>(getInitialTheme);
+  const location = useLocation();
+  const isBenchmarkRoute = location.pathname.startsWith('/benchmark/');
+
+  useEffect(() => {
+    setIsBenchmarkMenuOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+  }, [theme]);
+
+  useEffect(() => {
+    if (!isBenchmarkMenuOpen) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsBenchmarkMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isBenchmarkMenuOpen]);
+
   return (
     <div className="layout">
       {/* Header */}
@@ -24,8 +64,8 @@ export function Layout() {
             <span>VLA Leaderboard</span>
           </NavLink>
 
-          <nav className="nav-links">
-            {NAV_LINKS.map((link) => (
+          <nav className="header-primary-nav" aria-label="Primary navigation">
+            {PRIMARY_LINKS.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
@@ -40,6 +80,59 @@ export function Layout() {
           </nav>
 
           <div className="header-actions">
+            <button
+              type="button"
+              className="icon-button"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              onClick={() =>
+                setTheme((currentTheme) =>
+                  currentTheme === 'dark' ? 'light' : 'dark'
+                )
+              }
+            >
+              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+
+            <div className="benchmark-menu-wrapper">
+              <button
+                type="button"
+                className={`menu-toggle ${isBenchmarkMenuOpen || isBenchmarkRoute ? 'active' : ''}`}
+                aria-expanded={isBenchmarkMenuOpen}
+                aria-controls="benchmark-menu"
+                aria-haspopup="true"
+                onClick={() => setIsBenchmarkMenuOpen((open) => !open)}
+              >
+                {isBenchmarkMenuOpen ? <X size={18} /> : <Menu size={18} />}
+                <span>Benchmarks</span>
+              </button>
+
+              <div
+                id="benchmark-menu"
+                className={`benchmark-menu ${isBenchmarkMenuOpen ? 'open' : ''}`}
+              >
+                <div className="benchmark-menu-header">
+                  <p>Benchmark List</p>
+                  <span>{BENCHMARK_LINKS.length} benchmarks</span>
+                </div>
+
+                <nav className="benchmark-menu-links" aria-label="Benchmark navigation">
+                  {BENCHMARK_LINKS.map((link) => (
+                    <NavLink
+                      key={link.to}
+                      to={link.to}
+                      className={({ isActive }) =>
+                        `benchmark-menu-link ${isActive ? 'active' : ''}`
+                      }
+                      onClick={() => setIsBenchmarkMenuOpen(false)}
+                    >
+                      {link.label}
+                    </NavLink>
+                  ))}
+                </nav>
+              </div>
+            </div>
+
             <a
               href="https://github.com/k1000dai/vlaleaderboard"
               target="_blank"
@@ -52,6 +145,15 @@ export function Layout() {
           </div>
         </div>
       </header>
+
+      {isBenchmarkMenuOpen && (
+        <button
+          type="button"
+          className="menu-backdrop"
+          aria-label="Close benchmark menu"
+          onClick={() => setIsBenchmarkMenuOpen(false)}
+        />
+      )}
 
       {/* Main Content */}
       <main className="main-content">

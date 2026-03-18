@@ -9,7 +9,7 @@ export function Overview() {
       <div className="page-header">
         <h1>VLA Leaderboard</h1>
         <p className="page-description">
-          Comprehensive benchmarks for Vision-Language-Action models across simulation environments.
+          Comprehensive benchmarks for Vision-Language-Action models across simulation and real-world evaluation settings.
           Track the latest advances in robotic manipulation, navigation, and multi-task learning.
         </p>
       </div>
@@ -34,7 +34,7 @@ export function Overview() {
       </div>
 
       <section className="benchmarks-section">
-        <h2>Simulation Benchmarks</h2>
+        <h2>Benchmarks</h2>
         <div className="benchmark-grid">
           {benchmarks.map((benchmark) => (
             <BenchmarkCard
@@ -56,7 +56,7 @@ export function Overview() {
             language models, and the ability to generate robot actions.
           </p>
           <p>
-            This leaderboard tracks performance across standardized simulation benchmarks,
+            This leaderboard tracks performance across standardized simulation and real-world benchmarks,
             enabling fair comparison of different approaches to robot learning.
           </p>
           <div className="about-links">
@@ -90,5 +90,4 @@ export function Overview() {
     </div>
   );
 }
-
 

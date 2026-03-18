@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components';
-import { Overview, BenchmarkPage } from './pages';
+import { Overview, BenchmarkPage, Models } from './pages';
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Overview />} />
+          <Route path="models" element={<Models />} />
           <Route path="benchmark/:benchmarkId" element={<BenchmarkPage />} />
         </Route>
       </Routes>

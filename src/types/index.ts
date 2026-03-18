@@ -28,7 +28,7 @@ export interface ModelEntry {
   websiteUrl?: string;
   description?: string;
   dateAdded: string;
-  isOpenSource: boolean;
+  isOpenSource?: boolean;
   modelSize?: string; // e.g., "7B", "13B", "70B"
 }
 
