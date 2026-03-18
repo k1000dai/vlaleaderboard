@@ -51,11 +51,19 @@ npm run lint
 npm run build
 ```
 
-Production deploy:
+Manual Firebase deploy:
 
 ```bash
 npm run deploy
 ```
+
+Production updates are deployed through GitHub Actions. The intended workflow is:
+
+1. Open a pull request against `main`
+2. Merge the pull request
+3. GitHub Actions deploys the latest site automatically
+
+In other words, `main` is treated as the production branch, and manual `npm run deploy` is only a fallback path when you explicitly need a local deploy.
 
 ## 🗂 Project Structure
 
@@ -146,6 +154,8 @@ Before opening a PR:
 npm run lint
 npm run build
 ```
+
+After a pull request is merged into `main`, the production site is expected to update automatically via GitHub Actions.
 
 ## 🤖 Agent-Friendly Workflow
 
