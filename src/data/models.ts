@@ -1,6 +1,6 @@
-// ============================================
+// ===========================================
 // VLA Model Registry (Strictly based on provided info)
-// ============================================
+// ===========================================
 
 import type { ModelEntry } from '../types';
 
@@ -8,10 +8,10 @@ export const MODELS: Record<string, ModelEntry> = {
     'mixture_of_horizons': {
         id: 'mixture_of_horizons',
         name: 'Mixture of Horizons',
-        organization: 'RUC, UNC, CUHK',
+        organization: 'RUС, UNC, CUHK',
         paper: {
             title: 'Mixture of Horizons in Action Chunking',
-            authors: ['Dong Jing, Gang Wang, Jiaqi Liu, Weiliang Tang, Zelong Sun, Yunchao Yao, Zhenyu Wei, Yunhui Liu, Zhiwu Lu, Mingyu Ding'],
+            authors: ['Dong Jing', 'Gang Wang', 'Jiaqi Liu', 'Weiliang Tang', 'Zelong Sun', 'Yunchao Yao', 'Zhenyu Wei', 'Yunhui Liu', 'Zhiwu Lu', 'Mingyu Ding'],
             year: 2025,
             arxivId: '2511.19433',
         },
@@ -25,7 +25,7 @@ export const MODELS: Record<string, ModelEntry> = {
         name: 'pi0(Flow-Noise)',
         organization: 'RLinf Team',
         paper: {
-            title: '$\\pi_{\\texttt{RL}}$: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
+            title: '$\pi_{\texttt{RL}}$: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
             authors: ['Chen, Kang and Liu, Zhihao and Zhang, Tonghe and Guo, Zhen and Xu, Si and Lin, Hao and Zang, Hongzhi and Zhang, Quanlu and Yu, Zhaofei and Fan, Guoliang and others'],
             year: 2025,
             arxivId: '2510.25889',
@@ -40,7 +40,7 @@ export const MODELS: Record<string, ModelEntry> = {
         name: 'pi0.5(Flow-Noise)',
         organization: 'RLinf Team',
         paper: {
-            title: '$\\pi_{\\texttt{RL}}$: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
+            title: '$\pi_{\texttt{RL}}$: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
             authors: ['Chen, Kang and Liu, Zhihao and Zhang, Tonghe and Guo, Zhen and Xu, Si and Lin, Hao and Zang, Hongzhi and Zhang, Quanlu and Yu, Zhaofei and Fan, Guoliang and others'],
             year: 2025,
             arxivId: '2510.25889',
@@ -55,7 +55,7 @@ export const MODELS: Record<string, ModelEntry> = {
         name: 'pi0.5(Flow-SDE)',
         organization: 'RLinf Team',
         paper: {
-            title: '$\\pi_{\\texttt{RL}}$: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
+            title: '$\pi_{\texttt{RL}}$: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
             authors: ['Chen, Kang and Liu, Zhihao and Zhang, Tonghe and Guo, Zhen and Xu, Si and Lin, Hao and Zang, Hongzhi and Zhang, Quanlu and Yu, Zhaofei and Fan, Guoliang and others'],
             year: 2025,
             arxivId: '2510.25889',
@@ -101,7 +101,7 @@ export const MODELS: Record<string, ModelEntry> = {
         organization: 'Stanford University',
         paper: {
             title: 'Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success',
-            authors: ['Moo Jin Kim, Chelsea Finn, Percy Liang'],
+            authors: ['Moo Jin Kim', 'Chelsea Finn', 'Percy Liang'],
             year: 2025,
             arxivId: '2502.19645'
         },
@@ -116,7 +116,7 @@ export const MODELS: Record<string, ModelEntry> = {
         organization : 'NVIDIA, Stanford University, MIT',
         paper: {
             title: 'CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models',
-            authors : ['Qingqing Zhao, Yao Lu, Moo Jin Kim, Zipeng Fu, Zhuoyang Zhang, Yecheng Wu, Zhaoshuo Li, Qianli Ma, Song Han, Chelsea Finn, Ankur Handa, Ming-Yu Liu, Donglai Xiang, Gordon Wetzstein, Tsung-Yi Lin'],
+            authors : ['Qingqing Zhao', 'Yao Lu', 'Moo Jin Kim', 'Zipeng Fu', 'Zhuoyang Zhang', 'Yecheng Wu', 'Zhaoshuo Li', 'Qianli Ma', 'Song Han', 'Chelsea Finn', 'Ankur Handa', 'Ming-Yu Liu', 'Donglai Xiang', 'Gordon Wetzstein', 'Tsung-Yi Lin'],
             year : 2025,
             arxivId : '2503.22020',
         },
@@ -280,7 +280,7 @@ export const MODELS: Record<string, ModelEntry> = {
         organization: 'NVIDIA',
         paper: {
             title: 'VLA-0: Building State-of-the-Art VLAs with Zero Modification',
-            authors: ['Ankit Goyal, Hugo Hadfield, Xuning Yang, Valts Blukis, Fabio Ramos'],
+            authors: ['Ankit Goyal', 'Hugo Hadfield', 'Xuning Yang', 'Valts Blukis', 'Fabio Ramos'],
             year: 2025,
             arxivId: '2510.13054',
         },
@@ -432,21 +432,23 @@ export const MODELS: Record<string, ModelEntry> = {
         dateAdded: '2026-03-13',
         githubUrl: 'https://github.com/saivla/saivla-0',
         modelSize: '3b'
-    }
-};
-
-export const getAllModels = () => Object.values(MODELS);
-
-const MODELS_BY_ID: Record<string, ModelEntry> = Object.values(MODELS).reduce(
-    (acc, model) => {
-        acc[model.id] = model;
-        return acc;
     },
-    {} as Record<string, ModelEntry>
-);
-
-const normalizeModelId = (id: string): string =>
-    id.trim().replace(/^['"`]+|['"`]+$/g, '');
-
-export const getModelById = (id: string) =>
-    MODELS_BY_ID[id] ?? MODELS_BY_ID[normalizeModelId(id)];
+    // ===========================================
+    // 3DWMT Models
+    // ===========================================
+    '3dwmt-abc': {
+        id: '3dwmt-abc',
+        name: '3DWMT-ABC (Full)',
+        organization: 'Tencent Research Institute',
+        paper: {
+            title: '3DWMT: 3D World Model Token for Efficient Robot Communication',
+            authors: ['Solo Fang'],
+            year: 2026,
+            url: 'https://github.com/solofang/3DWMT',
+        },
+        githubUrl: 'https://github.com/solofang/3DWMT',
+        isOpenSource: false,
+        dateAdded: '2026-06-20',
+        modelSize: '2.4b'
+    },
+};
