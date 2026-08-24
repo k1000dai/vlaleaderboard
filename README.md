@@ -25,6 +25,7 @@ The repository currently includes these benchmark registries:
 - LIBERO-PRO
 - BEHAVIOR-1K
 - RoboChallenge Table 30
+- RoboLab-120
 
 Each benchmark definition lives in [`src/data/benchmarks.ts`](src/data/benchmarks.ts). Model metadata lives in [`src/data/models.ts`](src/data/models.ts).
 
@@ -155,7 +156,7 @@ npm run lint
 npm run build
 ```
 
-After a pull request is merged into `main`, the production site is expected to update automatically via GitHub Actions.
+After a pull request is merged into `main`, the production site is expected to update automatically via GitHub Actions. RoboLab leaderboard data is regenerated from NVIDIA's official JSON source daily at 09:00 JST; changed data is built, committed, and deployed by the scheduled workflow.
 
 ## 🤖 Agent-Friendly Workflow
 

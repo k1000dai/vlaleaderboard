@@ -1,0 +1,32 @@
+# Reusable Firebase Hosting deployment.
+# Called by firebase-hosting-merge.yml (pushes to main) and
+# update-robolab.yml (after a scheduled data update).
+
+name: Deploy to Firebase Hosting
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        description: Git ref to build and deploy (defaults to the triggering commit)
+        required: false
+        type: string
+        default: ''
+    secrets:
+      FIREBASE_SERVICE_ACCOUNT_VLALEADERBOARD:
+        required: true
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+      - run: npm ci && npm run build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_VLALEADERBOARD }}
+          channelId: live
+          projectId: vlaleaderboard
