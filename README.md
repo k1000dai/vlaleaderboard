@@ -26,6 +26,7 @@ The repository currently includes these benchmark registries:
 - BEHAVIOR-1K
 - RoboChallenge Table 30
 - RoboLab-120
+- RoboDojo-Sim
 
 Each benchmark definition lives in [`src/data/benchmarks.ts`](src/data/benchmarks.ts). Model metadata lives in [`src/data/models.ts`](src/data/models.ts).
 

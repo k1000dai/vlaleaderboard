@@ -4,6 +4,7 @@
 
 import type { ModelEntry } from '../types';
 import { ROBOLAB_MODELS } from './robolab';
+import { ROBODOJO_MODELS } from './robodojo';
 
 export const MODELS: Record<string, ModelEntry> = {
     'mixture_of_horizons': {
@@ -467,8 +468,13 @@ export const MODELS: Record<string, ModelEntry> = {
     },
 };
 
-// Merge auto-generated RoboLab models. Hand-maintained entries above always win.
+// Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
 for (const model of Object.values(ROBOLAB_MODELS)) {
+    if (!MODELS[model.id]) {
+        MODELS[model.id] = model;
+    }
+}
+for (const model of Object.values(ROBODOJO_MODELS)) {
     if (!MODELS[model.id]) {
         MODELS[model.id] = model;
     }
