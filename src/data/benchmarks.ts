@@ -4,6 +4,7 @@
 
 import type { Benchmark } from '../types';
 import { ROBO_LAB } from './robolab';
+import { ROBO_DOJO_SIM } from './robodojo';
 
 // ============================================
 // LIBERO
@@ -525,9 +526,10 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   BEHAVIOR,
   ROBOCHALLENGE,
   ROBO_LAB,
+  ROBO_DOJO_SIM,
 ];
 
-export { ROBO_LAB };
+export { ROBO_LAB, ROBO_DOJO_SIM };
 
 export const BENCHMARKS_BY_ID: Record<string, Benchmark> = ALL_BENCHMARKS.reduce(
   (acc, benchmark) => ({ ...acc, [benchmark.id]: benchmark }),
