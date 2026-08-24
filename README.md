@@ -156,7 +156,9 @@ npm run lint
 npm run build
 ```
 
-After a pull request is merged into `main`, the production site is expected to update automatically via GitHub Actions. RoboLab leaderboard data is regenerated from NVIDIA's official JSON source daily at 09:00 JST; changed data is built, committed, and deployed by the scheduled workflow.
+After a pull request is merged into `main`, the production site updates automatically via GitHub Actions. New leaderboard entries are curated nightly from primary sources; each accepted model, benchmark, or score update is built and merged through CI before the site is deployed. The RoboLab importer remains available as a reproducible source adapter, but it is not used as the leaderboard's only update path.
+
+See [`docs/leaderboard-curation.md`](docs/leaderboard-curation.md) for the acceptance criteria and automation flow.
 
 ## 🤖 Agent-Friendly Workflow
 
