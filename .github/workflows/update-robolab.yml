@@ -1,0 +1,65 @@
+# Daily sync of src/data/robolab.ts with the official NVIDIA RoboLab leaderboard.
+# Runs at 00:00 UTC (09:00 JST). Commits only when the generated data changed,
+# then deploys through the reusable Firebase workflow because a push made with
+# GITHUB_TOKEN does not reliably trigger the on-push deployment workflow.
+
+name: Update RoboLab leaderboard data
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-robolab
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+      sha: ${{ steps.commit.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Regenerate RoboLab data
+        run: node scripts/update-robolab.mjs
+      - name: Detect changes
+        id: detect
+        run: |
+          if git diff --quiet -- src/data; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Verify build
+        run: |
+          npm ci
+          npm run build
+      - name: Commit and push
+        id: commit
+        if: steps.detect.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data
+          git commit -m "chore: update RoboLab leaderboard data"
+          git push origin main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    uses: ./.github/workflows/firebase-deploy.yml
+    with:
+      ref: ${{ needs.update.outputs.sha }}
+    secrets: inherit

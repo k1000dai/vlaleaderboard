@@ -3,6 +3,7 @@
 // ===========================================
 
 import type { ModelEntry } from '../types';
+import { ROBOLAB_MODELS } from './robolab';
 
 export const MODELS: Record<string, ModelEntry> = {
     'mixture_of_horizons': {
@@ -25,7 +26,7 @@ export const MODELS: Record<string, ModelEntry> = {
         name: 'pi0(Flow-Noise)',
         organization: 'RLinf Team',
         paper: {
-            title: '$\pi_{\texttt{RL}}$: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
+            title: '$\\pi_{\\texttt{RL}}$: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
             authors: ['Chen, Kang and Liu, Zhihao and Zhang, Tonghe and Guo, Zhen and Xu, Si and Lin, Hao and Zang, Hongzhi and Zhang, Quanlu and Yu, Zhaofei and Fan, Guoliang and others'],
             year: 2025,
             arxivId: '2510.25889',
@@ -40,7 +41,7 @@ export const MODELS: Record<string, ModelEntry> = {
         name: 'pi0.5(Flow-Noise)',
         organization: 'RLinf Team',
         paper: {
-            title: '$\pi_{\texttt{RL}}$: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
+            title: '$\\pi_{\\texttt{RL}}$: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
             authors: ['Chen, Kang and Liu, Zhihao and Zhang, Tonghe and Guo, Zhen and Xu, Si and Lin, Hao and Zang, Hongzhi and Zhang, Quanlu and Yu, Zhaofei and Fan, Guoliang and others'],
             year: 2025,
             arxivId: '2510.25889',
@@ -55,7 +56,7 @@ export const MODELS: Record<string, ModelEntry> = {
         name: 'pi0.5(Flow-SDE)',
         organization: 'RLinf Team',
         paper: {
-            title: '$\pi_{\texttt{RL}}$: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
+            title: '$\\pi_{\\texttt{RL}}$: Online RL Fine-tuning for Flow-based Vision-Language-Action Models',
             authors: ['Chen, Kang and Liu, Zhihao and Zhang, Tonghe and Guo, Zhen and Xu, Si and Lin, Hao and Zang, Hongzhi and Zhang, Quanlu and Yu, Zhaofei and Fan, Guoliang and others'],
             year: 2025,
             arxivId: '2510.25889',
@@ -452,3 +453,26 @@ export const MODELS: Record<string, ModelEntry> = {
         modelSize: '2.4b'
     },
 };
+
+// Merge auto-generated RoboLab models. Hand-maintained entries above always win.
+for (const model of Object.values(ROBOLAB_MODELS)) {
+    if (!MODELS[model.id]) {
+        MODELS[model.id] = model;
+    }
+}
+
+export const getAllModels = () => Object.values(MODELS);
+
+const MODELS_BY_ID: Record<string, ModelEntry> = Object.values(MODELS).reduce(
+    (acc, model) => {
+        acc[model.id] = model;
+        return acc;
+    },
+    {} as Record<string, ModelEntry>
+);
+
+const normalizeModelId = (id: string): string =>
+    id.trim().replace(/^['"`]+|['"`]+$/g, '');
+
+export const getModelById = (id: string) =>
+    MODELS_BY_ID[id] ?? MODELS_BY_ID[normalizeModelId(id)];
