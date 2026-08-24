@@ -452,6 +452,19 @@ export const MODELS: Record<string, ModelEntry> = {
         dateAdded: '2026-06-20',
         modelSize: '2.4b'
     },
+    'aspire': {
+        id: 'aspire',
+        name: 'ASPIRE',
+        organization: 'NVIDIA, UMich, UIUC, UC Berkeley, CMU',
+        paper: {
+            title: 'ASPIRE: Agentic /Skills Discovery for Robotics',
+            authors: ['Runyu Lu', 'Yubo Wu', 'Ethan Kou', 'Letian Fu', 'et al.'],
+            year: 2026,
+            arxivId: '2607.00272',
+        },
+        websiteUrl: 'https://research.nvidia.com/labs/gear/aspire/',
+        dateAdded: '2026-08-24',
+    },
 };
 
 // Merge auto-generated RoboLab models. Hand-maintained entries above always win.

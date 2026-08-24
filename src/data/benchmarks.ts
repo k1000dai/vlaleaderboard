@@ -418,6 +418,11 @@ export const LIBERO_PRO: Benchmark = {
         obj_obj: 0.92, obj_pos: 0.06, obj_sem: 0.96, obj_task: 0.00
       }
     },
+    {
+      modelId: 'aspire',
+      score: 0.72,
+      notes: 'Source: https://arxiv.org/html/2607.00272. Overall All macro-average across LIBERO-Pro object/goal/spatial suites and Pos/Task perturbations on 50 held-out seeds per suite (Pos: 0.77, Task: 0.67). This protocol is not directly comparable to rows using the legacy LIBERO-PRO detail columns.'
+    },
   ],
 };
 
