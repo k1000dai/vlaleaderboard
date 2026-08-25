@@ -513,6 +513,61 @@ export const ROBOCHALLENGE: Benchmark = {
 };
 
 // ============================================
+// Know Your Camera
+// ============================================
+export const KNOW_YOUR_CAMERA: Benchmark = {
+  id: 'know-your-camera',
+  name: 'Know Your Camera',
+  shortName: 'CameraPose',
+  description: 'View-invariant policy evaluation across six RoboSuite and ManiSkill manipulation tasks with fixed and randomized scene variants.',
+  iconEmoji: '📷',
+  category: 'simulation',
+  paper: {
+    title: 'Do You Know Where Your Camera Is? View-Invariant Policy Learning with Camera Conditioning',
+    authors: ['Tianchong Jiang', 'Jingtian Ji', 'Xiangshan Tan', 'Jiading Fang', 'Anand Bhattad', 'Vitor Guizilini', 'Matthew R. Walter'],
+    venue: 'ICRA',
+    year: 2026,
+    arxivId: '2510.02268',
+  },
+  websiteUrl: 'https://ripl.github.io/know_your_camera/',
+  githubUrl: 'https://github.com/ripl/CamPoseOpensource',
+  datasetUrls: {
+    other: 'https://drive.google.com/drive/folders/1dmv-ueaP8F0ElqgVXsdmX-S9hvfQb7Yf?usp=drive_link',
+  },
+  taskTypes: ['manipulation', 'camera-pose generalization', 'RoboSuite', 'ManiSkill'],
+  metrics: [
+    { id: 'avg_success', name: 'Avg. Success', higherIsBetter: true, format: 'percentage' },
+    { id: 'lift', name: 'Lift', higherIsBetter: true, format: 'percentage' },
+    { id: 'pick_place_can', name: 'Pick Place Can', higherIsBetter: true, format: 'percentage' },
+    { id: 'assembly_square', name: 'Assembly Square', higherIsBetter: true, format: 'percentage' },
+    { id: 'push', name: 'Push', higherIsBetter: true, format: 'percentage' },
+    { id: 'lift_upright', name: 'Lift Upright', higherIsBetter: true, format: 'percentage' },
+    { id: 'roll_ball', name: 'Roll Ball', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2026-08-25',
+  scores: [
+    {
+      modelId: 'smolvla-camera-conditioned',
+      score: 43.07,
+      details: { lift: 54.4, pick_place_can: 70.0, assembly_square: 26.4, push: 43.8, lift_upright: 33.4, roll_ball: 30.4 },
+      notes: 'Source: https://arxiv.org/html/2510.02268, Table I. Success rates (%) are from six simulated tasks with Plücker camera-pose conditioning; SmolVLA uses seed 0, the last 10 checkpoints, and 50 initial-state × camera-pose pairs per checkpoint (500 rollouts per setting). Avg. Success is the arithmetic mean of the six reported task rates and is not directly comparable to other benchmark protocols.',
+    },
+    {
+      modelId: 'act-camera-conditioned',
+      score: 35.33,
+      details: { lift: 60.6, pick_place_can: 30.9, assembly_square: 18.7, push: 37.5, lift_upright: 34.6, roll_ball: 29.7 },
+      notes: 'Source: https://arxiv.org/html/2510.02268, Table I. Success rates (%) are from six simulated tasks with Plücker camera-pose conditioning; ACT uses 3 seeds, the last 10 checkpoints, and 50 initial-state × camera-pose pairs per checkpoint (1,500 rollouts per setting). Avg. Success is the arithmetic mean of the six reported task rates and is not directly comparable to other benchmark protocols.',
+    },
+    {
+      modelId: 'diffusion-policy-camera-conditioned',
+      score: 27.92,
+      details: { lift: 51.1, pick_place_can: 39.3, assembly_square: 2.4, push: 30.3, lift_upright: 20.7, roll_ball: 23.7 },
+      notes: 'Source: https://arxiv.org/html/2510.02268, Table I. Success rates (%) are from six simulated tasks with Plücker camera-pose conditioning; Diffusion Policy uses 3 seeds, the last 10 checkpoints, and 50 initial-state × camera-pose pairs per checkpoint (1,500 rollouts per setting). Avg. Success is the arithmetic mean of the six reported task rates and is not directly comparable to other benchmark protocols.',
+    },
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
@@ -525,6 +580,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   LIBERO_PRO,
   BEHAVIOR,
   ROBOCHALLENGE,
+  KNOW_YOUR_CAMERA,
   ROBO_LAB,
   ROBO_DOJO_SIM,
 ];
