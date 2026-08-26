@@ -568,6 +568,56 @@ export const KNOW_YOUR_CAMERA: Benchmark = {
 };
 
 // ============================================
+// VLA-REPLICA
+// ============================================
+export const VLA_REPLICA: Benchmark = {
+  id: 'vla-replica',
+  name: 'VLA-REPLICA',
+  shortName: 'VLA-REPLICA',
+  description: 'A low-cost, reproducible real-world benchmark for evaluating vision-language-action models on an SO-101 platform.',
+  iconEmoji: '🧰',
+  category: 'real-world',
+  paper: {
+    title: 'VLA-REPLICA: A Low-Cost, Reproducible Benchmark for Real-World Evaluation of Vision-Language-Action Models',
+    authors: ['Alex S. Huang', 'Jiahui Zhang', 'Shiqing Tang', 'Yu Xiang'],
+    venue: 'Data-Centric Robotics Workshop at RSS',
+    year: 2026,
+    arxivId: '2605.20774',
+  },
+  websiteUrl: 'https://irvlutd.github.io/VLAReplica/',
+  githubUrl: 'https://github.com/IRVLUTD/VLAReplica',
+  datasetUrls: {
+    other: 'https://huggingface.co/datasets/HenryZhang/VLAReplica_SFT_data',
+  },
+  taskTypes: ['real-world', 'SO-101', 'manipulation', 'in-distribution', 'out-of-distribution'],
+  metrics: [
+    { id: 'id_avg_success', name: 'ID Avg. Success', description: 'Average success rate across 10 in-distribution tasks, 5 runs per task.', higherIsBetter: true, format: 'percentage' },
+    { id: 'ood_avg_success', name: 'OOD Avg. Success', description: 'Average success rate across 8 out-of-distribution tasks, 5 runs per task.', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2026-05-20',
+  scores: [
+    {
+      modelId: 'pi0.5',
+      score: 54.0,
+      details: { id_avg_success: 54.0, ood_avg_success: 35.0 },
+      notes: 'Source: https://arxiv.org/html/2605.20774, Tables 4 and 5; official benchmark page: https://irvlutd.github.io/VLAReplica/. π0.5 was fine-tuned with 500 demonstrations and evaluated for 5 runs per task. ID and OOD are separate protocols and are not directly comparable to simulation benchmark rows.',
+    },
+    {
+      modelId: 'pi0',
+      score: 34.0,
+      details: { id_avg_success: 34.0, ood_avg_success: 30.0 },
+      notes: 'Source: https://arxiv.org/html/2605.20774, Tables 4 and 5; official benchmark page: https://irvlutd.github.io/VLAReplica/. π0 was fine-tuned with 500 demonstrations and evaluated for 5 runs per task. ID and OOD are separate protocols and are not directly comparable to simulation benchmark rows.',
+    },
+    {
+      modelId: 'x-vla',
+      score: 14.0,
+      details: { id_avg_success: 14.0, ood_avg_success: 7.5 },
+      notes: 'Source: https://arxiv.org/html/2605.20774, Tables 4 and 5; official benchmark page: https://irvlutd.github.io/VLAReplica/. X-VLA was fine-tuned with 500 demonstrations and evaluated for 5 runs per task. ID and OOD are separate protocols and are not directly comparable to simulation benchmark rows.',
+    },
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
@@ -583,6 +633,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   KNOW_YOUR_CAMERA,
   ROBO_LAB,
   ROBO_DOJO_SIM,
+  VLA_REPLICA,
 ];
 
 export { ROBO_LAB, ROBO_DOJO_SIM };
