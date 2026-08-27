@@ -511,6 +511,19 @@ export const MODELS: Record<string, ModelEntry> = {
         websiteUrl: 'https://research.nvidia.com/labs/gear/aspire/',
         dateAdded: '2026-08-24',
     },
+    'glam-o': {
+        id: 'glam-o',
+        name: 'GLAM-O',
+        organization: 'University of Oxford',
+        paper: {
+            title: 'Imitation from Heterogeneous Demonstrations using Grounded Latent-Action World Models',
+            authors: ['Tianyou Wang', 'Anson Lei', 'Joe Watson', 'Ingmar Posner'],
+            year: 2026,
+            arxivId: '2606.21672',
+        },
+        websiteUrl: 'https://viccccciv.github.io/glam/',
+        dateAdded: '2026-08-27',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.

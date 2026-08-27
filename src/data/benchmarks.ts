@@ -618,6 +618,38 @@ export const VLA_REPLICA: Benchmark = {
 };
 
 // ============================================
+// GLAM Manipulation Tasks
+// ============================================
+export const GLAM_MANIPULATION: Benchmark = {
+  id: 'glam-manipulation',
+  name: 'GLAM Manipulation Tasks',
+  shortName: 'GLAM Tasks',
+  description: 'Paper-defined manipulation task protocol for evaluating world-model-aligned imitation from heterogeneous demonstrations.',
+  iconEmoji: '🧩',
+  category: 'multi-task',
+  paper: {
+    title: 'Imitation from Heterogeneous Demonstrations using Grounded Latent-Action World Models',
+    authors: ['Tianyou Wang', 'Anson Lei', 'Joe Watson', 'Ingmar Posner'],
+    venue: 'arXiv',
+    year: 2026,
+    arxivId: '2606.21672',
+  },
+  websiteUrl: 'https://viccccciv.github.io/glam/',
+  metrics: [
+    { id: 'bimanual_stack_three_success', name: 'Bimanual Stack-Three Success', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2026-06-19',
+  scores: [
+    {
+      modelId: 'glam-o',
+      score: 72.7,
+      details: { bimanual_stack_three_success: 72.7 },
+      notes: 'Source: https://arxiv.org/html/2606.21672, Section 4.1 and Figure 3. GLAM-O is the object-mask variant of GLAM. This is the bimanual 3-cube stacking task in MuJoCo; the paper reports 3 training seeds and 50 evaluation trials per seed. The task has no instruction variant and uses task success rate (%). This paper-specific protocol is not directly comparable to standard LIBERO or other benchmark rows.',
+    },
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
@@ -634,6 +666,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   ROBO_LAB,
   ROBO_DOJO_SIM,
   VLA_REPLICA,
+  GLAM_MANIPULATION,
 ];
 
 export { ROBO_LAB, ROBO_DOJO_SIM };
