@@ -524,6 +524,21 @@ export const MODELS: Record<string, ModelEntry> = {
         websiteUrl: 'https://viccccciv.github.io/glam/',
         dateAdded: '2026-08-27',
     },
+    'behavior-prompting-policy': {
+        id: 'behavior-prompting-policy',
+        name: 'Behavior Prompting Policy (BPP)',
+        organization: 'Stanford University / UC Berkeley',
+        paper: {
+            title: 'Behavior Prompting Policy: Demonstrations as Prompts for Manipulation',
+            authors: ['Austin Patel', 'Ben Pekarek', 'Joel Enrique Castro Hernandez', 'Shuran Song'],
+            year: 2026,
+            arxivId: '2606.30457',
+        },
+        websiteUrl: 'https://behavior-prompting.github.io/',
+        githubUrl: 'https://github.com/real-stanford/behavior_prompting',
+        isOpenSource: true,
+        dateAdded: '2026-08-28',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
