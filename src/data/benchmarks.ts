@@ -36,7 +36,7 @@ export const LIBERO: Benchmark = {
     { id: 'object', name: 'LIBERO-Object', higherIsBetter: true, format: 'percentage' },
     { id: 'spatial', name: 'LIBERO-Spatial', higherIsBetter: true, format: 'percentage' },
   ],
-  lastUpdated: '2026-06-20',
+  lastUpdated: '2026-08-28',
   scores: [
     {
       modelId: 'mixture_of_horizons',
@@ -47,6 +47,12 @@ export const LIBERO: Benchmark = {
       modelId: 'saivla-0',
       score: 98.95,
       details: { goal: 98.2, long: 97.8, object: 100.0, spatial: 99.8 }
+    },
+    {
+      modelId: 'behavior-prompting-policy',
+      score: 97.48,
+      details: { goal: 98.33, long: 95.27, object: 98.93, spatial: 98.93 },
+      notes: 'Source: https://arxiv.org/html/2606.30457, Appendix D Table 2. Original LIBERO success rate (%) averaged across 3 seeds; the paper labels the 10-task suite as LIBERO 10, corresponding to this registry\'s LIBERO-Long column. Each seed uses one checkpoint across the listed splits and includes LIBERO-90 in training, so compare with rows sharing this protocol rather than the separately fine-tuned π0.5 column.',
     },
     {
       modelId: 'vla-adapter-pro',
