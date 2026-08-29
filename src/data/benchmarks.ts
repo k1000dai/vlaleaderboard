@@ -656,6 +656,91 @@ export const GLAM_MANIPULATION: Benchmark = {
 };
 
 // ============================================
+// ArmnetBench v0.1
+// ============================================
+export const ARMNETBENCH: Benchmark = {
+  id: 'armnetbench',
+  name: 'ArmnetBench v0.1',
+  shortName: 'ArmnetBench',
+  description: 'A parallel real-world benchmark for manipulation policies on low-cost SO-101 arm cells, with 8 single-arm and 4 bimanual tasks.',
+  iconEmoji: '🦾',
+  category: 'real-world',
+  paper: {
+    title: 'ArmnetBench v0.1: Parallel Real-World Evaluation of Manipulation Policies on a Low-Cost Arm Farm',
+    authors: ['Praveen Selvaraj', 'Lorenzo Uttini', 'Ville Kuosmanen'],
+    venue: 'arXiv',
+    year: 2026,
+    arxivId: '2607.24481',
+  },
+  websiteUrl: 'https://armnet.dev/',
+  datasetUrls: {
+    other: 'https://huggingface.co/datasets/armnet/armnetbench_v01_robometer',
+  },
+  taskTypes: ['real-world', 'SO-101', 'single-arm', 'bimanual', 'manipulation'],
+  metrics: [
+    {
+      id: 'strict_success',
+      name: 'Strict Success',
+      description: 'Cleanly successful rollouts only, pooled across the 12 benchmark tasks.',
+      higherIsBetter: true,
+      format: 'percentage',
+    },
+    {
+      id: 'success_plus_suboptimal',
+      name: 'Success + Suboptimal',
+      description: 'Successful and poor-quality completions, pooled across the 12 benchmark tasks.',
+      higherIsBetter: true,
+      format: 'percentage',
+    },
+  ],
+  lastUpdated: '2026-08-29',
+  scores: [
+    {
+      modelId: 'pi0.5',
+      score: 47.6,
+      details: { success_plus_suboptimal: 51.5 },
+      notes: 'Source: https://arxiv.org/html/2607.24481, Table 5 (submitted 2026-07-27). Pooled across 12 tasks with 359 scored rollouts; strict success counts successful labels only and Success + Suboptimal also counts poor-quality completions. All policies use 50 demonstrations per task; the protocol is not directly comparable to rows from other benchmarks.',
+    },
+    {
+      modelId: 'pi0',
+      score: 35.1,
+      details: { success_plus_suboptimal: 40.4 },
+      notes: 'Source: https://arxiv.org/html/2607.24481, Table 5 (submitted 2026-07-27). Pooled across 12 tasks with 359 scored rollouts; strict success counts successful labels only and Success + Suboptimal also counts poor-quality completions. All policies use 50 demonstrations per task; the protocol is not directly comparable to rows from other benchmarks.',
+    },
+    {
+      modelId: 'gr00t-n1.7',
+      score: 29.4,
+      details: { success_plus_suboptimal: 33.1 },
+      notes: 'Source: https://arxiv.org/html/2607.24481, Table 5 (submitted 2026-07-27). Pooled across 12 tasks with 360 scored rollouts; strict success counts successful labels only and Success + Suboptimal also counts poor-quality completions. All policies use 50 demonstrations per task; the protocol is not directly comparable to rows from other benchmarks.',
+    },
+    {
+      modelId: 'diffusion-policy',
+      score: 26.7,
+      details: { success_plus_suboptimal: 29.7 },
+      notes: 'Source: https://arxiv.org/html/2607.24481, Table 5 (submitted 2026-07-27). Pooled across 12 tasks with 360 scored rollouts; strict success counts successful labels only and Success + Suboptimal also counts poor-quality completions. All policies use 50 demonstrations per task; the protocol is not directly comparable to rows from other benchmarks.',
+    },
+    {
+      modelId: 'act',
+      score: 19.2,
+      details: { success_plus_suboptimal: 21.1 },
+      notes: 'Source: https://arxiv.org/html/2607.24481, Table 5 (submitted 2026-07-27). Pooled across 12 tasks with 360 scored rollouts; strict success counts successful labels only and Success + Suboptimal also counts poor-quality completions. All policies use 50 demonstrations per task; the protocol is not directly comparable to rows from other benchmarks.',
+    },
+    {
+      modelId: 'molmoact2',
+      score: 18.9,
+      details: { success_plus_suboptimal: 21.7 },
+      notes: 'Source: https://arxiv.org/html/2607.24481, Table 5 (submitted 2026-07-27). Pooled across 12 tasks with 360 scored rollouts; strict success counts successful labels only and Success + Suboptimal also counts poor-quality completions. All policies use 50 demonstrations per task; the protocol is not directly comparable to rows from other benchmarks.',
+    },
+    {
+      modelId: 'smolvla-0.45b',
+      score: 15.0,
+      details: { success_plus_suboptimal: 19.2 },
+      notes: 'Source: https://arxiv.org/html/2607.24481, Table 5 (submitted 2026-07-27). Pooled across 12 tasks with 360 scored rollouts; strict success counts successful labels only and Success + Suboptimal also counts poor-quality completions. All policies use 50 demonstrations per task; the protocol is not directly comparable to rows from other benchmarks.',
+    },
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
@@ -673,6 +758,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   ROBO_DOJO_SIM,
   VLA_REPLICA,
   GLAM_MANIPULATION,
+  ARMNETBENCH,
 ];
 
 export { ROBO_LAB, ROBO_DOJO_SIM };
