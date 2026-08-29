@@ -539,6 +539,52 @@ export const MODELS: Record<string, ModelEntry> = {
         isOpenSource: true,
         dateAdded: '2026-08-28',
     },
+    'gr00t-n1.7': {
+        id: 'gr00t-n1.7',
+        name: 'GR00T N1.7',
+        organization: 'NVIDIA',
+        paper: {
+            title: 'GR00T N1: An Open Foundation Model for Generalist Humanoid Robots',
+            authors: ['NVIDIA et al.'],
+            year: 2025,
+            arxivId: '2503.14734',
+        },
+        dateAdded: '2026-08-29',
+    },
+    'diffusion-policy': {
+        id: 'diffusion-policy',
+        name: 'Diffusion Policy',
+        paper: {
+            title: 'Diffusion Policy: Visuomotor Policy Learning via Action Diffusion',
+            authors: ['C. Chi', 'S. Feng', 'Y. Du', 'Z. Xu', 'E. Cousineau', 'B. Burchfiel', 'S. Song'],
+            venue: 'RSS',
+            year: 2023,
+        },
+        dateAdded: '2026-08-29',
+    },
+    'act': {
+        id: 'act',
+        name: 'ACT',
+        paper: {
+            title: 'Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware',
+            authors: ['T. Z. Zhao', 'V. Kumar', 'S. Levine', 'C. Finn'],
+            venue: 'RSS',
+            year: 2023,
+        },
+        dateAdded: '2026-08-29',
+    },
+    'molmoact2': {
+        id: 'molmoact2',
+        name: 'MolmoAct 2',
+        organization: 'AI2',
+        paper: {
+            title: 'MolmoAct2: Action Reasoning Models for Real-world Deployment',
+            authors: ['Haoquan Fang', 'et al.'],
+            year: 2026,
+            arxivId: '2605.02881',
+        },
+        dateAdded: '2026-08-29',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
