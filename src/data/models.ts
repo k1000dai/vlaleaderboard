@@ -585,6 +585,19 @@ export const MODELS: Record<string, ModelEntry> = {
         },
         dateAdded: '2026-08-29',
     },
+    'rotvla': {
+        id: 'rotvla',
+        name: 'RotVLA',
+        organization: 'Peking University / Xiaomi Robotics / CASIA',
+        paper: {
+            title: 'RotVLA: Rotational Latent Action for Vision-Language-Action Model',
+            authors: ['Qiwei Li', 'Xicheng Gong', 'Xinghang Li', 'Peiyan Li', 'Quanyun Zhou', 'Hangjun Ye', 'Jiahuan Zhou', 'Yadong Mu'],
+            year: 2026,
+            arxivId: '2605.13403',
+        },
+        websiteUrl: 'https://qiweili00.github.io/rotvla-page/',
+        dateAdded: '2026-08-30',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.

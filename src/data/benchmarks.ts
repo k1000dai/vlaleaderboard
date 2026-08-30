@@ -134,6 +134,12 @@ export const LIBERO: Benchmark = {
         score: 87.8,
         details: { spatial: 91.8, goal: 91.4, object: 89.0, long: 78.9 },
         notes: 'Simulation benchmark results. Real-world LIBERO evaluation in progress.'
+    },
+    {
+      modelId: 'rotvla',
+      score: 98.2,
+      details: { spatial: 98.2, object: 99.6, goal: 98.4, long: 96.4 },
+      notes: 'Source: https://arxiv.org/html/2605.13403, Table 1 and Section 4.2 (submitted 2026-05-13). Average success rate (%) over the four 10-task suites; one model is jointly fine-tuned for 80k steps after filtering unsuccessful training trajectories. This protocol is not directly comparable to rows trained or fine-tuned under different LIBERO data protocols.'
     }
   ],
 };
@@ -295,11 +301,19 @@ export const ROBOTWIN: Benchmark = {
   metrics: [
     { id: 'easy', name: 'Easy', higherIsBetter: true, format: 'percentage' },
     { id: 'hard', name: 'Hard', higherIsBetter: true, format: 'percentage' },
+    { id: 'clean', name: 'Clean', higherIsBetter: true, format: 'percentage' },
+    { id: 'rand', name: 'Randomized', higherIsBetter: true, format: 'percentage' },
   ],
-  lastUpdated: '2025-12-19',
+  lastUpdated: '2026-08-30',
   scores: [
     { modelId: 'x-vla', score: 70.0, details: { easy: 70.0, hard: 39.0 } },
     { modelId: 'pi0', score: 46.4, details: { easy: 46.4, hard: 16.3 } },
+    {
+      modelId: 'rotvla',
+      score: 89.6,
+      details: { clean: 89.6, rand: 88.5 },
+      notes: 'Source: https://arxiv.org/html/2605.13403, Table 1 and Section 4.2 (submitted 2026-05-13). RoboTwin2.0 clean/randomized success rate (%) over 50 dual-arm tasks; one model is trained across all tasks with 50 clean and 500 randomized demonstrations per task, then evaluated with 100 rollouts per task. The clean/randomized protocol is not directly comparable to the existing Easy/Hard rows.'
+    },
   ],
 };
 
