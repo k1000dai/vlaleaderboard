@@ -598,6 +598,21 @@ export const MODELS: Record<string, ModelEntry> = {
         websiteUrl: 'https://qiweili00.github.io/rotvla-page/',
         dateAdded: '2026-08-30',
     },
+    'qwen-vla-instruct': {
+        id: 'qwen-vla-instruct',
+        name: 'Qwen-VLA-Instruct',
+        organization: 'Qwen Team',
+        paper: {
+            title: 'Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments',
+            authors: ['Qiuyue Wang', 'Mingsheng Li', 'Jian Guan', 'et al.'],
+            year: 2026,
+            arxivId: '2605.30280',
+        },
+        githubUrl: 'https://github.com/QwenLM/Qwen-VLA',
+        websiteUrl: 'https://qwen.ai/blog?id=qwenvla',
+        dateAdded: '2026-08-31',
+        modelSize: '4b + 1.15b DiT',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
