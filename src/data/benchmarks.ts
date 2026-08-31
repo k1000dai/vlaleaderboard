@@ -36,7 +36,7 @@ export const LIBERO: Benchmark = {
     { id: 'object', name: 'LIBERO-Object', higherIsBetter: true, format: 'percentage' },
     { id: 'spatial', name: 'LIBERO-Spatial', higherIsBetter: true, format: 'percentage' },
   ],
-  lastUpdated: '2026-08-28',
+  lastUpdated: '2026-08-31',
   scores: [
     {
       modelId: 'mixture_of_horizons',
@@ -47,6 +47,11 @@ export const LIBERO: Benchmark = {
       modelId: 'saivla-0',
       score: 98.95,
       details: { goal: 98.2, long: 97.8, object: 100.0, spatial: 99.8 }
+    },
+    {
+      modelId: 'qwen-vla-instruct',
+      score: 97.9,
+      notes: 'Source: https://arxiv.org/html/2605.30280v1, Table 4; official repository: https://github.com/QwenLM/Qwen-VLA. Overall LIBERO success rate (%) for Qwen-VLA-Instruct across the four standard splits; the paper reports no per-split breakdown for this row. Action chunk length H=16 and the standard StarVLA evaluation protocol are used. The model is jointly trained across embodiments without per-benchmark adaptation, so this result is not directly comparable to rows using separately fine-tuned split-specific policies.'
     },
     {
       modelId: 'behavior-prompting-policy',
@@ -304,10 +309,16 @@ export const ROBOTWIN: Benchmark = {
     { id: 'clean', name: 'Clean', higherIsBetter: true, format: 'percentage' },
     { id: 'rand', name: 'Randomized', higherIsBetter: true, format: 'percentage' },
   ],
-  lastUpdated: '2026-08-30',
+  lastUpdated: '2026-08-31',
   scores: [
     { modelId: 'x-vla', score: 70.0, details: { easy: 70.0, hard: 39.0 } },
     { modelId: 'pi0', score: 46.4, details: { easy: 46.4, hard: 16.3 } },
+    {
+      modelId: 'qwen-vla-instruct',
+      score: 86.1,
+      details: { easy: 86.1, hard: 87.2 },
+      notes: 'Source: https://arxiv.org/html/2605.30280v1, Table 4; official repository: https://github.com/QwenLM/Qwen-VLA. RoboTwin 2.0 success rate (%) on the Easy and Hard tiers over 50 dual-arm tasks; the registry primary score follows the existing Easy-column convention. Action chunk length H=16; Qwen-VLA-Instruct is trained jointly across embodiments without per-benchmark adaptation. This Easy/Hard protocol is not directly comparable to the existing clean/randomized RoboTwin row.'
+    },
     {
       modelId: 'rotvla',
       score: 89.6,
