@@ -613,6 +613,22 @@ export const MODELS: Record<string, ModelEntry> = {
         dateAdded: '2026-08-31',
         modelSize: '4b + 1.15b DiT',
     },
+    'vlact': {
+        id: 'vlact',
+        name: 'VLAct',
+        organization: 'VLAct research team',
+        paper: {
+            title: 'Beyond Data Scaling: Representation-Centric Continued Pre-training for Vision-Language-Action Models',
+            authors: ['Senqiao Yang', 'Chengyao Wang', 'Yuxin Chen', 'Zixuan Wang', 'et al.'],
+            year: 2026,
+            arxivId: '2608.27550',
+        },
+        githubUrl: 'https://github.com/starVLA/VLAct',
+        websiteUrl: 'https://starvla.github.io/VLAct/',
+        isOpenSource: true,
+        dateAdded: '2026-09-01',
+        modelSize: '4b',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.

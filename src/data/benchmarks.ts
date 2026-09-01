@@ -325,6 +325,12 @@ export const ROBOTWIN: Benchmark = {
       details: { clean: 89.6, rand: 88.5 },
       notes: 'Source: https://arxiv.org/html/2605.13403, Table 1 and Section 4.2 (submitted 2026-05-13). RoboTwin2.0 clean/randomized success rate (%) over 50 dual-arm tasks; one model is trained across all tasks with 50 clean and 500 randomized demonstrations per task, then evaluated with 100 rollouts per task. The clean/randomized protocol is not directly comparable to the existing Easy/Hard rows.'
     },
+    {
+      modelId: 'vlact',
+      score: 92.5,
+      details: { clean: 92.5, rand: 90.8 },
+      notes: 'Source: https://arxiv.org/html/2608.27550, Table 2 and Section 4.2; official project page: https://starvla.github.io/VLAct/. RoboTwin 2.0 Data Scaling setting with the VLAct-OFT head: 92.5% success on Clean and 90.8% on Random. The protocol uses 50 clean and 500 domain-randomized expert trajectories per task (2,500 clean and 25,000 randomized demonstrations across 50 tasks); these are successful demonstrations from the official demo_randomized setting, not random-action rollouts. This Data Scaling Clean/Random protocol is not directly comparable to the existing Easy/Hard rows.'
+    },
   ],
 };
 
