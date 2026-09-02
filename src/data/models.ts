@@ -629,6 +629,20 @@ export const MODELS: Record<string, ModelEntry> = {
         dateAdded: '2026-09-01',
         modelSize: '4b',
     },
+    'long-vla': {
+        id: 'long-vla',
+        name: 'Long-VLA',
+        organization: 'MiLAB, Westlake University / Zhejiang University / Xi\'an Jiaotong University / UESTC / Beihang',
+        paper: {
+            title: 'Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation',
+            authors: ['Yiguo Fan', 'Pengxiang Ding', 'Shuanghao Bai', 'Xinyang Tong', 'Yuyang Zhu', 'Hongchao Lu', 'Fengqi Dai', 'Wei Zhao', 'Yang Liu', 'Siteng Huang', 'Zhaoxin Fan', 'Badong Chen', 'Donglin Wang'],
+            venue: 'CoRL',
+            year: 2025,
+            arxivId: '2508.19958',
+        },
+        websiteUrl: 'https://long-vla.github.io/',
+        dateAdded: '2026-09-02',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
