@@ -772,6 +772,48 @@ export const ARMNETBENCH: Benchmark = {
 };
 
 // ============================================
+// L-CALVIN
+// ============================================
+export const L_CALVIN: Benchmark = {
+  id: 'l-calvin',
+  name: 'L-CALVIN',
+  shortName: 'L-CALVIN',
+  description: 'CALVIN-derived data protocol extended from 5 to 10 task sequences for long-horizon manipulation.',
+  iconEmoji: '🔗',
+  category: 'simulation',
+  paper: {
+    title: 'Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation',
+    authors: ['Yiguo Fan', 'Pengxiang Ding', 'Shuanghao Bai', 'Xinyang Tong', 'Yuyang Zhu', 'Hongchao Lu', 'Fengqi Dai', 'Wei Zhao', 'Yang Liu', 'Siteng Huang', 'Zhaoxin Fan', 'Badong Chen', 'Donglin Wang'],
+    venue: 'CoRL',
+    year: 2025,
+    arxivId: '2508.19958',
+  },
+  websiteUrl: 'https://long-vla.github.io/',
+  metrics: [
+    { id: 'avg_len', name: 'Avg. Length', higherIsBetter: true, format: 'decimal' },
+    { id: 'seq_1', name: 'Tasks Completed in Sequence (1)', higherIsBetter: true, format: 'percentage' },
+    { id: 'seq_2', name: 'Tasks Completed in Sequence (2)', higherIsBetter: true, format: 'percentage' },
+    { id: 'seq_3', name: 'Tasks Completed in Sequence (3)', higherIsBetter: true, format: 'percentage' },
+    { id: 'seq_4', name: 'Tasks Completed in Sequence (4)', higherIsBetter: true, format: 'percentage' },
+    { id: 'seq_5', name: 'Tasks Completed in Sequence (5)', higherIsBetter: true, format: 'percentage' },
+    { id: 'seq_6', name: 'Tasks Completed in Sequence (6)', higherIsBetter: true, format: 'percentage' },
+    { id: 'seq_7', name: 'Tasks Completed in Sequence (7)', higherIsBetter: true, format: 'percentage' },
+    { id: 'seq_8', name: 'Tasks Completed in Sequence (8)', higherIsBetter: true, format: 'percentage' },
+    { id: 'seq_9', name: 'Tasks Completed in Sequence (9)', higherIsBetter: true, format: 'percentage' },
+    { id: 'seq_10', name: 'Tasks Completed in Sequence (10)', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2026-09-02',
+  scores: [
+    {
+      modelId: 'long-vla',
+      score: 4.75,
+      details: { seq_1: 92, seq_2: 74, seq_3: 65, seq_4: 50, seq_5: 43, seq_6: 39, seq_7: 36, seq_8: 30, seq_9: 26, seq_10: 20, avg_len: 4.75 },
+      notes: 'Source: https://arxiv.org/pdf/2508.19958 and https://long-vla.github.io/long-vla/longvla.pdf, Table 2 (arXiv v2 revised 2025-08-28). L-CALVIN extends the CALVIN evaluation protocol from 5 to 10 task sequences; the sequence values are success rates in percent converted from the paper\'s 0.xx values, and Avg. Length is the average number of consecutively completed tasks. This L-CALVIN 10-task protocol is not directly comparable to standard CALVIN rows.',
+    },
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
@@ -790,6 +832,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   VLA_REPLICA,
   GLAM_MANIPULATION,
   ARMNETBENCH,
+  L_CALVIN,
 ];
 
 export { ROBO_LAB, ROBO_DOJO_SIM };
