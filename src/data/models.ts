@@ -643,6 +643,24 @@ export const MODELS: Record<string, ModelEntry> = {
         websiteUrl: 'https://long-vla.github.io/',
         dateAdded: '2026-09-02',
     },
+    'dynamicvla': {
+        id: 'dynamicvla',
+        name: 'DynamicVLA',
+        organization: 'S-Lab, Nanyang Technological University',
+        paper: {
+            title: 'DynamicVLA: A Vision-Language-Action Model for Dynamic Object Manipulation',
+            authors: ['Haozhe Xie', 'Beichen Wen', 'Jiarui Zheng', 'Zhaoxi Chen', 'Fangzhou Hong', 'Haiwen Diao', 'Ziwei Liu'],
+            venue: 'CVPRW',
+            year: 2026,
+            arxivId: '2601.22153',
+        },
+        githubUrl: 'https://github.com/hzxie/DynamicVLA',
+        websiteUrl: 'https://haozhexie.com/project/dynamic-vla',
+        huggingfaceUrl: 'https://huggingface.co/hzxie/dynamic-vla-DOM',
+        isOpenSource: true,
+        dateAdded: '2026-09-03',
+        modelSize: '0.4b',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
