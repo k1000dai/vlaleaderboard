@@ -814,6 +814,66 @@ export const L_CALVIN: Benchmark = {
 };
 
 // ============================================
+// Dynamic Object Manipulation (DOM)
+// ============================================
+export const DYNAMIC_OBJECT_MANIPULATION: Benchmark = {
+  id: 'dynamic-object-manipulation',
+  name: 'Dynamic Object Manipulation (DOM)',
+  shortName: 'DOM',
+  description: 'A dynamic manipulation benchmark for evaluating VLA and policy robustness to moving objects across interaction, perception, and generalization.',
+  iconEmoji: '💨',
+  category: 'real-world',
+  paper: {
+    title: 'DynamicVLA: A Vision-Language-Action Model for Dynamic Object Manipulation',
+    authors: ['Haozhe Xie', 'Beichen Wen', 'Jiarui Zheng', 'Zhaoxi Chen', 'Fangzhou Hong', 'Haiwen Diao', 'Ziwei Liu'],
+    venue: 'CVPRW',
+    year: 2026,
+    arxivId: '2601.22153',
+  },
+  websiteUrl: 'https://haozhexie.com/project/dynamic-vla',
+  githubUrl: 'https://github.com/hzxie/DynamicVLA',
+  datasetUrls: {
+    other: 'https://huggingface.co/datasets/hzxie/DOM',
+  },
+  taskTypes: ['dynamic manipulation', 'VLA', 'simulation', 'real-world', 'Franka', 'PiPER'],
+  metrics: [
+    { id: 'avg_success', name: 'Overall Avg. Success', description: 'Average success rate across nine DOM evaluation dimensions.', higherIsBetter: true, format: 'percentage' },
+    { id: 'closed_loop_reactivity', name: 'Closed-loop Reactivity', higherIsBetter: true, format: 'percentage' },
+    { id: 'dynamic_adaptation', name: 'Dynamic Adaptation', higherIsBetter: true, format: 'percentage' },
+    { id: 'long_horizon_sequencing', name: 'Long-horizon Sequencing', higherIsBetter: true, format: 'percentage' },
+    { id: 'visual_understanding', name: 'Visual Understanding', higherIsBetter: true, format: 'percentage' },
+    { id: 'spatial_reasoning', name: 'Spatial Reasoning', higherIsBetter: true, format: 'percentage' },
+    { id: 'motion_perception', name: 'Motion Perception', higherIsBetter: true, format: 'percentage' },
+    { id: 'visual_generation', name: 'Visual Generation', higherIsBetter: true, format: 'percentage' },
+    { id: 'motion_generalization', name: 'Motion Generalization', higherIsBetter: true, format: 'percentage' },
+    { id: 'disturbance_robustness', name: 'Disturbance Robustness', higherIsBetter: true, format: 'percentage' },
+    { id: 'path_length', name: 'Path Length', higherIsBetter: false, format: 'decimal' },
+    { id: 'completion_time', name: 'Task Completion Time', higherIsBetter: false, format: 'decimal' },
+  ],
+  lastUpdated: '2026-09-03',
+  scores: [
+    {
+      modelId: 'dynamicvla',
+      score: 47.06,
+      details: {
+        closed_loop_reactivity: 60.5,
+        dynamic_adaptation: 38.5,
+        long_horizon_sequencing: 40.5,
+        visual_understanding: 51.5,
+        spatial_reasoning: 48.0,
+        motion_perception: 33.5,
+        visual_generation: 59.5,
+        motion_generalization: 65.0,
+        disturbance_robustness: 26.5,
+        path_length: 2.50,
+        completion_time: 8.53,
+      },
+      notes: 'Source: https://arxiv.org/html/2601.22153, Table I and Sections IV-A/V; official project page: https://haozhexie.com/project/dynamic-vla; official repository: https://github.com/hzxie/DynamicVLA. DOM simulation benchmark, nine dimensions (CR/DA/LS/VU/SR/MP/VG/MG/DR), 10 scenes × 20 trials per dimension (1,800 trials total). The primary metric is success rate (%); Path Length is in meters and Task Completion Time is in seconds. The paper-defined language instructions and temporal input are used, with no separate instruction variant reported. This dynamic-object protocol is not directly comparable to static manipulation benchmark rows.',
+    },
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
@@ -833,6 +893,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   GLAM_MANIPULATION,
   ARMNETBENCH,
   L_CALVIN,
+  DYNAMIC_OBJECT_MANIPULATION,
 ];
 
 export { ROBO_LAB, ROBO_DOJO_SIM };
