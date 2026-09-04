@@ -874,6 +874,66 @@ export const DYNAMIC_OBJECT_MANIPULATION: Benchmark = {
 };
 
 // ============================================
+// RoboBenchMart
+// ============================================
+export const ROBOBENCHMART: Benchmark = {
+  id: 'robobenchmart',
+  name: 'RoboBenchMart',
+  shortName: 'RoboBenchMart',
+  description: 'An open-source simulated retail benchmark for evaluating mobile-manipulation policies in dark-store environments with cluttered shelves, refrigerators, and diverse grocery items.',
+  iconEmoji: '🛒',
+  category: 'simulation',
+  paper: {
+    title: 'RoboBenchMart: Benchmarking Robots in Retail Environment',
+    authors: ['Konstantin Soshin', 'Alexander Krapukhin', 'Andrei Spiridonov', 'Gregorii Bukhtuev', 'Andrey Kuznetsov', 'Vlad Shakhuro', 'Denis Shepelev'],
+    venue: 'arXiv',
+    year: 2025,
+    arxivId: '2511.10276',
+  },
+  websiteUrl: 'https://emb-ai.github.io/RoboBenchMart/',
+  githubUrl: 'https://github.com/emb-ai/RoboBenchMart',
+  datasetUrls: {
+    other: 'https://huggingface.co/datasets/emb-ai/RoboBenchMart_assets',
+  },
+  taskTypes: ['retail', 'mobile manipulation', 'simulation', 'VLA'],
+  metrics: [
+    { id: 'id_atomic_avg', name: 'In-Domain Atomic Avg.', description: 'Arithmetic mean of success rates for the five reported atomic tasks in the In-Domain split.', higherIsBetter: true, format: 'percentage' },
+    { id: 'unseen_scenes_atomic_avg', name: 'Unseen Scenes Atomic Avg.', description: 'Arithmetic mean of success rates for the five reported atomic tasks with unseen layouts and arrangements.', higherIsBetter: true, format: 'percentage' },
+    { id: 'unseen_items_atomic_avg', name: 'Unseen Scenes & Items Atomic Avg.', description: 'Arithmetic mean of the three applicable pick-and-place atomic tasks with unseen scenes and target items.', higherIsBetter: true, format: 'percentage' },
+    { id: 'id_composite_avg', name: 'In-Domain Composite Avg.', description: 'Arithmetic mean of the two reported composite tasks in the In-Domain split.', higherIsBetter: true, format: 'percentage' },
+    { id: 'unseen_scenes_composite_avg', name: 'Unseen Scenes Composite Avg.', description: 'Arithmetic mean of the two reported composite tasks with unseen scenes.', higherIsBetter: true, format: 'percentage' },
+    { id: 'unseen_items_composite_avg', name: 'Unseen Scenes & Items Composite Avg.', description: 'Arithmetic mean of the two reported composite tasks with unseen scenes and items.', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2026-09-04',
+  scores: [
+    {
+      modelId: 'pi0.5',
+      score: 55.8,
+      details: { id_atomic_avg: 55.8, unseen_scenes_atomic_avg: 37.8, unseen_items_atomic_avg: 9.67, id_composite_avg: 0, unseen_scenes_composite_avg: 0, unseen_items_composite_avg: 0 },
+      notes: 'Source: https://arxiv.org/html/2511.10276v2, Table 2; official project page: https://emb-ai.github.io/RoboBenchMart/; official repository: https://github.com/emb-ai/RoboBenchMart. Fine-tuned pi0.5 on 248 demonstrations per task-item-fixture triplet; score is the arithmetic mean of the five In-Domain atomic-task rates reported in Table 2. Unseen Scenes adds layouts, textures, and arrangements; Unseen Scenes & Items additionally uses out-of-distribution items and averages the three applicable pick-and-place tasks. Each rate uses 100 trials per task-item-fixture triplet; both reported composite tasks are 0%. These fine-tuned Fetch/ManiSkill3 retail results are not directly comparable to other benchmark protocols.',
+    },
+    {
+      modelId: 'pi0',
+      score: 42.0,
+      details: { id_atomic_avg: 42.0, unseen_scenes_atomic_avg: 27.8, unseen_items_atomic_avg: 0.33, id_composite_avg: 0, unseen_scenes_composite_avg: 0, unseen_items_composite_avg: 0 },
+      notes: 'Source: https://arxiv.org/html/2511.10276v2, Table 2; official project page: https://emb-ai.github.io/RoboBenchMart/; official repository: https://github.com/emb-ai/RoboBenchMart. Fine-tuned pi0 on 248 demonstrations per task-item-fixture triplet; score is the arithmetic mean of the five In-Domain atomic-task rates reported in Table 2. Unseen Scenes adds layouts, textures, and arrangements; Unseen Scenes & Items additionally uses out-of-distribution items and averages the three applicable pick-and-place tasks. Each rate uses 100 trials per task-item-fixture triplet; both reported composite tasks are 0%. These fine-tuned Fetch/ManiSkill3 retail results are not directly comparable to other benchmark protocols.',
+    },
+    {
+      modelId: 'octo',
+      score: 23.0,
+      details: { id_atomic_avg: 23.0, unseen_scenes_atomic_avg: 10.6, unseen_items_atomic_avg: 0, id_composite_avg: 0, unseen_scenes_composite_avg: 0, unseen_items_composite_avg: 0 },
+      notes: 'Source: https://arxiv.org/html/2511.10276v2, Table 2; official project page: https://emb-ai.github.io/RoboBenchMart/; official repository: https://github.com/emb-ai/RoboBenchMart. Fine-tuned Octo on 248 demonstrations per task-item-fixture triplet; score is the arithmetic mean of the five In-Domain atomic-task rates reported in Table 2. Unseen Scenes adds layouts, textures, and arrangements; Unseen Scenes & Items additionally uses out-of-distribution items and averages the three applicable pick-and-place tasks. Each rate uses 100 trials per task-item-fixture triplet; both reported composite tasks are 0%. These fine-tuned Fetch/ManiSkill3 retail results are not directly comparable to other benchmark protocols.',
+    },
+    {
+      modelId: 'smolvla-0.45b',
+      score: 4.6,
+      details: { id_atomic_avg: 4.6, unseen_scenes_atomic_avg: 5.2, unseen_items_atomic_avg: 0, id_composite_avg: 0, unseen_scenes_composite_avg: 0, unseen_items_composite_avg: 0 },
+      notes: 'Source: https://arxiv.org/html/2511.10276v2, Table 2; official project page: https://emb-ai.github.io/RoboBenchMart/; official repository: https://github.com/emb-ai/RoboBenchMart. Fine-tuned SmolVLA on 248 demonstrations per task-item-fixture triplet; score is the arithmetic mean of the five In-Domain atomic-task rates reported in Table 2. Unseen Scenes adds layouts, textures, and arrangements; Unseen Scenes & Items additionally uses out-of-distribution items and averages the three applicable pick-and-place tasks. Each rate uses 100 trials per task-item-fixture triplet; both reported composite tasks are 0%. These fine-tuned Fetch/ManiSkill3 retail results are not directly comparable to other benchmark protocols.',
+    },
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
@@ -894,6 +954,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   ARMNETBENCH,
   L_CALVIN,
   DYNAMIC_OBJECT_MANIPULATION,
+  ROBOBENCHMART,
 ];
 
 export { ROBO_LAB, ROBO_DOJO_SIM };
