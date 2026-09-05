@@ -934,6 +934,67 @@ export const ROBOBENCHMART: Benchmark = {
 };
 
 // ============================================
+// MoveBench
+// ============================================
+export const MOVE_BENCH: Benchmark = {
+  id: 'movebench',
+  name: 'MoveBench',
+  shortName: 'MoveBench',
+  description: 'A controlled ManiSkill benchmark for isolating VLA robustness to uniform, accelerated, and irregular target-object motion in a 7-DoF xArm6 pick-and-lift task.',
+  iconEmoji: '🏃',
+  category: 'simulation',
+  paper: {
+    title: 'Overcoming Dynamics-Blindness: Training-Free Pace-and-Path Correction for VLA Models',
+    authors: ['Yanyan Zhang', 'Chaoda Song', 'et al.'],
+    venue: 'arXiv',
+    year: 2026,
+    arxivId: '2605.11459',
+  },
+  metrics: [
+    { id: 'static', name: 'Static', higherIsBetter: true, format: 'percentage' },
+    { id: 'uniform_easy', name: 'Uniform Motion (Easy)', higherIsBetter: true, format: 'percentage' },
+    { id: 'uniform_medium', name: 'Uniform Motion (Medium)', higherIsBetter: true, format: 'percentage' },
+    { id: 'uniform_hard', name: 'Uniform Motion (Hard)', higherIsBetter: true, format: 'percentage' },
+    { id: 'accelerated_easy', name: 'Accelerated Motion (Easy)', higherIsBetter: true, format: 'percentage' },
+    { id: 'accelerated_medium', name: 'Accelerated Motion (Medium)', higherIsBetter: true, format: 'percentage' },
+    { id: 'accelerated_hard', name: 'Accelerated Motion (Hard)', higherIsBetter: true, format: 'percentage' },
+    { id: 'random_walk', name: 'Irregular Motion (Random Walk)', higherIsBetter: true, format: 'percentage' },
+    { id: 'stop_and_go', name: 'Irregular Motion (Stop & Go)', higherIsBetter: true, format: 'percentage' },
+    { id: 'teleport', name: 'Irregular Motion (Teleport)', higherIsBetter: true, format: 'percentage' },
+    { id: 'dynamic_only', name: 'Dynamic-only Average', higherIsBetter: true, format: 'percentage' },
+    { id: 'all', name: 'Overall Average', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2026-09-05',
+  taskTypes: ['simulation', 'dynamic manipulation', 'xArm6', 'pick-and-lift', 'VLA'],
+  scores: [
+    {
+      modelId: 'gr00t-n1.6-ppc',
+      score: 68.3,
+      details: { static: 88, uniform_easy: 86, uniform_medium: 83, uniform_hard: 61, accelerated_easy: 70, accelerated_medium: 56, accelerated_hard: 33, random_walk: 78, stop_and_go: 54, teleport: 74, dynamic_only: 66.1, all: 68.3 },
+      notes: 'Source: https://arxiv.org/html/2605.11459, Table 1 (arXiv v2 dated 2026-05-14). MoveBench success rate (%) over ten xArm6 pick-and-lift environments; 100 held-out trials per environment. Dynamic-only averages the nine dynamic environments and Overall includes the static control. PPC uses T=16, K=2, and beta_in=0.3 as an inference-time wrapper around the released backbone without retraining. This motion-regime protocol is not directly comparable to static manipulation benchmarks or other dynamic benchmark protocols.',
+    },
+    {
+      modelId: 'smolvla-0.45b-ppc',
+      score: 61.3,
+      details: { static: 81, uniform_easy: 69, uniform_medium: 69, uniform_hard: 58, accelerated_easy: 58, accelerated_medium: 59, accelerated_hard: 35, random_walk: 60, stop_and_go: 71, teleport: 53, dynamic_only: 59.1, all: 61.3 },
+      notes: 'Source: https://arxiv.org/html/2605.11459, Table 1 (arXiv v2 dated 2026-05-14). MoveBench success rate (%) over ten xArm6 pick-and-lift environments; 100 held-out trials per environment. Dynamic-only averages the nine dynamic environments and Overall includes the static control. PPC uses T=16, K=2, and beta_in=0.3 as an inference-time wrapper around the released backbone without retraining. This motion-regime protocol is not directly comparable to static manipulation benchmarks or other dynamic benchmark protocols.',
+    },
+    {
+      modelId: 'pi0-ppc',
+      score: 69.6,
+      details: { static: 82, uniform_easy: 86, uniform_medium: 76, uniform_hard: 67, accelerated_easy: 73, accelerated_medium: 65, accelerated_hard: 57, random_walk: 71, stop_and_go: 67, teleport: 52, dynamic_only: 68.2, all: 69.6 },
+      notes: 'Source: https://arxiv.org/html/2605.11459, Table 1 (arXiv v2 dated 2026-05-14). MoveBench success rate (%) over ten xArm6 pick-and-lift environments; 100 held-out trials per environment. Dynamic-only averages the nine dynamic environments and Overall includes the static control. PPC uses T=16, K=2, and beta_in=0.3 as an inference-time wrapper around the released backbone without retraining. This motion-regime protocol is not directly comparable to static manipulation benchmarks or other dynamic benchmark protocols.',
+    },
+    {
+      modelId: 'pi0.5-ppc',
+      score: 73.6,
+      details: { static: 80, uniform_easy: 88, uniform_medium: 86, uniform_hard: 70, accelerated_easy: 82, accelerated_medium: 72, accelerated_hard: 65, random_walk: 74, stop_and_go: 66, teleport: 53, dynamic_only: 72.9, all: 73.6 },
+      notes: 'Source: https://arxiv.org/html/2605.11459, Table 1 (arXiv v2 dated 2026-05-14). MoveBench success rate (%) over ten xArm6 pick-and-lift environments; 100 held-out trials per environment. Dynamic-only averages the nine dynamic environments and Overall includes the static control. PPC uses T=16, K=2, and beta_in=0.3 as an inference-time wrapper around the released backbone without retraining. This motion-regime protocol is not directly comparable to static manipulation benchmarks or other dynamic benchmark protocols.',
+    },
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
@@ -955,6 +1016,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   L_CALVIN,
   DYNAMIC_OBJECT_MANIPULATION,
   ROBOBENCHMART,
+  MOVE_BENCH,
 ];
 
 export { ROBO_LAB, ROBO_DOJO_SIM };
