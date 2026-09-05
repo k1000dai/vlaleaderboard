@@ -661,6 +661,54 @@ export const MODELS: Record<string, ModelEntry> = {
         dateAdded: '2026-09-03',
         modelSize: '0.4b',
     },
+    'gr00t-n1.6-ppc': {
+        id: 'gr00t-n1.6-ppc',
+        name: 'GR00T N1.6 + PPC',
+        paper: {
+            title: 'Overcoming Dynamics-Blindness: Training-Free Pace-and-Path Correction for VLA Models',
+            authors: ['Yanyan Zhang', 'Chaoda Song', 'et al.'],
+            year: 2026,
+            arxivId: '2605.11459',
+        },
+        description: 'Pace-and-Path Correction (PPC) inference-time wrapper around GR00T N1.6; no backbone retraining.',
+        dateAdded: '2026-09-05',
+    },
+    'smolvla-0.45b-ppc': {
+        id: 'smolvla-0.45b-ppc',
+        name: 'SmolVLA + PPC',
+        paper: {
+            title: 'Overcoming Dynamics-Blindness: Training-Free Pace-and-Path Correction for VLA Models',
+            authors: ['Yanyan Zhang', 'Chaoda Song', 'et al.'],
+            year: 2026,
+            arxivId: '2605.11459',
+        },
+        description: 'Pace-and-Path Correction (PPC) inference-time wrapper around SmolVLA; no backbone retraining.',
+        dateAdded: '2026-09-05',
+    },
+    'pi0-ppc': {
+        id: 'pi0-ppc',
+        name: 'π0 + PPC',
+        paper: {
+            title: 'Overcoming Dynamics-Blindness: Training-Free Pace-and-Path Correction for VLA Models',
+            authors: ['Yanyan Zhang', 'Chaoda Song', 'et al.'],
+            year: 2026,
+            arxivId: '2605.11459',
+        },
+        description: 'Pace-and-Path Correction (PPC) inference-time wrapper around π0; no backbone retraining.',
+        dateAdded: '2026-09-05',
+    },
+    'pi0.5-ppc': {
+        id: 'pi0.5-ppc',
+        name: 'π0.5 + PPC',
+        paper: {
+            title: 'Overcoming Dynamics-Blindness: Training-Free Pace-and-Path Correction for VLA Models',
+            authors: ['Yanyan Zhang', 'Chaoda Song', 'et al.'],
+            year: 2026,
+            arxivId: '2605.11459',
+        },
+        description: 'Pace-and-Path Correction (PPC) inference-time wrapper around π0.5; no backbone retraining.',
+        dateAdded: '2026-09-05',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
