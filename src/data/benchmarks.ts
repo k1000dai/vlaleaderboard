@@ -36,7 +36,7 @@ export const LIBERO: Benchmark = {
     { id: 'object', name: 'LIBERO-Object', higherIsBetter: true, format: 'percentage' },
     { id: 'spatial', name: 'LIBERO-Spatial', higherIsBetter: true, format: 'percentage' },
   ],
-  lastUpdated: '2026-08-31',
+  lastUpdated: '2026-09-06',
   scores: [
     {
       modelId: 'mixture_of_horizons',
@@ -145,6 +145,12 @@ export const LIBERO: Benchmark = {
       score: 98.2,
       details: { spatial: 98.2, object: 99.6, goal: 98.4, long: 96.4 },
       notes: 'Source: https://arxiv.org/html/2605.13403, Table 1 and Section 4.2 (submitted 2026-05-13). Average success rate (%) over the four 10-task suites; one model is jointly fine-tuned for 80k steps after filtering unsuccessful training trajectories. This protocol is not directly comparable to rows trained or fine-tuned under different LIBERO data protocols.'
+    },
+    {
+      modelId: 'predvla',
+      score: 75.35,
+      details: { spatial: 83.19, goal: 88.40, object: 89.24, long: 40.57 },
+      notes: 'Source: https://arxiv.org/html/2608.26673, Table 3 (v2 revised 2026-08-30); official benchmark: https://lifelong-robot-learning.github.io/LIBERO/; official repository: https://github.com/Lifelong-Robot-Learning/LIBERO. Mean success rates (%) across 14 independently trained seeds: spatial 83.19±6.10, goal 88.40±3.83, object 89.24±6.13, and LIBERO-10 long 40.57±6.44. The primary score is the four-suite mean including LIBERO-10; the paper also reports an 86.94% three-suite short-horizon mean. Each suite has 10 tasks and 50 official demonstrations per task, with a separate controller trained and evaluated per suite. PredVLA uses 675,732 trainable network parameters and no robot-data pretraining; its frozen front end and evaluation protocol differ from the existing rows, so the result is not directly comparable to other LIBERO entries.'
     }
   ],
 };

@@ -709,6 +709,19 @@ export const MODELS: Record<string, ModelEntry> = {
         description: 'Pace-and-Path Correction (PPC) inference-time wrapper around π0.5; no backbone retraining.',
         dateAdded: '2026-09-05',
     },
+    'predvla': {
+        id: 'predvla',
+        name: 'PredVLA',
+        organization: 'Sony Computer Science Laboratory',
+        paper: {
+            title: 'PredVLA: Predictive Sensorimotor Modeling for Sub-Million-Parameter Robot Manipulation',
+            authors: ['Hiroki Sawada', 'Shunichi Kasahara'],
+            year: 2026,
+            arxivId: '2608.26673',
+        },
+        dateAdded: '2026-09-06',
+        modelSize: '0.68m trainable parameters',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
