@@ -722,6 +722,22 @@ export const MODELS: Record<string, ModelEntry> = {
         dateAdded: '2026-09-06',
         modelSize: '0.68m trainable parameters',
     },
+    'realtime-vla-flash-pi0': {
+        id: 'realtime-vla-flash-pi0',
+        name: 'FLASH + Triton-π0',
+        organization: 'CAS, UCAS, Nanjing University, Dexmal',
+        paper: {
+            title: 'Realtime-VLA FLASH: Speculative Inference Framework for Diffusion-based VLAs',
+            authors: ['Jiahui Niu', 'Kefan Gu', 'Yucheng Zhao', 'Shengwen Liang', 'Tiancai Wang', 'Xing Hu', 'Ying Wang', 'Huawei Li'],
+            year: 2026,
+            arxivId: '2605.13778',
+        },
+        githubUrl: 'https://github.com/dexmal/realtime-vla-flash',
+        websiteUrl: 'https://dexmal.github.io/realtime-vla-flash',
+        huggingfaceUrl: 'https://huggingface.co/Dexmal/RealtimeVLA-Flash',
+        isOpenSource: true,
+        dateAdded: '2026-09-07',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
