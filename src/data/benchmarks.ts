@@ -36,8 +36,14 @@ export const LIBERO: Benchmark = {
     { id: 'object', name: 'LIBERO-Object', higherIsBetter: true, format: 'percentage' },
     { id: 'spatial', name: 'LIBERO-Spatial', higherIsBetter: true, format: 'percentage' },
   ],
-  lastUpdated: '2026-09-06',
+  lastUpdated: '2026-09-07',
   scores: [
+    {
+      modelId: 'realtime-vla-flash-pi0',
+      score: 93.8,
+      details: { spatial: 96.8, object: 99.2, goal: 94.4, long: 84.6 },
+      notes: 'Source: https://arxiv.org/html/2605.13778, Table 1; official project page: https://dexmal.github.io/realtime-vla-flash; official repository: https://github.com/dexmal/realtime-vla-flash. FLASH+Triton-π0 reports LIBERO suite success rates (%) of Spatial 96.8, Object 99.2, Goal 94.4, and LIBERO-10 84.6, with a four-suite average of 93.8%; the paper also reports 19.1 ms task-level average latency and 3.04× speedup over Torch-π0. The paper\'s LIBERO-10 column is mapped to this registry\'s long column. This is an inference-system variant using FLASH speculative inference with Triton-π0, so it is not directly comparable to rows using different weights, training, or inference protocols.',
+    },
     {
       modelId: 'mixture_of_horizons',
       score: 99.0,
