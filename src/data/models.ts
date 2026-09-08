@@ -738,6 +738,23 @@ export const MODELS: Record<string, ModelEntry> = {
         isOpenSource: true,
         dateAdded: '2026-09-07',
     },
+    'imagewam': {
+        id: 'imagewam',
+        name: 'ImageWAM',
+        organization: 'Shanghai Jiao Tong University / Eastern Institute of Technology / Tencent Robotics X / Tsinghua University / Zhongguancun Academy',
+        paper: {
+            title: 'ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?',
+            authors: ['Yuyang Zhang', 'Wenyao Zhang', 'Zekun Qi', 'He Zhang', 'Haitao Lin', 'Jingbo Zhang', 'Yao Mu', 'Xiaokang Yang', 'Wenjun Zeng', 'Xin Jin'],
+            year: 2026,
+            arxivId: '2606.19531',
+        },
+        githubUrl: 'https://github.com/yuyangalin/ImageWAM',
+        websiteUrl: 'https://zhangwenyao1.github.io/ImageWAM/',
+        huggingfaceUrl: 'https://huggingface.co/collections/yuyangalin/imagewam',
+        isOpenSource: true,
+        dateAdded: '2026-09-08',
+        modelSize: 'FLUX.2 4B/9B; Ovis-U1 1.1B DiT',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
