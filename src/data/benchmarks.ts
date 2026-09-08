@@ -36,7 +36,7 @@ export const LIBERO: Benchmark = {
     { id: 'object', name: 'LIBERO-Object', higherIsBetter: true, format: 'percentage' },
     { id: 'spatial', name: 'LIBERO-Spatial', higherIsBetter: true, format: 'percentage' },
   ],
-  lastUpdated: '2026-09-07',
+  lastUpdated: '2026-09-08',
   scores: [
     {
       modelId: 'realtime-vla-flash-pi0',
@@ -157,6 +157,12 @@ export const LIBERO: Benchmark = {
       score: 75.35,
       details: { spatial: 83.19, goal: 88.40, object: 89.24, long: 40.57 },
       notes: 'Source: https://arxiv.org/html/2608.26673, Table 3 (v2 revised 2026-08-30); official benchmark: https://lifelong-robot-learning.github.io/LIBERO/; official repository: https://github.com/Lifelong-Robot-Learning/LIBERO. Mean success rates (%) across 14 independently trained seeds: spatial 83.19±6.10, goal 88.40±3.83, object 89.24±6.13, and LIBERO-10 long 40.57±6.44. The primary score is the four-suite mean including LIBERO-10; the paper also reports an 86.94% three-suite short-horizon mean. Each suite has 10 tasks and 50 official demonstrations per task, with a separate controller trained and evaluated per suite. PredVLA uses 675,732 trainable network parameters and no robot-data pretraining; its frozen front end and evaluation protocol differ from the existing rows, so the result is not directly comparable to other LIBERO entries.'
+    },
+    {
+      modelId: 'imagewam',
+      score: 98.4,
+      details: { spatial: 97.2, object: 99.2, goal: 98.8, long: 98.4 },
+      notes: 'Source: https://arxiv.org/html/2606.19531, Table 2 (arXiv v1, 2026-06-17); official repository: https://github.com/yuyangalin/ImageWAM. ImageWAM reports success rates (%) on the standard LIBERO Spatial/Object/Goal/Long suites: Spatial 97.2, Object 99.2, Goal 98.8, and Long 98.4, with a four-suite average of 98.4%. The protocol uses 500 expert demonstrations per 10-task suite with no extra embodied pretraining; this result is not directly comparable to rows using different training or evaluation protocols.',
     }
   ],
 };
@@ -321,7 +327,7 @@ export const ROBOTWIN: Benchmark = {
     { id: 'clean', name: 'Clean', higherIsBetter: true, format: 'percentage' },
     { id: 'rand', name: 'Randomized', higherIsBetter: true, format: 'percentage' },
   ],
-  lastUpdated: '2026-08-31',
+  lastUpdated: '2026-09-08',
   scores: [
     { modelId: 'x-vla', score: 70.0, details: { easy: 70.0, hard: 39.0 } },
     { modelId: 'pi0', score: 46.4, details: { easy: 46.4, hard: 16.3 } },
@@ -342,6 +348,12 @@ export const ROBOTWIN: Benchmark = {
       score: 92.5,
       details: { clean: 92.5, rand: 90.8 },
       notes: 'Source: https://arxiv.org/html/2608.27550, Table 2 and Section 4.2; official project page: https://starvla.github.io/VLAct/. RoboTwin 2.0 Data Scaling setting with the VLAct-OFT head: 92.5% success on Clean and 90.8% on Random. The protocol uses 50 clean and 500 domain-randomized expert trajectories per task (2,500 clean and 25,000 randomized demonstrations across 50 tasks); these are successful demonstrations from the official demo_randomized setting, not random-action rollouts. This Data Scaling Clean/Random protocol is not directly comparable to the existing Easy/Hard rows.'
+    },
+    {
+      modelId: 'imagewam',
+      score: 93.2,
+      details: { clean: 93.2, rand: 93.56 },
+      notes: 'Source: https://arxiv.org/html/2606.19531, Table 1 (arXiv v1, 2026-06-17); official repository: https://github.com/yuyangalin/ImageWAM. ImageWAM reports RoboTwin 2.0 success rates (%) of 93.20 on Clean, 93.56 on Randomized, and 93.38 overall average. The protocol uses 2,500 clean plus 25,000 randomized training trajectories across 50+ tasks, trains for 30k steps, and evaluates with 100 trials per task. This clean/randomized protocol is not directly comparable to the existing Easy/Hard rows.',
     },
   ],
 };
