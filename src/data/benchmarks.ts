@@ -36,8 +36,14 @@ export const LIBERO: Benchmark = {
     { id: 'object', name: 'LIBERO-Object', higherIsBetter: true, format: 'percentage' },
     { id: 'spatial', name: 'LIBERO-Spatial', higherIsBetter: true, format: 'percentage' },
   ],
-  lastUpdated: '2026-09-08',
+  lastUpdated: '2026-09-09',
   scores: [
+    {
+      modelId: 'lara-vla',
+      score: 97.9,
+      details: { spatial: 96.4, goal: 98.6, object: 99.8, long: 96.6 },
+      notes: 'Source: https://arxiv.org/html/2602.01166, Table 2 (arXiv submitted 2026-02-01); official project page: https://loveju1y.github.io/Latent-Reasoning-VLA/; official repository: https://github.com/LoveJu1y/LaRA-VLA. LaRA-VLA reports LIBERO success rates (%) of Spatial 96.4, Goal 98.6, Object 99.8, and Long 96.6, with a four-suite average of 97.9%; the paper evaluates 10 tasks per suite with 50 rollouts per task and trains on the paper-defined LIBERO-LaRA data. This result uses a latent-CoT VLA and a paper-specific training-data protocol, so it is not directly comparable to rows using different weights, fine-tuning data, or evaluation protocols.',
+    },
     {
       modelId: 'realtime-vla-flash-pi0',
       score: 93.8,
