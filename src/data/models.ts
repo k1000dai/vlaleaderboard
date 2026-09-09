@@ -738,6 +738,22 @@ export const MODELS: Record<string, ModelEntry> = {
         isOpenSource: true,
         dateAdded: '2026-09-07',
     },
+    'lara-vla': {
+        id: 'lara-vla',
+        name: 'LaRA-VLA',
+        organization: 'Beijing Academy of Artificial Intelligence / Xi\'an Jiaotong University / UCAS / Peking University',
+        paper: {
+            title: 'Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models',
+            authors: ['Shuanghao Bai', 'Jing Lyu', 'Wanqi Zhou', 'Zhe Li', 'Dakai Wang', 'Lei Xing', 'Xiaoguang Zhao', 'Pengwei Wang', 'Zhongyuan Wang', 'Cheng Chi', 'Badong Chen', 'Shanghang Zhang'],
+            venue: 'ICML',
+            year: 2026,
+            arxivId: '2602.01166',
+        },
+        githubUrl: 'https://github.com/LoveJu1y/LaRA-VLA',
+        websiteUrl: 'https://loveju1y.github.io/Latent-Reasoning-VLA/',
+        isOpenSource: true,
+        dateAdded: '2026-09-09',
+    },
     'imagewam': {
         id: 'imagewam',
         name: 'ImageWAM',
