@@ -36,7 +36,7 @@ export const LIBERO: Benchmark = {
     { id: 'object', name: 'LIBERO-Object', higherIsBetter: true, format: 'percentage' },
     { id: 'spatial', name: 'LIBERO-Spatial', higherIsBetter: true, format: 'percentage' },
   ],
-  lastUpdated: '2026-09-09',
+  lastUpdated: '2026-09-10',
   scores: [
     {
       modelId: 'lara-vla',
@@ -169,6 +169,12 @@ export const LIBERO: Benchmark = {
       score: 98.4,
       details: { spatial: 97.2, object: 99.2, goal: 98.8, long: 98.4 },
       notes: 'Source: https://arxiv.org/html/2606.19531, Table 2 (arXiv v1, 2026-06-17); official repository: https://github.com/yuyangalin/ImageWAM. ImageWAM reports success rates (%) on the standard LIBERO Spatial/Object/Goal/Long suites: Spatial 97.2, Object 99.2, Goal 98.8, and Long 98.4, with a four-suite average of 98.4%. The protocol uses 500 expert demonstrations per 10-task suite with no extra embodied pretraining; this result is not directly comparable to rows using different training or evaluation protocols.',
+    },
+    {
+      modelId: 'seal',
+      score: 96,
+      details: { long: 96 },
+      notes: 'Source: https://arxiv.org/html/2510.16281v2, Table II; official project page: https://yilin-wu98.github.io/steering-reasoning-vla/. SEAL reports 96% average success on LIBERO-10 (10 long-horizon tasks, 50 trials per method) with the LIBERO-10 training dataset. LIBERO-10 is mapped to this registry\'s long column; this is a single-suite result for a training-free runtime steering method and is not directly comparable to four-suite means or rows using different training data and protocols.',
     }
   ],
 };

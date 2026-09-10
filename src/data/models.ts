@@ -771,6 +771,20 @@ export const MODELS: Record<string, ModelEntry> = {
         dateAdded: '2026-09-08',
         modelSize: 'FLUX.2 4B/9B; Ovis-U1 1.1B DiT',
     },
+    'seal': {
+        id: 'seal',
+        name: 'SEAL',
+        organization: 'NVIDIA / Carnegie Mellon University / University of Utah / University of Sydney',
+        paper: {
+            title: 'Do What You Say: Steering Vision-Language-Action Models via Runtime Reasoning-Action Alignment Verification',
+            authors: ['Yilin Wu', 'Anqi Li', 'Tucker Hermans', 'Fabio Ramos', 'Andrea Bajcsy', 'Claudia Pérez-D\'Arpino'],
+            year: 2025,
+            arxivId: '2510.16281',
+        },
+        websiteUrl: 'https://yilin-wu98.github.io/steering-reasoning-vla/',
+        description: 'Training-free runtime steering that verifies candidate actions against a reasoning VLA\'s textual plan.',
+        dateAdded: '2026-09-10',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
