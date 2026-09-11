@@ -771,6 +771,23 @@ export const MODELS: Record<string, ModelEntry> = {
         dateAdded: '2026-09-08',
         modelSize: 'FLUX.2 4B/9B; Ovis-U1 1.1B DiT',
     },
+    'squint': {
+        id: 'squint',
+        name: 'Squint',
+        organization: 'University of California San Diego',
+        paper: {
+            title: 'Squint: Fast Visual Reinforcement Learning for Sim-to-Real Robotics',
+            authors: ['Abdulaziz Almuzairee', 'Henrik I. Christensen'],
+            venue: 'IEEE Robotics and Automation Letters',
+            year: 2026,
+            arxivId: '2602.21203',
+            doi: '10.1109/LRA.2026.3730387',
+        },
+        githubUrl: 'https://github.com/aalmuzairee/squint',
+        websiteUrl: 'https://aalmuzairee.github.io/squint',
+        isOpenSource: true,
+        dateAdded: '2026-09-11',
+    },
     'seal': {
         id: 'seal',
         name: 'SEAL',

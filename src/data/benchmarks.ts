@@ -910,6 +910,61 @@ export const DYNAMIC_OBJECT_MANIPULATION: Benchmark = {
 };
 
 // ============================================
+// SO-101 Task Set
+// ============================================
+export const SO101_TASK_SET: Benchmark = {
+  id: 'so101-task-set',
+  name: 'SO-101 Task Set',
+  shortName: 'SO-101 Tasks',
+  description: 'An eight-task visual reinforcement learning benchmark in ManiSkill3 for sim-to-real transfer with a 5-DoF SO-101 arm.',
+  iconEmoji: '🦾',
+  category: 'simulation',
+  paper: {
+    title: 'Squint: Fast Visual Reinforcement Learning for Sim-to-Real Robotics',
+    authors: ['Abdulaziz Almuzairee', 'Henrik I. Christensen'],
+    venue: 'IEEE Robotics and Automation Letters',
+    year: 2026,
+    arxivId: '2602.21203',
+    doi: '10.1109/LRA.2026.3730387',
+  },
+  websiteUrl: 'https://aalmuzairee.github.io/squint',
+  githubUrl: 'https://github.com/aalmuzairee/squint',
+  taskTypes: ['simulation', 'real-world', 'SO-101', 'ManiSkill3', 'visual RL', 'manipulation'],
+  metrics: [
+    { id: 'sim_avg_success', name: 'Simulation Avg. Success', description: 'Mean success rate across eight tasks after 15 minutes of training, averaged over five seeds.', higherIsBetter: true, format: 'percentage' },
+    { id: 'real_avg_success', name: 'Real-World Avg. Success', description: 'Success rate over 10 trials for each of eight tasks, 80 trials total.', higherIsBetter: true, format: 'percentage' },
+    { id: 'reach_cube', name: 'Reach Cube', higherIsBetter: true, format: 'percentage' },
+    { id: 'reach_can', name: 'Reach Can', higherIsBetter: true, format: 'percentage' },
+    { id: 'lift_cube', name: 'Lift Cube', higherIsBetter: true, format: 'percentage' },
+    { id: 'lift_can', name: 'Lift Can', higherIsBetter: true, format: 'percentage' },
+    { id: 'place_cube', name: 'Place Cube', higherIsBetter: true, format: 'percentage' },
+    { id: 'place_can', name: 'Place Can', higherIsBetter: true, format: 'percentage' },
+    { id: 'stack_cube', name: 'Stack Cube', higherIsBetter: true, format: 'percentage' },
+    { id: 'stack_can', name: 'Stack Can', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2026-09-11',
+  scores: [
+    {
+      modelId: 'squint',
+      score: 96.1,
+      details: {
+        sim_avg_success: 96.1,
+        real_avg_success: 91.3,
+        reach_cube: 100.0,
+        reach_can: 100.0,
+        lift_cube: 99.8,
+        lift_can: 98.8,
+        place_cube: 97.5,
+        place_can: 96.3,
+        stack_cube: 95.0,
+        stack_can: 81.2,
+      },
+      notes: 'Primary sources: https://arxiv.org/html/2602.21203v2, Tables I-II; official project page: https://aalmuzairee.github.io/squint; official repository: https://github.com/aalmuzairee/squint. Simulation success rates (%) are means over 5 seeds after 15 minutes of training on each of eight ManiSkill3 tasks with a 5-DoF SO-101, wrist-camera images, proprioceptive state, and visual/physical domain randomization. Real-world rates are 10 trials per task (80 total) using the best simulation seed, with zero-shot transfer; Squint reports 73/80 successes (91.3%). This paper-specific visual-RL and SO-101 protocol is not directly comparable to VLA benchmark rows or the separate real-world VLA-REPLICA protocol.',
+    },
+  ],
+};
+
+// ============================================
 // RoboBenchMart
 // ============================================
 export const ROBOBENCHMART: Benchmark = {
@@ -1051,6 +1106,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   ARMNETBENCH,
   L_CALVIN,
   DYNAMIC_OBJECT_MANIPULATION,
+  SO101_TASK_SET,
   ROBOBENCHMART,
   MOVE_BENCH,
 ];
