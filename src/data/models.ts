@@ -291,6 +291,19 @@ export const MODELS: Record<string, ModelEntry> = {
         dateAdded: '2025-12-19',
         modelSize: '3b'
     },
+    'llada-vla': {
+        id: 'llada-vla',
+        name: 'LLaDA-VLA',
+        organization: 'University of Science and Technology of China, Dexmal',
+        paper: {
+            title: 'LLaDA-VLA: Vision Language Diffusion Action Models',
+            authors: ['Yuqing Wen', 'Hebei Li', 'Kefan Gu', 'Yucheng Zhao', 'Tiancai Wang', 'Xiaoyan Sun'],
+            year: 2025,
+            arxivId: '2509.06932',
+        },
+        websiteUrl: 'https://wenyuqing.github.io/llada-vla/',
+        dateAdded: '2026-09-12',
+    },
     'gr00tn1.6': {
         id: 'gr00tn1.6',
         name: 'GR00TN1.6',

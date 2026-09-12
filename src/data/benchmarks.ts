@@ -209,8 +209,14 @@ export const CALVIN: Benchmark = {
     { id: 'sr_4', name: 'SR (4 tasks)', higherIsBetter: true, format: 'percentage' },
     { id: 'sr_5', name: 'SR (5 tasks)', higherIsBetter: true, format: 'percentage' },
   ],
-  lastUpdated: '2025-12-19',
+  lastUpdated: '2026-09-12',
   scores: [
+    {
+      modelId: 'llada-vla',
+      score: 4.01,
+      details: { sr_1: 95.6, sr_2: 87.8, sr_3: 79.5, sr_4: 73.9, sr_5: 64.5, avg_len: 4.01 },
+      notes: 'Source: https://arxiv.org/html/2509.06932v2, Table 2; official project page: https://wenyuqing.github.io/llada-vla/. LLaDA-VLA reports CALVIN ABC-D success rates (%) of 95.6, 87.8, 79.5, 73.9, and 64.5 for 1–5 consecutively completed tasks, with Avg. Length 4.01; the paper averages success over 1,000 rollouts per task. This is the paper\'s ABC-D simulation protocol, so compare with rows using the same split and training/evaluation settings rather than treating it as an instruction-variant-neutral score.'
+    },
     { modelId: 'flower', score: 4.53, details: { sr_1: 99.4, sr_2: 95.8, sr_3: 90.7, sr_4: 84.9, sr_5: 77.8, avg_len: 4.53 } },
     { modelId: 'vla-adapter-pro', score: 4.5, details: { sr_1: 98.5, sr_2: 95.0, sr_3: 90.5, sr_4: 85.3, sr_5: 80.0, avg_len: 4.5 } },
     { modelId: 'x-vla', score: 4.43, details: { sr_1: 97.1, sr_2: 92.6, sr_3: 88.5, sr_4: 84.4, sr_5: 78.8, avg_len: 4.43 } },
