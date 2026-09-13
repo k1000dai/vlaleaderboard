@@ -815,6 +815,36 @@ export const MODELS: Record<string, ModelEntry> = {
         description: 'Training-free runtime steering that verifies candidate actions against a reasoning VLA\'s textual plan.',
         dateAdded: '2026-09-10',
     },
+    'ge-sim-ltx-video-2b': {
+        id: 'ge-sim-ltx-video-2b',
+        name: 'GE-Sim (LTX-Video 2B)',
+        organization: 'AgiBot',
+        paper: {
+            title: 'Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation',
+            authors: ['Yue Liao', 'Pengfei Zhou', 'Siyuan Huang', 'et al.'],
+            venue: 'ICLR',
+            year: 2026,
+            arxivId: '2508.05635',
+        },
+        websiteUrl: 'https://genie-envisioner.github.io/',
+        description: 'GE-Sim action-conditioned world simulator initialized from the LTX-Video 2B architecture.',
+        dateAdded: '2026-09-13',
+    },
+    'ge-sim-cosmos2-2b': {
+        id: 'ge-sim-cosmos2-2b',
+        name: 'GE-Sim (COSMOS2 2B)',
+        organization: 'AgiBot',
+        paper: {
+            title: 'Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation',
+            authors: ['Yue Liao', 'Pengfei Zhou', 'Siyuan Huang', 'et al.'],
+            venue: 'ICLR',
+            year: 2026,
+            arxivId: '2508.05635',
+        },
+        websiteUrl: 'https://genie-envisioner.github.io/',
+        description: 'GE-Sim action-conditioned world simulator initialized from the COSMOS2 2B architecture.',
+        dateAdded: '2026-09-13',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.

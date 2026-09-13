@@ -1092,6 +1092,53 @@ export const MOVE_BENCH: Benchmark = {
 };
 
 // ============================================
+// EWMBench
+// ============================================
+export const EWMBENCH: Benchmark = {
+  id: 'ewmbench',
+  name: 'EWMBench',
+  shortName: 'EWMBench',
+  description: 'An embodied world-model benchmark for evaluating scene, motion, semantic, and visual quality in robotic manipulation videos.',
+  iconEmoji: '🌐',
+  category: 'simulation',
+  paper: {
+    title: 'EWMBench: Evaluating Scene, Motion, and Semantic Quality in Embodied World Models',
+    authors: ['Hu Yue', 'Siyuan Huang', 'Yue Liao', 'et al.'],
+    venue: 'arXiv',
+    year: 2025,
+    arxivId: '2505.09694',
+  },
+  websiteUrl: 'https://genie-envisioner.github.io/',
+  taskTypes: ['world model', 'video generation', 'robotics', 'manipulation'],
+  metrics: [
+    { id: 'bleu', name: 'BLEU', higherIsBetter: true, format: 'decimal' },
+    { id: 'clip', name: 'CLIP', higherIsBetter: true, format: 'decimal' },
+    { id: 'dyn', name: 'DYN', higherIsBetter: true, format: 'decimal' },
+    { id: 'diversity', name: 'Diversity', higherIsBetter: true, format: 'decimal' },
+    { id: 'psnr', name: 'PSNR', higherIsBetter: true, format: 'decimal' },
+    { id: 'sa', name: 'SA', higherIsBetter: true, format: 'decimal' },
+    { id: 'logics', name: 'Log.', higherIsBetter: true, format: 'decimal' },
+    { id: 'ta', name: 'TA', higherIsBetter: true, format: 'decimal' },
+    { id: 'scene_consistency', name: 'Scn.', higherIsBetter: true, format: 'decimal' },
+  ],
+  lastUpdated: '2026-09-13',
+  scores: [
+    {
+      modelId: 'ge-sim-cosmos2-2b',
+      score: 0.85,
+      details: { bleu: 0.31, clip: 90.2, diversity: 0.010, psnr: 20.7, sa: 0.87, logics: 0.97, ta: 0.97, scene_consistency: 0.91 },
+      notes: 'Primary source: https://arxiv.org/html/2508.05635v3, Table 2; benchmark definition: https://arxiv.org/html/2505.09694v2. This is the GE-Sim action-conditioned setting: given ground-truth action trajectories, the simulator generates visual predictions conditioned solely on the control sequence. The source table labels this row COSMOS and describes it as the COSMOS2 2B base variant. The primary score is the reported DYN metric; BLEU, CLIP, Diversity, PSNR, SA, Log., TA, and Scn. are retained as source-reported details. This adapted GE-Sim result is not directly comparable to zero-shot video-generation or instruction-conditioned rows using different protocols.',
+    },
+    {
+      modelId: 'ge-sim-ltx-video-2b',
+      score: 0.78,
+      details: { bleu: 0.33, clip: 90.8, diversity: 0.011, psnr: 19.9, sa: 0.94, logics: 0.97, ta: 0.98, scene_consistency: 0.90 },
+      notes: 'Primary source: https://arxiv.org/html/2508.05635v3, Table 2; benchmark definition: https://arxiv.org/html/2505.09694v2. This is the GE-Sim action-conditioned setting: given ground-truth action trajectories, the simulator generates visual predictions conditioned solely on the control sequence. The source table labels this row LTX and describes it as the LTX-Video 2B base variant. The primary score is the reported DYN metric; BLEU, CLIP, Diversity, PSNR, SA, Log., TA, and Scn. are retained as source-reported details. This adapted GE-Sim result is not directly comparable to zero-shot video-generation or instruction-conditioned rows using different protocols.',
+    },
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
@@ -1115,6 +1162,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   SO101_TASK_SET,
   ROBOBENCHMART,
   MOVE_BENCH,
+  EWMBENCH,
 ];
 
 export { ROBO_LAB, ROBO_DOJO_SIM };
