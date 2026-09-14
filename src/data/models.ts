@@ -845,6 +845,21 @@ export const MODELS: Record<string, ModelEntry> = {
         description: 'GE-Sim action-conditioned world simulator initialized from the COSMOS2 2B architecture.',
         dateAdded: '2026-09-13',
     },
+    'expo-ft': {
+        id: 'expo-ft',
+        name: 'EXPO-FT',
+        organization: 'Stanford University',
+        paper: {
+            title: 'EXPO-FT: Sample-Efficient Reinforcement Learning Finetuning for Vision-Language-Action Models',
+            authors: ['Perry Dong', 'Kuo-Han Hung', 'Tian Gao', 'Dorsa Sadigh', 'Chelsea Finn'],
+            year: 2026,
+            arxivId: '2605.25477',
+        },
+        githubUrl: 'https://github.com/pd-perry/expo-ft',
+        websiteUrl: 'https://pd-perry.github.io/expo-ft/',
+        isOpenSource: true,
+        dateAdded: '2026-09-14',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
