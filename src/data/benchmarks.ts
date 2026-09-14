@@ -1092,6 +1092,60 @@ export const MOVE_BENCH: Benchmark = {
 };
 
 // ============================================
+// EXPO-FT Real-World Task Suite
+// ============================================
+export const EXPO_FT_REAL_WORLD: Benchmark = {
+  id: 'expo-ft-real-world',
+  name: 'EXPO-FT Real-World Task Suite',
+  shortName: 'EXPO-FT',
+  description: 'An eight-task real-world manipulation evaluation suite for sample-efficient reinforcement-learning finetuning of pretrained VLA policies.',
+  iconEmoji: '🧪',
+  category: 'real-world',
+  paper: {
+    title: 'EXPO-FT: Sample-Efficient Reinforcement Learning Finetuning for Vision-Language-Action Models',
+    authors: ['Perry Dong', 'Kuo-Han Hung', 'Tian Gao', 'Dorsa Sadigh', 'Chelsea Finn'],
+    venue: 'arXiv',
+    year: 2026,
+    arxivId: '2605.25477',
+  },
+  websiteUrl: 'https://pd-perry.github.io/expo-ft/',
+  githubUrl: 'https://github.com/pd-perry/expo-ft',
+  taskTypes: ['real-world', 'manipulation', 'VLA', 'reinforcement learning', 'human-in-the-loop'],
+  metrics: [
+    { id: 'avg_success', name: 'Average Success', description: 'Mean success rate across the eight reported real-world tasks.', higherIsBetter: true, format: 'percentage' },
+    { id: 'egg_flip', name: 'Egg Flip', higherIsBetter: true, format: 'percentage' },
+    { id: 'string_light_route_i', name: 'String Light Routing - Route I', higherIsBetter: true, format: 'percentage' },
+    { id: 'string_light_route_ii', name: 'String Light Routing - Route II', higherIsBetter: true, format: 'percentage' },
+    { id: 'string_light_insert', name: 'String Light Routing - Insert', higherIsBetter: true, format: 'percentage' },
+    { id: 'candy_scoop', name: 'Candy Scoop', higherIsBetter: true, format: 'percentage' },
+    { id: 'cube_pick', name: 'Cube Pick', higherIsBetter: true, format: 'percentage' },
+    { id: 'flower_insert', name: 'Flower Insert', higherIsBetter: true, format: 'percentage' },
+    { id: 'pool_shot', name: 'Pool Shot', higherIsBetter: true, format: 'percentage' },
+    { id: 'online_data_minutes', name: 'Online Data (minutes)', description: 'Average real-world online interaction time reported across tasks.', higherIsBetter: false, format: 'decimal' },
+  ],
+  lastUpdated: '2026-09-14',
+  scores: [
+    {
+      modelId: 'expo-ft',
+      score: 100.0,
+      details: {
+        avg_success: 100.0,
+        egg_flip: 100.0,
+        string_light_route_i: 100.0,
+        string_light_route_ii: 100.0,
+        string_light_insert: 100.0,
+        candy_scoop: 100.0,
+        cube_pick: 100.0,
+        flower_insert: 100.0,
+        pool_shot: 100.0,
+        online_data_minutes: 19.1,
+      },
+      notes: 'Primary source: https://arxiv.org/html/2605.25477v2, Tables 1-2 and Section 5.4; official project page: https://pd-perry.github.io/expo-ft/; official repository: https://github.com/pd-perry/expo-ft. EXPO-FT reports 30/30 successful trials on each of eight real-world tasks (Egg Flip, three String Light Routing variants, Candy Scoop, Cube Pick, Flower Insert, and Pool Shot), with 19.1 minutes of online robot data on average. This is the paper-defined task-suite protocol with a pretrained VLA backbone and RL finetuning, human interventions during training, and 30 evaluation trials per task; it is not directly comparable to standard simulation benchmarks or other real-world protocols.',
+    },
+  ],
+};
+
+// ============================================
 // EWMBench
 // ============================================
 export const EWMBENCH: Benchmark = {
@@ -1162,6 +1216,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   SO101_TASK_SET,
   ROBOBENCHMART,
   MOVE_BENCH,
+  EXPO_FT_REAL_WORLD,
   EWMBENCH,
 ];
 
