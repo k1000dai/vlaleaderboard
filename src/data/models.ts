@@ -845,6 +845,22 @@ export const MODELS: Record<string, ModelEntry> = {
         description: 'GE-Sim action-conditioned world simulator initialized from the COSMOS2 2B architecture.',
         dateAdded: '2026-09-13',
     },
+    'hcsg': {
+        id: 'hcsg',
+        name: 'HCSG',
+        organization: 'The Hong Kong University of Science and Technology (Guangzhou) et al.',
+        paper: {
+            title: 'HCSG: Human-Centric Semantic-Geometric Reasoning for Vision-Language Navigation',
+            authors: ['Haoxuan Xu', 'Tianfu Li', 'Wenbo Chen', 'Yi Liu', 'Jin Wu', 'Huashuo Lei', 'Yunfan Lou', 'Lujia Wang', 'Hesheng Wang', 'Haoang Li'],
+            venue: 'arXiv',
+            year: 2026,
+            arxivId: '2605.13321',
+        },
+        githubUrl: 'https://github.com/HaoxuanXU1024/HCSG',
+        websiteUrl: 'https://haoxuanxu1024.github.io/HCSG/',
+        isOpenSource: true,
+        dateAdded: '2026-09-15',
+    },
     'expo-ft': {
         id: 'expo-ft',
         name: 'EXPO-FT',
