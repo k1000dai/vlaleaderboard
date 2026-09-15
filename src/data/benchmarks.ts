@@ -1146,6 +1146,48 @@ export const EXPO_FT_REAL_WORLD: Benchmark = {
 };
 
 // ============================================
+// HA-VLNCE
+// ============================================
+export const HA_VLNCE: Benchmark = {
+  id: 'ha-vlnce',
+  name: 'HA-VLNCE',
+  shortName: 'HA-VLNCE',
+  description: 'A human-aware vision-language navigation benchmark for continuous environments with dynamic multi-human interactions.',
+  iconEmoji: '🧭',
+  category: 'navigation',
+  paper: {
+    title: 'HA-VLN: A Benchmark for Human-Aware Navigation in Discrete–Continuous Environments with Dynamic Multi-Human Interactions, Real-World Validation, and an Open Leaderboard',
+    authors: ['Yifei Dong', 'Fengyi Wu', 'Qi He', 'et al.'],
+    venue: 'arXiv',
+    year: 2025,
+    arxivId: '2503.14229',
+  },
+  websiteUrl: 'https://ha-vln-project.vercel.app/',
+  githubUrl: 'https://github.com/UWMILab/HA-VLN',
+  datasetUrls: {
+    other: 'https://github.com/UWMILab/HA-VLN',
+  },
+  taskTypes: ['vision-language navigation', 'human-aware navigation', 'dynamic environments', 'continuous navigation'],
+  metrics: [
+    { id: 'unseen_sr', name: 'Success Rate (validation-unseen)', description: 'Source-reported success proportion; higher is better.', higherIsBetter: true, format: 'decimal' },
+    { id: 'unseen_cr', name: 'Collision Rate (validation-unseen)', description: 'Source-reported collision proportion; lower is better.', higherIsBetter: false, format: 'decimal' },
+    { id: 'unseen_tcr', name: 'Total Collision Rate (validation-unseen)', description: 'Source-reported TCR value; lower is better.', higherIsBetter: false, format: 'decimal' },
+    { id: 'seen_sr', name: 'Success Rate (validation-seen)', description: 'Source-reported success proportion; higher is better.', higherIsBetter: true, format: 'decimal' },
+    { id: 'seen_cr', name: 'Collision Rate (validation-seen)', description: 'Source-reported collision proportion; lower is better.', higherIsBetter: false, format: 'decimal' },
+    { id: 'seen_tcr', name: 'Total Collision Rate (validation-seen)', description: 'Source-reported TCR value; lower is better.', higherIsBetter: false, format: 'decimal' },
+  ],
+  lastUpdated: '2026-09-15',
+  scores: [
+    {
+      modelId: 'hcsg',
+      score: 0.24,
+      details: { unseen_sr: 0.24, unseen_cr: 0.36, unseen_tcr: 5.02, seen_sr: 0.29, seen_cr: 0.34, seen_tcr: 3.63 },
+      notes: 'Primary source: https://arxiv.org/html/2605.13321v1, Table I and Sections V-A1–V-B; official project page: https://haoxuanxu1024.github.io/HCSG/; official repository: https://github.com/HaoxuanXU1024/HCSG. Benchmark definition and protocol: https://arxiv.org/html/2503.14229v1; official benchmark repository: https://github.com/UWMILab/HA-VLN. HCSG reports validation-unseen TCR 5.02, CR 0.36, and SR 0.24, and validation-seen TCR 3.63, CR 0.34, and SR 0.29. The paper reports SR and CR as proportions and TCR in its source table scale; this row follows the paper\'s HA-VLN-CE/HA-VLNCE protocol and is not directly comparable to static or discrete VLN benchmarks.'
+    },
+  ],
+};
+
+// ============================================
 // EWMBench
 // ============================================
 export const EWMBENCH: Benchmark = {
@@ -1217,6 +1259,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   ROBOBENCHMART,
   MOVE_BENCH,
   EXPO_FT_REAL_WORLD,
+  HA_VLNCE,
   EWMBENCH,
 ];
 
