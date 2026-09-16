@@ -586,6 +586,20 @@ export const MODELS: Record<string, ModelEntry> = {
         },
         dateAdded: '2026-08-29',
     },
+    'wall-x': {
+        id: 'wall-x',
+        name: 'Wall-X',
+        organization: 'X-Square Robot Team',
+        paper: {
+            title: 'Building General-Purpose Robots Based on Embodied Foundation Model',
+            authors: ['X-Square Robot Team'],
+            year: 2025,
+            url: 'https://github.com/X-Square-Robot/wall-x',
+        },
+        githubUrl: 'https://github.com/X-Square-Robot/wall-x',
+        isOpenSource: true,
+        dateAdded: '2026-09-16',
+    },
     'molmoact2': {
         id: 'molmoact2',
         name: 'MolmoAct 2',

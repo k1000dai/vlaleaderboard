@@ -971,6 +971,64 @@ export const SO101_TASK_SET: Benchmark = {
 };
 
 // ============================================
+// SO-101 VLA Evaluation
+// ============================================
+export const SO101_VLA_EVALUATION: Benchmark = {
+  id: 'so101-vla-evaluation',
+  name: 'SO-101 VLA Evaluation',
+  shortName: 'SO-101 VLA',
+  description: 'A real-world SO-101 benchmark for task success, failure modes, and recovery behavior of VLA and imitation policies.',
+  iconEmoji: '🧪',
+  category: 'real-world',
+  paper: {
+    title: 'Benchmarking Vision-Language-Action Models on SO-101: Failure and Recovery Analysis',
+    authors: ['Yi Yu', 'Xinchuan Qiu'],
+    year: 2026,
+    arxivId: '2606.08881',
+  },
+  websiteUrl: 'https://arxiv.org/html/2606.08881v2',
+  datasetUrls: {
+    other: 'https://huggingface.co/collections/Qiu-Xinchuan/400-so-101-vla-evaluate-dataset',
+  },
+  taskTypes: ['real-world', 'SO-101', 'manipulation', 'VLA', 'imitation learning', 'failure recovery'],
+  metrics: [
+    { id: 'avg_success', name: 'Average Task Success', description: 'Mean success rate across four tasks, with 20 trials per model-task pair.', higherIsBetter: true, format: 'percentage' },
+    { id: 'pen_transfer', name: 'Pen Transfer', higherIsBetter: true, format: 'percentage' },
+    { id: 'color_sorting', name: 'Selective Color Sorting', higherIsBetter: true, format: 'percentage' },
+    { id: 'multi_object_packing', name: 'Multi-Object Packing', higherIsBetter: true, format: 'percentage' },
+    { id: 'precision_pen_placement', name: 'Precision Pen Placement', higherIsBetter: true, format: 'percentage' },
+    { id: 'recovery_rate', name: 'Failure Recovery Rate', description: 'Successful recoveries divided by identified recovery opportunities.', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2026-09-16',
+  scores: [
+    {
+      modelId: 'pi0.5',
+      score: 56.25,
+      details: { avg_success: 56.25, pen_transfer: 95, color_sorting: 10, multi_object_packing: 55, precision_pen_placement: 65, recovery_rate: 30.77 },
+      notes: 'Primary source: https://arxiv.org/html/2606.08881v2, Tables 3 and 5; official evaluation dataset: https://huggingface.co/collections/Qiu-Xinchuan/400-so-101-vla-evaluate-dataset. π0.5 was adapted with 100 teleoperated demonstrations per task and evaluated on 20 independent trials per task on SO-101. The primary score is the mean task success rate (%) across Pen Transfer, Selective Color Sorting, Multi-Object Packing, and Precision Pen Placement. Recovery rate is a separate metric over identified recovery opportunities and is not directly comparable to task success or other benchmark protocols.',
+    },
+    {
+      modelId: 'wall-x',
+      score: 51.25,
+      details: { avg_success: 51.25, pen_transfer: 95, color_sorting: 0, multi_object_packing: 30, precision_pen_placement: 80, recovery_rate: 20.51 },
+      notes: 'Primary source: https://arxiv.org/html/2606.08881v2, Tables 3 and 5; official Wall-X repository: https://github.com/X-Square-Robot/wall-x; official evaluation dataset: https://huggingface.co/collections/Qiu-Xinchuan/400-so-101-vla-evaluate-dataset. Wall-X was adapted with 100 teleoperated demonstrations per task and evaluated on 20 independent trials per task on SO-101. The primary score is the mean task success rate (%) across the four paper-defined tasks. Recovery rate is a separate metric over identified recovery opportunities and is not directly comparable to task success or other benchmark protocols.',
+    },
+    {
+      modelId: 'act',
+      score: 33.75,
+      details: { avg_success: 33.75, pen_transfer: 75, color_sorting: 0, multi_object_packing: 10, precision_pen_placement: 50, recovery_rate: 6.45 },
+      notes: 'Primary source: https://arxiv.org/html/2606.08881v2, Tables 3 and 5; official evaluation dataset: https://huggingface.co/collections/Qiu-Xinchuan/400-so-101-vla-evaluate-dataset. ACT was adapted with 100 teleoperated demonstrations per task and evaluated on 20 independent trials per task on SO-101. The primary score is the mean task success rate (%) across the four paper-defined tasks. Recovery rate is a separate metric over identified recovery opportunities and is not directly comparable to task success or other benchmark protocols.',
+    },
+    {
+      modelId: 'smolvla-0.45b',
+      score: 32.5,
+      details: { avg_success: 32.5, pen_transfer: 70, color_sorting: 5, multi_object_packing: 10, precision_pen_placement: 45, recovery_rate: 3.23 },
+      notes: 'Primary source: https://arxiv.org/html/2606.08881v2, Tables 3 and 5; official evaluation dataset: https://huggingface.co/collections/Qiu-Xinchuan/400-so-101-vla-evaluate-dataset. SmolVLA was adapted with 100 teleoperated demonstrations per task and evaluated on 20 independent trials per task on SO-101. The primary score is the mean task success rate (%) across the four paper-defined tasks. Recovery rate is a separate metric over identified recovery opportunities and is not directly comparable to task success or other benchmark protocols.',
+    },
+  ],
+};
+
+// ============================================
 // RoboBenchMart
 // ============================================
 export const ROBOBENCHMART: Benchmark = {
@@ -1256,6 +1314,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   L_CALVIN,
   DYNAMIC_OBJECT_MANIPULATION,
   SO101_TASK_SET,
+  SO101_VLA_EVALUATION,
   ROBOBENCHMART,
   MOVE_BENCH,
   EXPO_FT_REAL_WORLD,
