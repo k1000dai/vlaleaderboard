@@ -503,6 +503,12 @@ export const LIBERO_PRO: Benchmark = {
       score: 0.72,
       notes: 'Source: https://arxiv.org/html/2607.00272. Overall All macro-average across LIBERO-Pro object/goal/spatial suites and Pos/Task perturbations on 50 held-out seeds per suite (Pos: 0.77, Task: 0.67). This protocol is not directly comparable to rows using the legacy LIBERO-PRO detail columns.'
     },
+    {
+      modelId: 'rats',
+      score: 0.438,
+      details: { obj_pos: 0.61, obj_task: 0.63, goal_pos: 0.43, goal_task: 0.36, spatial_pos: 0.29, spatial_task: 0.31 },
+      notes: 'Primary source: https://arxiv.org/html/2606.19419v1, Table 1 and Sections 4.2–4.3; official project page: https://Playful-RATs.github.io; official repository: https://github.com/Playful-RATs/rats; benchmark definition: https://github.com/Zxy-MLlab/LIBERO-PRO. RATs reports LIBERO-PRO success rates (%) of Object Pos 61, Object Task 63, Goal Pos 43, Goal Task 36, Spatial Pos 29, and Spatial Task 31, with a six-split average of 43.8. The paper evaluates 10 tasks per split with 10 trials per task (600 reported rollouts); percentages are stored as fractions to match this registry. This row covers the six Pos/Task splits reported in the paper and is not directly comparable to legacy rows that include the full 20-column LIBERO-PRO schema or use different test-time systems.'
+    },
   ],
 };
 
