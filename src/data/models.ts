@@ -524,6 +524,21 @@ export const MODELS: Record<string, ModelEntry> = {
         websiteUrl: 'https://research.nvidia.com/labs/gear/aspire/',
         dateAdded: '2026-08-24',
     },
+    'rats': {
+        id: 'rats',
+        name: 'RATs',
+        organization: 'UC Berkeley / Impossible Research',
+        paper: {
+            title: 'Playful Agentic Robot Learning',
+            authors: ['Junyi Zhang', 'Jiaxin Ge', 'Hanjun Yoo', 'Letian Fu', 'Zihan Yang', 'Yaowei Liu', 'Raj Saravanan', 'Shaofeng Yin', 'Justin Yu', 'Dantong Niu', 'Zirui Wang', 'Roei Herzig', 'Ken Goldberg', 'Yutong Bai', 'David M. Chan', 'Ion Stoica', 'Angjoo Kanazawa', 'Jiahui Lei', 'Haiwen Feng', 'Trevor Darrell'],
+            year: 2026,
+            arxivId: '2606.19419',
+        },
+        githubUrl: 'https://github.com/Playful-RATs/rats',
+        websiteUrl: 'https://Playful-RATs.github.io',
+        isOpenSource: true,
+        dateAdded: '2026-09-17',
+    },
     'glam-o': {
         id: 'glam-o',
         name: 'GLAM-O',
