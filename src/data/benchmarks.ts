@@ -1210,6 +1210,65 @@ export const EXPO_FT_REAL_WORLD: Benchmark = {
 };
 
 // ============================================
+// SimFoundry Real-to-Sim Policy Evaluation
+// ============================================
+export const SIMFOUNDRY_REAL_TO_SIM: Benchmark = {
+  id: 'simfoundry-real-to-sim',
+  name: 'SimFoundry Real-to-Sim Policy Evaluation',
+  shortName: 'SimFoundry',
+  description: 'A paper-defined real-to-sim evaluation protocol comparing policy success in reconstructed simulation scenes with real-world performance across tabletop manipulation tasks.',
+  iconEmoji: '🏗️',
+  category: 'simulation',
+  paper: {
+    title: 'SimFoundry: Modular and Automated Scene Generation for Policy Learning and Evaluation',
+    authors: ['Nadun Ranawaka', 'Josiah Wong', 'Wei-Lin Pai', 'Wei-Teng Chu', 'et al.'],
+    venue: 'arXiv',
+    year: 2026,
+    arxivId: '2606.28276',
+  },
+  websiteUrl: 'https://research.nvidia.com/labs/gear/simfoundry/',
+  githubUrl: 'https://github.com/NVlabs/SimFoundry',
+  taskTypes: ['simulation', 'real-world', 'real-to-sim', 'manipulation', 'DROID', 'YAM'],
+  metrics: [
+    { id: 'real_avg_success', name: 'Real-World Avg. Success', description: 'Arithmetic mean of the paper-reported real-world task success rates available for each policy.', higherIsBetter: true, format: 'percentage' },
+    { id: 'sim_avg_success', name: 'SimFoundry Avg. Success', description: 'Arithmetic mean of the paper-reported success rates in SimFoundry reconstructed scenes for the same tasks.', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2026-09-18',
+  scores: [
+    {
+      modelId: 'pi0.5',
+      score: 73.14,
+      details: { real_avg_success: 73.14, sim_avg_success: 54.86 },
+      notes: 'Primary source: https://arxiv.org/html/2606.28276v4, Table G.1; official project page: https://research.nvidia.com/labs/gear/simfoundry/; official repository: https://github.com/NVlabs/SimFoundry. Mean of the seven paper-defined task rates (Stack Dishware, Store Marker, Throw Away Trash, Serve Fruits, Cup in Bowl, Marker in Cup, Clear Table), calculated from the reported percentages. The three harder tasks use policies adapted with 50 real-world demonstrations per task; the four easier tasks are zero-shot. SimFoundry evaluation is zero-shot in reconstructed scenes, so this combined protocol is not directly comparable to standard single-benchmark VLA scores or the four-task-only rows.',
+    },
+    {
+      modelId: 'pi0',
+      score: 42.29,
+      details: { real_avg_success: 42.29, sim_avg_success: 21.43 },
+      notes: 'Primary source: https://arxiv.org/html/2606.28276v4, Table G.1; official project page: https://research.nvidia.com/labs/gear/simfoundry/; official repository: https://github.com/NVlabs/SimFoundry. Mean of the seven paper-defined task rates (Stack Dishware, Store Marker, Throw Away Trash, Serve Fruits, Cup in Bowl, Marker in Cup, Clear Table), calculated from the reported percentages. The three harder tasks use policies adapted with 50 real-world demonstrations per task; the four easier tasks are zero-shot. SimFoundry evaluation is zero-shot in reconstructed scenes, so this combined protocol is not directly comparable to standard single-benchmark VLA scores or the four-task-only rows.',
+    },
+    {
+      modelId: 'gr00tn1.6',
+      score: 24.57,
+      details: { real_avg_success: 24.57, sim_avg_success: 12.57 },
+      notes: 'Primary source: https://arxiv.org/html/2606.28276v4, Table G.1; official project page: https://research.nvidia.com/labs/gear/simfoundry/; official repository: https://github.com/NVlabs/SimFoundry. Mean of the seven paper-defined task rates (Stack Dishware, Store Marker, Throw Away Trash, Serve Fruits, Cup in Bowl, Marker in Cup, Clear Table), calculated from the reported percentages. The three harder tasks use policies adapted with 50 real-world demonstrations per task; the four easier tasks are zero-shot. SimFoundry evaluation is zero-shot in reconstructed scenes, so this combined protocol is not directly comparable to standard single-benchmark VLA scores or the four-task-only rows.',
+    },
+    {
+      modelId: 'gr00t-n1.7',
+      score: 57.0,
+      details: { real_avg_success: 57.0, sim_avg_success: 60.0 },
+      notes: 'Primary source: https://arxiv.org/html/2606.28276v4, Table G.1; official project page: https://research.nvidia.com/labs/gear/simfoundry/; official repository: https://github.com/NVlabs/SimFoundry. Mean of the four available zero-shot task rates (Serve Fruits, Cup in Bowl, Marker in Cup, Clear Table), calculated from the reported percentages; the paper marks the other three tasks as not evaluated for this policy. SimFoundry evaluation is zero-shot in reconstructed scenes, so this four-task result is not directly comparable to the seven-task rows.',
+    },
+    {
+      modelId: 'dreamzero',
+      score: 53.0,
+      details: { real_avg_success: 53.0, sim_avg_success: 53.0 },
+      notes: 'Primary source: https://arxiv.org/html/2606.28276v4, Table G.1; official project page: https://research.nvidia.com/labs/gear/simfoundry/; official repository: https://github.com/NVlabs/SimFoundry. Mean of the four available zero-shot task rates (Serve Fruits, Cup in Bowl, Marker in Cup, Clear Table), calculated from the reported percentages; the paper marks the other three tasks as not evaluated for this policy. SimFoundry evaluation is zero-shot in reconstructed scenes, so this four-task result is not directly comparable to the seven-task rows.',
+    },
+  ],
+};
+
+// ============================================
 // HA-VLNCE
 // ============================================
 export const HA_VLNCE: Benchmark = {
@@ -1324,6 +1383,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   ROBOBENCHMART,
   MOVE_BENCH,
   EXPO_FT_REAL_WORLD,
+  SIMFOUNDRY_REAL_TO_SIM,
   HA_VLNCE,
   EWMBENCH,
 ];

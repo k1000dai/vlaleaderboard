@@ -905,6 +905,17 @@ export const MODELS: Record<string, ModelEntry> = {
         isOpenSource: true,
         dateAdded: '2026-09-14',
     },
+    'dreamzero': {
+        id: 'dreamzero',
+        name: 'DreamZero',
+        paper: {
+            title: 'World Action Models are Zero-Shot Policies',
+            authors: ['Seonghyeon Ye', 'Yunhao Ge', 'Kaiyuan Zheng', 'et al.'],
+            year: 2026,
+            arxivId: '2602.15922',
+        },
+        dateAdded: '2026-09-18',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
