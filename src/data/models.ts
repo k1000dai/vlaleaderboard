@@ -590,6 +590,22 @@ export const MODELS: Record<string, ModelEntry> = {
         },
         dateAdded: '2026-08-29',
     },
+    'oat-l-siglip': {
+        id: 'oat-l-siglip',
+        name: 'OAT (L, SigLIP)',
+        organization: 'Shibattic Inc.',
+        paper: {
+            title: 'The Compression Gap: Why Discrete Tokenization Limits Vision-Language-Action Model Scaling',
+            authors: ['Takuya Shiba'],
+            year: 2026,
+            arxivId: '2604.03191',
+        },
+        githubUrl: 'https://github.com/Shibattic/the-compression-gap',
+        websiteUrl: 'https://shibattic.github.io/compression-gap',
+        isOpenSource: true,
+        dateAdded: '2026-09-19',
+        modelSize: 'L',
+    },
     'act': {
         id: 'act',
         name: 'ACT',

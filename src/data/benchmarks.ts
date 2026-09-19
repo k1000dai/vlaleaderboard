@@ -175,7 +175,13 @@ export const LIBERO: Benchmark = {
       score: 96,
       details: { long: 96 },
       notes: 'Source: https://arxiv.org/html/2510.16281v2, Table II; official project page: https://yilin-wu98.github.io/steering-reasoning-vla/. SEAL reports 96% average success on LIBERO-10 (10 long-horizon tasks, 50 trials per method) with the LIBERO-10 training dataset. LIBERO-10 is mapped to this registry\'s long column; this is a single-suite result for a training-free runtime steering method and is not directly comparable to four-suite means or rows using different training data and protocols.',
-    }
+    },
+    {
+      modelId: 'oat-l-siglip',
+      score: 58.4,
+      details: { long: 58.4 },
+      notes: 'Source: https://arxiv.org/html/2604.03191, Table 1; official project page: https://shibattic.github.io/compression-gap; official repository: https://github.com/Shibattic/the-compression-gap. OAT (L, SigLIP) reports 58.4% peak success on LIBERO-10 (10 tasks, 50 demonstrations per task, 500 rollouts per evaluation with 50 per task), using the official OAT codebase; action chunks have H_a=32 and execute 16 steps before re-inference. This is the SigLIP encoder, L-size variant, and peak success metric from the paper-specific training run, so it is not directly comparable to rows with other model sizes, encoders, checkpoints, seeds, or LIBERO suites.',
+    },
   ],
 };
 
