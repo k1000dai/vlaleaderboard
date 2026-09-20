@@ -291,6 +291,23 @@ export const MODELS: Record<string, ModelEntry> = {
         dateAdded: '2025-12-19',
         modelSize: '3b'
     },
+    'rldx-1': {
+        id: 'rldx-1',
+        name: 'RLDX-1',
+        organization: 'RLWRLD / KAIST',
+        paper: {
+            title: 'RLDX-1 Technical Report',
+            authors: ['Dongyoung Kim', 'Huiwon Jang', 'Myungkyu Koo', 'et al.'],
+            year: 2026,
+            arxivId: '2605.03269',
+        },
+        githubUrl: 'https://github.com/RLWRLD/RLDX-1',
+        websiteUrl: 'https://rlwrld.ai/rldx-1',
+        huggingfaceUrl: 'https://huggingface.co/collections/RLWRLD/rldx-1',
+        isOpenSource: true,
+        dateAdded: '2026-09-20',
+        modelSize: '8.1b mid-trained'
+    },
     'llada-vla': {
         id: 'llada-vla',
         name: 'LLaDA-VLA',
