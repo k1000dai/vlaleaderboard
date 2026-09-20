@@ -1364,6 +1364,39 @@ export const EWMBENCH: Benchmark = {
 };
 
 // ============================================
+// GR-1 Tabletop
+// ============================================
+export const GR1_TABLETOP: Benchmark = {
+  id: 'gr-1-tabletop',
+  name: 'GR-1 Tabletop',
+  shortName: 'GR-1 Tabletop',
+  description: 'A humanoid tabletop manipulation benchmark with 24 tasks covering object rearrangement and articulated-object manipulation.',
+  iconEmoji: '🤖',
+  category: 'simulation',
+  paper: {
+    title: 'GR00T N1: An Open Foundation Model for Generalist Humanoid Robots',
+    authors: ['J. Bjorck', 'et al.'],
+    venue: 'arXiv',
+    year: 2025,
+    arxivId: '2503.14734',
+  },
+  websiteUrl: 'https://github.com/NVIDIA/Isaac-GR00T',
+  githubUrl: 'https://github.com/NVIDIA/Isaac-GR00T',
+  taskTypes: ['humanoid', 'manipulation', 'long-horizon'],
+  metrics: [
+    { id: 'avg_success', name: 'Average Success', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2026-09-20',
+  scores: [
+    {
+      modelId: 'rldx-1',
+      score: 58.7,
+      notes: 'Primary sources: https://arxiv.org/html/2605.03269v2, Table 1(b) and Table 14; official repository: https://github.com/RLWRLD/RLDX-1#simulation-benchmarks. RLDX-1 reports 58.7% average success over 24 tabletop tasks (18 object-rearrangement and 6 articulated-object tasks), with 50 evaluation episodes per task and 256×256 egocentric images. The reported checkpoint was fine-tuned with 1,000 machine-generated demonstrations per task; the GR-1 Tabletop setting uses 60,000 training iterations, 4 denoising steps, Beta(1.5, 1.0) timestep sampling, and an 8-step action horizon. This task-specific fine-tuned result is not directly comparable to zero-shot or differently fine-tuned rows.'
+    },
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
@@ -1392,6 +1425,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   SIMFOUNDRY_REAL_TO_SIM,
   HA_VLNCE,
   EWMBENCH,
+  GR1_TABLETOP,
 ];
 
 export { ROBO_LAB, ROBO_DOJO_SIM };
