@@ -938,6 +938,23 @@ export const MODELS: Record<string, ModelEntry> = {
         isOpenSource: true,
         dateAdded: '2026-09-14',
     },
+    'cover-vla': {
+        id: 'cover-vla',
+        name: 'CoVer-VLA',
+        organization: 'Stanford University / NVIDIA Research',
+        paper: {
+            title: 'Scaling Verification Can Be More Effective than Scaling Policy Learning for Vision-Language-Action Alignment',
+            authors: ['Jacky Kwok', 'Xilun Zhang', 'Mengdi Xu', 'Yuejiang Liu', 'Azalia Mirhoseini', 'Chelsea Finn', 'Marco Pavone'],
+            year: 2026,
+            arxivId: '2602.12281',
+        },
+        githubUrl: 'https://github.com/cover-vla/cover-vla',
+        websiteUrl: 'https://cover-vla.github.io',
+        huggingfaceUrl: 'https://huggingface.co/cover-vla',
+        isOpenSource: true,
+        description: 'Test-time verification and instruction/action re-ranking wrapper around π0.',
+        dateAdded: '2026-09-21',
+    },
     'dreamzero': {
         id: 'dreamzero',
         name: 'DreamZero',
