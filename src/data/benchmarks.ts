@@ -1405,6 +1405,40 @@ export const GR1_TABLETOP: Benchmark = {
 };
 
 // ============================================
+// ZPRL Real-World Task Suite
+// ============================================
+export const ZPRL_REAL_WORLD_TASKS: Benchmark = {
+  id: 'zprl-real-world-tasks',
+  name: 'ZPRL Real-World Task Suite',
+  shortName: 'ZPRL Real-World',
+  description: 'A paper-defined four-task real-world manipulation suite for online reinforcement-learning adaptation of a flow-matching policy.',
+  iconEmoji: '🦾',
+  category: 'real-world',
+  paper: {
+    title: 'Beyond Action Residuals: Real-World Robot Policy Steering via Bottleneck Latent Reinforcement Learning',
+    authors: ['Dongjie Yu', 'Kun Lei', 'Zhennan Jiang', 'Jia Pan', 'Huazhe Xu'],
+    venue: 'arXiv',
+    year: 2026,
+    arxivId: '2605.19919',
+  },
+  websiteUrl: 'https://manutdmoon.github.io/ZPRL/',
+  githubUrl: 'https://github.com/manutdmoon/ZPRL',
+  taskTypes: ['real-world', 'manipulation', 'flow matching', 'online reinforcement learning', 'bimanual'],
+  metrics: [
+    { id: 'insert_bills_success', name: 'Insert Bills Success', description: 'Final success rate on the paper-defined Insert Bills task after online ZPRL finetuning.', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2026-09-22',
+  scores: [
+    {
+      modelId: 'zprl',
+      score: 77.5,
+      details: { insert_bills_success: 77.5 },
+      notes: 'Primary sources: https://arxiv.org/html/2605.19919 (v1, 2026-05-19), Sections V-D2–V-D4; official project page: https://manutdmoon.github.io/ZPRL/; official repository: https://github.com/manutdmoon/ZPRL. ZPRL improves the Insert Bills base policy from 20% to a final 77.5% success rate after online RL; the paper evaluates checkpoints with 40 randomly initialized trajectories at fixed intervals and trains only ZPRL for this task because of its hardware and time cost. The suite also contains Place Orange, Flip Egg, and Open Box, but this row records only the exact Insert Bills result stated in the primary source. This paper-defined real-world protocol is not directly comparable to simulation or other real-world benchmark rows.'
+    },
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
@@ -1434,6 +1468,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   HA_VLNCE,
   EWMBENCH,
   GR1_TABLETOP,
+  ZPRL_REAL_WORLD_TASKS,
 ];
 
 export { ROBO_LAB, ROBO_DOJO_SIM };

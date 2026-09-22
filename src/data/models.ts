@@ -955,6 +955,23 @@ export const MODELS: Record<string, ModelEntry> = {
         description: 'Test-time verification and instruction/action re-ranking wrapper around π0.',
         dateAdded: '2026-09-21',
     },
+    'zprl': {
+        id: 'zprl',
+        name: 'ZPRL',
+        organization: 'Shanghai Qizhi Institute / Shanghai Jiao Tong University / CAS / Tsinghua University / The University of Hong Kong',
+        paper: {
+            title: 'Beyond Action Residuals: Real-World Robot Policy Steering via Bottleneck Latent Reinforcement Learning',
+            authors: ['Dongjie Yu', 'Kun Lei', 'Zhennan Jiang', 'Jia Pan', 'Huazhe Xu'],
+            venue: 'arXiv',
+            year: 2026,
+            arxivId: '2605.19919',
+        },
+        githubUrl: 'https://github.com/manutdmoon/ZPRL',
+        websiteUrl: 'https://manutdmoon.github.io/ZPRL/',
+        isOpenSource: true,
+        description: 'Z-Perturbation Reinforcement Learning steers a frozen flow-matching policy through a compact bottleneck latent during online adaptation.',
+        dateAdded: '2026-09-22',
+    },
     'dreamzero': {
         id: 'dreamzero',
         name: 'DreamZero',
