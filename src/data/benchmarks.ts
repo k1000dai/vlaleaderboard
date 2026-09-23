@@ -36,7 +36,7 @@ export const LIBERO: Benchmark = {
     { id: 'object', name: 'LIBERO-Object', higherIsBetter: true, format: 'percentage' },
     { id: 'spatial', name: 'LIBERO-Spatial', higherIsBetter: true, format: 'percentage' },
   ],
-  lastUpdated: '2026-09-10',
+  lastUpdated: '2026-09-23',
   scores: [
     {
       modelId: 'lara-vla',
@@ -181,6 +181,12 @@ export const LIBERO: Benchmark = {
       score: 58.4,
       details: { long: 58.4 },
       notes: 'Source: https://arxiv.org/html/2604.03191, Table 1; official project page: https://shibattic.github.io/compression-gap; official repository: https://github.com/Shibattic/the-compression-gap. OAT (L, SigLIP) reports 58.4% peak success on LIBERO-10 (10 tasks, 50 demonstrations per task, 500 rollouts per evaluation with 50 per task), using the official OAT codebase; action chunks have H_a=32 and execute 16 steps before re-inference. This is the SigLIP encoder, L-size variant, and peak success metric from the paper-specific training run, so it is not directly comparable to rows with other model sizes, encoders, checkpoints, seeds, or LIBERO suites.',
+    },
+    {
+      modelId: 'clap-rf',
+      score: 97.2,
+      details: { spatial: 98.6, object: 99.2, goal: 98.0, long: 93.0 },
+      notes: 'Primary sources: https://arxiv.org/html/2601.04061v2, Table IV and Section V-B; official project page: https://lin-shan.com/CLAP/; official repository: https://github.com/LinShan-Bin/OpenCLAP; released LIBERO checkpoint: https://huggingface.co/LinShan/clap-qwen3vl4b-libero. CLAP-RF is a single generalist policy trained across LIBERO Spatial/Object/Goal/Long and reports success rates (%) of 98.6, 99.2, 98.0, and 93.0, averaging 97.2%; the paper evaluates 500 trials per suite (50 per task), trains for 30k steps with batch size 128, and uses Knowledge Matching post-training. Compare this row with other single-policy/generalist results rather than specialist rows trained separately per suite.',
     },
   ],
 };

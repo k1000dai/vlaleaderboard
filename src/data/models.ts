@@ -983,6 +983,24 @@ export const MODELS: Record<string, ModelEntry> = {
         },
         dateAdded: '2026-09-18',
     },
+    'clap-rf': {
+        id: 'clap-rf',
+        name: 'CLAP-RF',
+        organization: 'Tsinghua University / Astribot / University of Hong Kong / MIT',
+        paper: {
+            title: 'CLAP: Contrastive Latent Action Pretraining for Learning Vision-Language-Action Models from Human Videos',
+            authors: ['Chubin Zhang', 'Jianan Wang', 'Zifeng Gao', 'Yue Su', 'et al.'],
+            year: 2026,
+            arxivId: '2601.04061',
+        },
+        githubUrl: 'https://github.com/LinShan-Bin/OpenCLAP',
+        websiteUrl: 'https://lin-shan.com/CLAP/',
+        huggingfaceUrl: 'https://huggingface.co/LinShan/clap-qwen3vl4b-libero',
+        isOpenSource: true,
+        dateAdded: '2026-09-23',
+        modelSize: 'Qwen3-VL-4B',
+        description: 'CLAP rectified-flow action head with Knowledge Matching post-training.',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
