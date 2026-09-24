@@ -1001,6 +1001,21 @@ export const MODELS: Record<string, ModelEntry> = {
         modelSize: 'Qwen3-VL-4B',
         description: 'CLAP rectified-flow action head with Knowledge Matching post-training.',
     },
+    'simplevla-rl-openvla-oft': {
+        id: 'simplevla-rl-openvla-oft',
+        name: 'SimpleVLA-RL (OpenVLA-OFT)',
+        organization: 'PRIME-RL / Shanghai Jiao Tong University / Peking University / Shanghai AI Lab',
+        paper: {
+            title: 'SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning',
+            authors: ['Haozhan Li', 'Yuxin Zuo', 'Jiale Yu', 'et al.'],
+            year: 2025,
+            arxivId: '2509.09674',
+        },
+        githubUrl: 'https://github.com/PRIME-RL/SimpleVLA-RL',
+        isOpenSource: true,
+        description: 'OpenVLA-OFT fine-tuned with the SimpleVLA-RL online reinforcement-learning framework.',
+        dateAdded: '2026-09-24',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
