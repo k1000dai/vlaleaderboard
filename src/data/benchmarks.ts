@@ -188,6 +188,12 @@ export const LIBERO: Benchmark = {
       details: { spatial: 98.6, object: 99.2, goal: 98.0, long: 93.0 },
       notes: 'Primary sources: https://arxiv.org/html/2601.04061v2, Table IV and Section V-B; official project page: https://lin-shan.com/CLAP/; official repository: https://github.com/LinShan-Bin/OpenCLAP; released LIBERO checkpoint: https://huggingface.co/LinShan/clap-qwen3vl4b-libero. CLAP-RF is a single generalist policy trained across LIBERO Spatial/Object/Goal/Long and reports success rates (%) of 98.6, 99.2, 98.0, and 93.0, averaging 97.2%; the paper evaluates 500 trials per suite (50 per task), trains for 30k steps with batch size 128, and uses Knowledge Matching post-training. Compare this row with other single-policy/generalist results rather than specialist rows trained separately per suite.',
     },
+    {
+      modelId: 'simplevla-rl-openvla-oft',
+      score: 99.1,
+      details: { spatial: 99.4, object: 99.1, goal: 99.2, long: 98.5 },
+      notes: 'Primary sources: https://arxiv.org/html/2509.09674v1, Table 2 and Section 4.1; official repository: https://github.com/PRIME-RL/SimpleVLA-RL; benchmark: https://lifelong-robot-learning.github.io/LIBERO/. The paper reports the OpenVLA-OFT + SimpleVLA-RL result on the standard LIBERO Spatial/Object/Goal/Long suites: 99.4%, 99.1%, 99.2%, and 98.5%, averaging 99.1%. Evaluation averages success over 50 held-out scenarios per task (10 tasks per suite); this is the paper\'s RL-finetuned OpenVLA-OFT result and is not directly comparable to rows using different data, seeds, or inference protocols.',
+    },
   ],
 };
 
