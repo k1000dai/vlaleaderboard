@@ -983,6 +983,23 @@ export const MODELS: Record<string, ModelEntry> = {
         },
         dateAdded: '2026-09-18',
     },
+    'tiptop': {
+        id: 'tiptop',
+        name: 'TiPToP',
+        organization: 'MIT CSAIL / University of Pennsylvania',
+        paper: {
+            title: 'TiPToP: A Modular Open-Vocabulary Robot Manipulation System That Plans',
+            authors: ['William Shen', 'Nishanth Kumar', 'Sahit Chintalapudi', 'Ryan Lindeborg', 'Jie Wang', 'Christopher Watson', 'Edward S. Hu', 'Jing Cao', 'Dinesh Jayaraman', 'Leslie Pack Kaelbling', 'Tomás Lozano-Pérez'],
+            venue: 'arXiv',
+            year: 2026,
+            arxivId: '2603.09971',
+        },
+        githubUrl: 'https://github.com/tiptop-robot/tiptop',
+        websiteUrl: 'https://tiptop-robot.github.io/',
+        isOpenSource: true,
+        description: 'Modular open-vocabulary robot manipulation system combining foundation-model perception, GPU-accelerated task-and-motion planning, and execution without robot training data.',
+        dateAdded: '2026-09-25',
+    },
     'clap-rf': {
         id: 'clap-rf',
         name: 'CLAP-RF',
