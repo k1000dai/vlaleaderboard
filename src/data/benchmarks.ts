@@ -1451,6 +1451,41 @@ export const ZPRL_REAL_WORLD_TASKS: Benchmark = {
 };
 
 // ============================================
+// MolmoSpaces
+// ============================================
+export const MOLMO_SPACES: Benchmark = {
+  id: 'molmo-spaces',
+  name: 'MolmoSpaces',
+  shortName: 'MolmoSpaces',
+  description: 'An open benchmark and leaderboard for vision-language-action robot manipulation across pick and pick-and-place task variants.',
+  iconEmoji: '🏠',
+  category: 'simulation',
+  websiteUrl: 'https://molmospaces.allen.ai/leaderboard',
+  taskTypes: ['robot manipulation', 'pick', 'pick-and-place', 'VLA', 'simulation'],
+  metrics: [
+    { id: 'pick', name: 'MolmoSpaces Pick', higherIsBetter: true, format: 'percentage' },
+    { id: 'pick_place', name: 'MolmoSpaces Pick & Place', higherIsBetter: true, format: 'percentage' },
+    { id: 'msproc', name: 'MolmoBot Pick-MSProc', higherIsBetter: true, format: 'percentage' },
+    { id: 'classic', name: 'MolmoBot Pick-Classic', higherIsBetter: true, format: 'percentage' },
+    { id: 'filament', name: 'MolmoBot Pick-Filament', higherIsBetter: true, format: 'percentage' },
+    { id: 'randcam', name: 'MolmoBot Pick-RandCam', higherIsBetter: true, format: 'percentage' },
+    { id: 'pnp', name: 'MolmoBot Pick & Place', higherIsBetter: true, format: 'percentage' },
+    { id: 'pnp_next_to', name: 'MolmoBot Pick & Place-NextTo', higherIsBetter: true, format: 'percentage' },
+    { id: 'pnp_color', name: 'MolmoBot Pick & Place-Color', higherIsBetter: true, format: 'percentage' },
+    { id: 'overall', name: 'Overall Oracle Success', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2026-09-25',
+  scores: [
+    {
+      modelId: 'tiptop',
+      score: 46.1,
+      details: { pick: 68.7, pick_place: 33.2, msproc: 67.5, classic: 50.0, filament: 48.5, randcam: 47.8, pnp: 29.4, pnp_next_to: 38.0, pnp_color: 31.5, overall: 46.1 },
+      notes: 'Primary sources: https://arxiv.org/html/2603.09971v2, Table III and Section VII-B; official project page: https://tiptop-robot.github.io/; official benchmark leaderboard: https://molmospaces.allen.ai/leaderboard; official repository: https://github.com/tiptop-robot/tiptop. Oracle success rate is defined as success anywhere during the time horizon, not only at episode end. TiPToP reports 68.7% on MolmoSpaces Pick, 33.2% on MolmoSpaces Pick & Place, 67.5% on MolmoBot Pick-MSProc, 50.0% on Classic, 48.5% on Filament, 47.8% on RandCam, 29.4% on Pick & Place, 38.0% on Pick & Place-NextTo, and 31.5% on Pick & Place-Color; overall 46.1%. The evaluation runs 1,000 episodes per task set (9,000 total), omits Open/Close, and uses zero robot or simulator demonstrations. This is the arXiv v2 snapshot dated 2026-07-28 and is not directly comparable to in-distribution-trained rows or end-of-episode-only success metrics.',
+    },
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
@@ -1481,6 +1516,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   EWMBENCH,
   GR1_TABLETOP,
   ZPRL_REAL_WORLD_TASKS,
+  MOLMO_SPACES,
 ];
 
 export { ROBO_LAB, ROBO_DOJO_SIM };
