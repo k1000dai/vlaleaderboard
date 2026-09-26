@@ -1486,9 +1486,45 @@ export const MOLMO_SPACES: Benchmark = {
 };
 
 // ============================================
+// HumanoidBench
+// ============================================
+export const HUMANOID_BENCH: Benchmark = {
+  id: 'humanoidbench',
+  name: 'HumanoidBench',
+  shortName: 'HumanoidBench',
+  description: 'A simulated humanoid benchmark for whole-body locomotion and manipulation with dexterous hands.',
+  iconEmoji: '🦿',
+  category: 'simulation',
+  paper: {
+    title: 'HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation',
+    authors: ['Carmelo Sferrazza', 'Dun-Ming Huang', 'Xingyu Lin', 'Youngwoon Lee', 'Pieter Abbeel'],
+    venue: 'RSS',
+    year: 2024,
+    arxivId: '2403.10506',
+  },
+  websiteUrl: 'https://humanoid-bench.github.io',
+  githubUrl: 'https://github.com/carlosferrazza/humanoid-bench',
+  taskTypes: ['humanoid', 'whole-body locomotion', 'manipulation', 'simulation'],
+  metrics: [
+    { id: 'basketball_gain', name: 'Basketball gain vs FastTD3', description: 'Source-reported relative return gain on HumanoidBench Basketball.', higherIsBetter: true, format: 'percentage' },
+    { id: 'balance_hard_gain', name: 'Balance Hard gain vs FastTD3', description: 'Source-reported relative return gain on HumanoidBench Balance Hard.', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2026-09-26',
+  scores: [
+    {
+      modelId: 'fastdsac',
+      score: 180,
+      details: { basketball_gain: 180, balance_hard_gain: 350 },
+      notes: 'Primary source: https://arxiv.org/html/2603.12612 (v2, 2026-05-04), abstract and Figure 1. Benchmark definition and official task suite: https://arxiv.org/html/2403.10506v2; official site: https://humanoid-bench.github.io; official repository: https://github.com/carlosferrazza/humanoid-bench. FastDSAC reports source-stated gains of 180% on Basketball and 350% on Balance Hard versus FastTD3, with final-return curves averaged over 5 seeds; the row stores Basketball as the primary metric and Balance Hard as a detail. The evaluation uses the HumanoidBench protocol inherited from FastTD3, including 128 parallel environments and a 32,768 batch size, and has no instruction variant. These are relative gains rather than absolute task returns, so they are not directly comparable to rows reporting absolute success or return values.',
+    },
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
+  HUMANOID_BENCH,
   LIBERO,
   CALVIN,
   VLABENCH,

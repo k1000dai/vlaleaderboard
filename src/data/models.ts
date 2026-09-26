@@ -1033,6 +1033,20 @@ export const MODELS: Record<string, ModelEntry> = {
         description: 'OpenVLA-OFT fine-tuned with the SimpleVLA-RL online reinforcement-learning framework.',
         dateAdded: '2026-09-24',
     },
+    'fastdsac': {
+        id: 'fastdsac',
+        name: 'FastDSAC',
+        organization: 'Eastern Institute of Technology, Ningbo',
+        paper: {
+            title: 'FastDSAC: Unlocking the Potential of Maximum Entropy RL in High-Dimensional Humanoid Control',
+            authors: ['Jun Xue', 'Junze Wang', 'Shanze Wang', 'Xinming Zhang', 'Yanjun Chen', 'Wei Zhang'],
+            venue: 'arXiv',
+            year: 2026,
+            arxivId: '2603.12612',
+        },
+        description: 'Maximum-entropy stochastic policy framework with Dimension-wise Entropy Modulation and a continuous distributional critic for high-dimensional humanoid control.',
+        dateAdded: '2026-09-26',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
