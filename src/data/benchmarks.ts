@@ -416,13 +416,18 @@ export const SIMPLER_ENV: Benchmark = {
     { id: 'avg_success', name: 'ID Avg. Success', description: 'Mean success rate across four in-distribution tasks under red-team instructions.', higherIsBetter: true, format: 'percentage' },
     { id: 'ood_success', name: 'OOD Avg. Success', description: 'Mean success rate across three out-of-distribution tasks under red-team instructions.', higherIsBetter: true, format: 'percentage' },
   ],
-  lastUpdated: '2026-09-21',
+  lastUpdated: '2026-09-27',
   scores: [
     {
       modelId: 'cover-vla',
       score: 65.5,
       details: { ood_success: 62.0 },
       notes: 'Primary source: https://arxiv.org/html/2602.12281v2, Appendix Table 3; official project page: https://cover-vla.github.io; official repository: https://github.com/cover-vla/cover-vla. CoVer-VLA (π0 with rephrased instructions plus CoVer) reports 65.5% mean success across the four SIMPLER in-distribution tasks and 62.0% across three out-of-distribution tasks, using red-team instructions, 8 rephrases, and 5 action samples per rephrase. The primary score is the paper\'s in-distribution average; the OOD average is retained in details. These split- and inference-protocol-specific results are not directly comparable to a single undifferentiated SIMPLER average.',
+    },
+    {
+      modelId: 'videovla',
+      score: 63.0,
+      notes: 'Primary sources: https://arxiv.org/html/2512.06963, Table 1; official project page: https://videovla-nips2025.github.io/; official repository: https://github.com/VideoVLA-Project/VideoVLA; released model: https://huggingface.co/VideoVLA/VideoVLA_Cogvideobase_Pretrained. VideoVLA reports a 63.0% overall average across 12 in-domain SIMPLER tasks, composed of 53.1% for WidowX VM, 73.1% for Google VM, and 62.8% for Google VA. The paper evaluates the OXE-trained model in SIMPLER\'s VM and VA protocols; the primary score is this paper-defined overall average and is not directly comparable to CoVer-VLA\'s red-team four-task ID average or its OOD metric.',
     },
   ],
 };

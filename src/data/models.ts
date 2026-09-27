@@ -1047,6 +1047,24 @@ export const MODELS: Record<string, ModelEntry> = {
         description: 'Maximum-entropy stochastic policy framework with Dimension-wise Entropy Modulation and a continuous distributional critic for high-dimensional humanoid control.',
         dateAdded: '2026-09-26',
     },
+    'videovla': {
+        id: 'videovla',
+        name: 'VideoVLA',
+        organization: "Xi'an Jiaotong University / Microsoft Research Asia / Fudan University",
+        paper: {
+            title: 'VideoVLA: Video Generators Can Be Generalizable Robot Manipulators',
+            authors: ['Yichao Shen', 'Fangyun Wei', 'Zhiying Du', 'Yaobo Liang', 'Yan Lu', 'Jiaolong Yang', 'Nanning Zheng', 'Baining Guo'],
+            venue: 'NeurIPS',
+            year: 2025,
+            arxivId: '2512.06963',
+        },
+        githubUrl: 'https://github.com/VideoVLA-Project/VideoVLA',
+        websiteUrl: 'https://videovla-nips2025.github.io/',
+        huggingfaceUrl: 'https://huggingface.co/VideoVLA/VideoVLA_Cogvideobase_Pretrained',
+        isOpenSource: true,
+        description: 'A video-generation-based VLA that jointly predicts robot actions and future visual outcomes.',
+        dateAdded: '2026-09-27',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
