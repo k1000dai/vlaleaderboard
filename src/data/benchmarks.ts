@@ -1066,6 +1066,55 @@ export const SO101_VLA_EVALUATION: Benchmark = {
 };
 
 // ============================================
+// SO100 Task Set
+// ============================================
+export const SO100_TASK_SET: Benchmark = {
+  id: 'so100-task-set',
+  name: 'SO100 Task Set',
+  shortName: 'SO100 Tasks',
+  description: 'A paper-defined real-world three-task VLA evaluation protocol on LeRobot SO100 arms with single-target, multi-target, and distractor settings.',
+  iconEmoji: '🦾',
+  category: 'real-world',
+  paper: {
+    title: 'RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation',
+    authors: ['Yuming Jiang', 'Siteng Huang', 'Shengke Xue', 'Yaxi Zhao', 'Jun Cen', 'Sicong Leng', 'Kehan Li', 'Jiayan Guo', 'Kexiang Wang', 'Mingxiu Chen', 'Fan Wang', 'Deli Zhao', 'Xin Li'],
+    year: 2025,
+    arxivId: '2509.15212',
+  },
+  websiteUrl: 'https://github.com/alibaba-damo-academy/RynnVLA-001',
+  githubUrl: 'https://github.com/alibaba-damo-academy/RynnVLA-001',
+  taskTypes: ['real-world', 'SO100', 'VLA', 'manipulation', 'instruction following'],
+  metrics: [
+    { id: 'avg_success', name: 'Average Task Success', description: 'Average success rate across the three tasks and three evaluation settings.', higherIsBetter: true, format: 'percentage' },
+    { id: 'sr_at_1', name: 'Success Rate@1', description: 'Percentage of tasks completed successfully within a single trial.', higherIsBetter: true, format: 'percentage' },
+    { id: 'green_blocks', name: 'Pick up and place green blocks', higherIsBetter: true, format: 'percentage' },
+    { id: 'strawberries', name: 'Pick up and place strawberries', higherIsBetter: true, format: 'percentage' },
+    { id: 'pen_holder', name: 'Grab pen and put it into holder', higherIsBetter: true, format: 'percentage' },
+    { id: 'single_target', name: 'Single-target manipulation', higherIsBetter: true, format: 'percentage' },
+    { id: 'multi_target', name: 'Multi-target manipulation', higherIsBetter: true, format: 'percentage' },
+    { id: 'distractors', name: 'Instruction following with distractors', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2026-09-28',
+  scores: [
+    {
+      modelId: 'rynnvla-001',
+      score: 90.6,
+      details: {
+        avg_success: 90.6,
+        sr_at_1: 56.7,
+        green_blocks: 90.0,
+        strawberries: 91.7,
+        pen_holder: 90.0,
+        single_target: 93.3,
+        multi_target: 86.7,
+        distractors: 91.7,
+      },
+      notes: 'Primary source: https://arxiv.org/html/2509.15212v1, Figure 3, Tables 1-2, and Section 5.1; official repository: https://github.com/alibaba-damo-academy/RynnVLA-001. RynnVLA-001 is fine-tuned on the same SO100 demonstrations as the baselines and evaluated on three tasks across three SO100 arms and environments. The paper reports 90.0% for green blocks, 91.7% for strawberries, 90.0% for pen insertion, a 90.6% average across tasks and settings, and 56.7% Success Rate@1. The three settings are single-target, multi-target, and instruction-following with distractors; a trial succeeds when at least one target is placed within the time limit, with the paper-defined grasp-failure and distractor-failure conditions. This real-world, paper-defined protocol is not directly comparable to SO-101 or simulation benchmark rows.',
+    },
+  ],
+};
+
+// ============================================
 // RoboBenchMart
 // ============================================
 export const ROBOBENCHMART: Benchmark = {
@@ -1549,6 +1598,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   DYNAMIC_OBJECT_MANIPULATION,
   SO101_TASK_SET,
   SO101_VLA_EVALUATION,
+  SO100_TASK_SET,
   ROBOBENCHMART,
   MOVE_BENCH,
   EXPO_FT_REAL_WORLD,
