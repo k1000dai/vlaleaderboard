@@ -1065,6 +1065,24 @@ export const MODELS: Record<string, ModelEntry> = {
         description: 'A video-generation-based VLA that jointly predicts robot actions and future visual outcomes.',
         dateAdded: '2026-09-27',
     },
+    'rynnvla-001': {
+        id: 'rynnvla-001',
+        name: 'RynnVLA-001',
+        organization: 'Alibaba DAMO Academy / Hupan Lab',
+        paper: {
+            title: 'RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation',
+            authors: ['Yuming Jiang', 'Siteng Huang', 'Shengke Xue', 'Yaxi Zhao', 'Jun Cen', 'Sicong Leng', 'Kehan Li', 'Jiayan Guo', 'Kexiang Wang', 'Mingxiu Chen', 'Fan Wang', 'Deli Zhao', 'Xin Li'],
+            venue: 'arXiv',
+            year: 2025,
+            arxivId: '2509.15212',
+        },
+        githubUrl: 'https://github.com/alibaba-damo-academy/RynnVLA-001',
+        huggingfaceUrl: 'https://huggingface.co/Alibaba-DAMO-Academy/RynnVLA-001-7B-Trajectory',
+        isOpenSource: true,
+        modelSize: '7b',
+        description: 'A VLA initialized from ego-centric video and human trajectory-aware pretraining with a compact ActionVAE representation.',
+        dateAdded: '2026-09-28',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
