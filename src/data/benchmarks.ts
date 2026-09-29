@@ -1575,10 +1575,66 @@ export const HUMANOID_BENCH: Benchmark = {
 };
 
 // ============================================
+// ConRFT Real-World Tasks
+// ============================================
+export const CONRFT_REAL_WORLD_TASKS: Benchmark = {
+  id: 'conrft-real-world-tasks',
+  name: 'ConRFT Real-World Tasks',
+  shortName: 'ConRFT Tasks',
+  description: 'A paper-defined eight-task real-world manipulation suite for human-in-the-loop reinforced fine-tuning of VLA policies on a 7-DoF Franka Emika arm.',
+  iconEmoji: '🦾',
+  category: 'real-world',
+  paper: {
+    title: 'ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy',
+    authors: ['Yuhui Chen', 'Shuai Tian', 'Shugao Liu', 'Yingting Zhou', 'Haoran Li', 'Dongbin Zhao'],
+    venue: 'RSS',
+    year: 2025,
+    arxivId: '2502.05450',
+    doi: '10.15607/RSS.2025.XXI.019',
+  },
+  websiteUrl: 'https://cccedric.github.io/conrft/',
+  githubUrl: 'https://github.com/cccedric/conrft',
+  taskTypes: ['real-world', 'manipulation', 'VLA', 'reinforcement learning', 'human-in-the-loop', 'Franka'],
+  metrics: [
+    { id: 'avg_success', name: 'Average Success', description: 'Mean success rate across the eight paper-defined tasks.', higherIsBetter: true, format: 'percentage' },
+    { id: 'pick_banana', name: 'Pick Banana', higherIsBetter: true, format: 'percentage' },
+    { id: 'put_spoon', name: 'Put Spoon', higherIsBetter: true, format: 'percentage' },
+    { id: 'open_drawer', name: 'Open Drawer', higherIsBetter: true, format: 'percentage' },
+    { id: 'pick_bread', name: 'Pick Bread', higherIsBetter: true, format: 'percentage' },
+    { id: 'open_toaster', name: 'Open Toaster', higherIsBetter: true, format: 'percentage' },
+    { id: 'put_bread', name: 'Put Bread', higherIsBetter: true, format: 'percentage' },
+    { id: 'insert_wheel', name: 'Insert Wheel', higherIsBetter: true, format: 'percentage' },
+    { id: 'hang_chinese_knot', name: 'Hang Chinese Knot', higherIsBetter: true, format: 'percentage' },
+    { id: 'avg_episode_length', name: 'Average Episode Length', higherIsBetter: false, format: 'decimal' },
+  ],
+  lastUpdated: '2026-09-29',
+  scores: [
+    {
+      modelId: 'hil-conrft-octosmall',
+      score: 96.3,
+      details: {
+        avg_success: 96.3,
+        pick_banana: 90,
+        put_spoon: 100,
+        open_drawer: 100,
+        pick_bread: 100,
+        open_toaster: 100,
+        put_bread: 100,
+        insert_wheel: 80,
+        hang_chinese_knot: 100,
+        avg_episode_length: 30.7,
+      },
+      notes: 'Primary sources: https://arxiv.org/html/2502.05450v2, Tables I and II and Section V-A; official project page: https://cccedric.github.io/conrft/; official repository: https://github.com/cccedric/conrft. HIL-ConRFT starts from the Cal-ConRFT offline initialization and fine-tunes an Octo-small VLA with a consistency-policy action head using human interventions on a 7-DoF Franka Emika arm. The paper reports success rates (%) of 90, 100, 100, 100, 100, 100, 80, and 100 for Pick Banana, Put Spoon, Open Drawer, Pick Bread, Open Toaster, Put Bread, Insert Wheel, and Hang Chinese Knot, respectively, averaging 96.3%, with an average episode length of 30.7 steps. All metrics are reported over 20 trials per task; the paper-specific real-world protocol is not directly comparable to simulation or other real-world benchmark rows.',
+    },
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
   HUMANOID_BENCH,
+  CONRFT_REAL_WORLD_TASKS,
   LIBERO,
   CALVIN,
   VLABENCH,

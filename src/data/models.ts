@@ -1083,6 +1083,24 @@ export const MODELS: Record<string, ModelEntry> = {
         description: 'A VLA initialized from ego-centric video and human trajectory-aware pretraining with a compact ActionVAE representation.',
         dateAdded: '2026-09-28',
     },
+    'hil-conrft-octosmall': {
+        id: 'hil-conrft-octosmall',
+        name: 'HIL-ConRFT (Octo-small)',
+        organization: 'Institute of Automation, Chinese Academy of Sciences / University of Chinese Academy of Sciences',
+        paper: {
+            title: 'ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy',
+            authors: ['Yuhui Chen', 'Shuai Tian', 'Shugao Liu', 'Yingting Zhou', 'Haoran Li', 'Dongbin Zhao'],
+            venue: 'RSS',
+            year: 2025,
+            arxivId: '2502.05450',
+            doi: '10.15607/RSS.2025.XXI.019',
+        },
+        githubUrl: 'https://github.com/cccedric/conrft',
+        websiteUrl: 'https://cccedric.github.io/conrft/',
+        isOpenSource: true,
+        description: 'Octo-small fine-tuned with the human-in-the-loop ConRFT consistency-policy procedure on a 7-DoF Franka arm.',
+        dateAdded: '2026-09-29',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
