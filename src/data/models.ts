@@ -1101,6 +1101,20 @@ export const MODELS: Record<string, ModelEntry> = {
         description: 'Octo-small fine-tuned with the human-in-the-loop ConRFT consistency-policy procedure on a 7-DoF Franka arm.',
         dateAdded: '2026-09-29',
     },
+    'starry': {
+        id: 'starry',
+        name: 'STARRY',
+        organization: 'Beijing Institute of Technology / Zhongguancun Academy',
+        paper: {
+            title: 'STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation',
+            authors: ['Yuxuan Tian', 'Yurun Jin', 'Bin Yu', 'Yukun Shi', 'Hao Wu', 'Chi Harold Liu', 'Kai Chen', 'Cong Huang'],
+            venue: 'arXiv',
+            year: 2026,
+            arxivId: '2604.26848',
+        },
+        description: 'A world-model-enhanced action-generation policy that jointly models future spatial-temporal latents and robot actions, with geometry-aware attention modulation.',
+        dateAdded: '2026-09-30',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
