@@ -363,7 +363,7 @@ export const ROBOTWIN: Benchmark = {
     { id: 'clean', name: 'Clean', higherIsBetter: true, format: 'percentage' },
     { id: 'rand', name: 'Randomized', higherIsBetter: true, format: 'percentage' },
   ],
-  lastUpdated: '2026-09-08',
+  lastUpdated: '2026-09-30',
   scores: [
     { modelId: 'x-vla', score: 70.0, details: { easy: 70.0, hard: 39.0 } },
     { modelId: 'pi0', score: 46.4, details: { easy: 46.4, hard: 16.3 } },
@@ -390,6 +390,12 @@ export const ROBOTWIN: Benchmark = {
       score: 93.2,
       details: { clean: 93.2, rand: 93.56 },
       notes: 'Source: https://arxiv.org/html/2606.19531, Table 1 (arXiv v1, 2026-06-17); official repository: https://github.com/yuyangalin/ImageWAM. ImageWAM reports RoboTwin 2.0 success rates (%) of 93.20 on Clean, 93.56 on Randomized, and 93.38 overall average. The protocol uses 2,500 clean plus 25,000 randomized training trajectories across 50+ tasks, trains for 30k steps, and evaluates with 100 trials per task. This clean/randomized protocol is not directly comparable to the existing Easy/Hard rows.',
+    },
+    {
+      modelId: 'starry',
+      score: 93.82,
+      details: { clean: 93.82, rand: 93.30 },
+      notes: 'Primary source: https://arxiv.org/html/2604.26848v2, Table 2 and Section 4.1. STARRY reports average success rates (%) of 93.82 on Clean and 93.30 on Randomized across all 50 RoboTwin 2.0 bimanual tasks. The paper uses 50 demonstrations per task for Clean and 500 per task for Randomized, pools all 50 tasks for joint optimization, and trains for 40k steps with batch size 256. These clean/randomized results are not directly comparable to the existing Easy/Hard rows or to entries using different demonstration and evaluation protocols.',
     },
   ],
 };
