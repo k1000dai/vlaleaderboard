@@ -1636,11 +1636,50 @@ export const CONRFT_REAL_WORLD_TASKS: Benchmark = {
 };
 
 // ============================================
+// Object-Centric Residual RL Real-World Tasks
+// ============================================
+export const OBJECT_CENTRIC_RESIDUAL_REAL_WORLD: Benchmark = {
+  id: 'object-centric-residual-real-world',
+  name: 'Object-Centric Residual RL Real-World Tasks',
+  shortName: 'Object-Centric Residual RL',
+  description: 'A paper-defined five-task real-world manipulation suite for zero-shot sim-to-real residual reinforcement learning on a Franka Research 3 robot.',
+  iconEmoji: '🦾',
+  category: 'real-world',
+  paper: {
+    title: 'Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement',
+    authors: ['Kinam Kim', 'Namiko Saito', 'Heecheol Kim', 'Katsushi Ikeuchi', 'Jaegul Choo', 'Yasuyuki Matsushita'],
+    venue: 'arXiv',
+    year: 2026,
+    arxivId: '2606.18953',
+  },
+  websiteUrl: 'https://www.microsoft.com/en-us/research/articles/object-centric-residual-rl/',
+  taskTypes: ['real-world', 'manipulation', 'VLA', 'residual reinforcement learning', 'sim-to-real', 'Franka Research 3'],
+  metrics: [
+    { id: 'avg_success', name: 'Average Real-Robot Success', higherIsBetter: true, format: 'percentage' },
+    { id: 'cube_lift', name: 'Cube Lift', higherIsBetter: true, format: 'percentage' },
+    { id: 'pick_and_place', name: 'Pick-and-Place', higherIsBetter: true, format: 'percentage' },
+    { id: 'stack_cube', name: 'Stack Cube', higherIsBetter: true, format: 'percentage' },
+    { id: 'close_drawer', name: 'Close Drawer', higherIsBetter: true, format: 'percentage' },
+    { id: 'stand_cup_up', name: 'Stand Cup Up', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2026-10-01',
+  scores: [
+    {
+      modelId: 'object-centric-residual-rl',
+      score: 76,
+      details: { avg_success: 76, cube_lift: 85, pick_and_place: 80, stack_cube: 75, close_drawer: 100, stand_cup_up: 40 },
+      notes: 'Primary source: https://arxiv.org/html/2606.18953v1, abstract and Table 1; official project page: https://www.microsoft.com/en-us/research/articles/object-centric-residual-rl/. The simulation-trained object-centric residual raises average real-robot success from 42% (base VLA) to 76% zero-shot across five tasks on a Franka Research 3 robot. Table 1 reports +Residual success rates of Cube Lift 17/20 (85%), Pick-and-Place 16/20 (80%), Stack Cube 15/20 (75%), Close Drawer 20/20 (100%), and Stand Cup Up 8/20 (40%). The residual is trained only in simulation and the result uses a paper-defined real-robot task suite, so it is not directly comparable to simulation benchmarks or rows using different VLA weights, robot hardware, or adaptation protocols.'
+    },
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
   HUMANOID_BENCH,
   CONRFT_REAL_WORLD_TASKS,
+  OBJECT_CENTRIC_RESIDUAL_REAL_WORLD,
   LIBERO,
   CALVIN,
   VLABENCH,
