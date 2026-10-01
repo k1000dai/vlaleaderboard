@@ -1115,6 +1115,21 @@ export const MODELS: Record<string, ModelEntry> = {
         description: 'A world-model-enhanced action-generation policy that jointly models future spatial-temporal latents and robot actions, with geometry-aware attention modulation.',
         dateAdded: '2026-09-30',
     },
+    'object-centric-residual-rl': {
+        id: 'object-centric-residual-rl',
+        name: 'Object-Centric Residual RL',
+        organization: 'KAIST / Microsoft Research Asia / The University of Tokyo',
+        paper: {
+            title: 'Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement',
+            authors: ['Kinam Kim', 'Namiko Saito', 'Heecheol Kim', 'Katsushi Ikeuchi', 'Jaegul Choo', 'Yasuyuki Matsushita'],
+            venue: 'arXiv',
+            year: 2026,
+            arxivId: '2606.18953',
+        },
+        websiteUrl: 'https://www.microsoft.com/en-us/research/articles/object-centric-residual-rl/',
+        description: 'A simulation-trained object-centric residual policy that improves a frozen VLA zero-shot on a real Franka Research 3 robot.',
+        dateAdded: '2026-10-01',
+    },
 };
 
 // Merge auto-generated RoboLab and RoboDojo models. Hand-maintained entries above always win.
